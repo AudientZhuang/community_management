@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.saltedfish.community_management.mapper.HouseholdMapper">
+    <select id="insertHousehold" parameterType="com.saltedfish.community_management.bean.Household">
+        insert into household
+         (name,gender,age,telephone,IDcard,arrivalDate,isOwner,buildingId,roomId)
+         values
+         (#{name},#{gender},#{age},#{telephone},#{IDcard},#{arrivalDate},#{isOwner},#{buildingId},#{roomId})
+    </select>
+</mapper>
