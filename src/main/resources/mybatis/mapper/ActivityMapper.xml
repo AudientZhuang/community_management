@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.saltedfish.community_management.mapper.ActivityMapper">
+
+    <insert id="insertActivity" parameterType="com.saltedfish.community_management.bean.Activity">
+        insert into activity
+        (image,title,content,address,number,date,publisher,publishDate)
+        values
+        (#{image},#{title},#{content},#{address},#{number},#{date},#{publisher},#{publishDate})
+    </insert>
+
+    <update id="updateActivity" parameterType="com.saltedfish.community_management.bean.Activity">
+        update activity
+        set
+        image=#{image},title=#{title},content=#{content},address=#{address},number=#{number},date=#{date},publisher=#{publisher},publishDate=#{publishDate}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteActivity">
+        delete from activity where id = #{id}
+    </delete>
+
+    <select id="findActivityById" resultType="com.saltedfish.community_management.bean.Activity">
+        select id,image,title,content,address,number,date,publisher,publishDate from activity where id = #{id}
+    </select>
+
+    <select id="findActivity" parameterType="java.util.Map" resultType="com.saltedfish.community_management.bean.Activity">
+        select id,image,title,content,address,number,date,publisher,publishDate
+        from activity
+        where 1
+        <if test="conditionMap.publishDate != null">
+            and publishDate = #{conditionMap.publishDate}
+        </if>
+        <if test="conditionMap.number != null">
+            and number = #{conditionMap.number}
+        </if>
+        <if test="conditionMap.publisher != null">
+            and publisher = #{conditionMap.publisher}
+        </if>
+    </select>
+
+</mapper>
