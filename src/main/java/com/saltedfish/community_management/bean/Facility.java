@@ -12,5 +12,5 @@ public class Facility {
     private Integer cateId;     //外键绑定分类ID
     private Integer num;        //设施购入数量
     private Double price;       //设施价格
-    private Date pruchaseDate;  //购买日期
+    private Date purchaseDate;  //购买日期
 }

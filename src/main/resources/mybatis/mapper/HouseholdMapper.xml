@@ -3,10 +3,52 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.saltedfish.community_management.mapper.HouseholdMapper">
-    <select id="insertHousehold" parameterType="com.saltedfish.community_management.bean.Household">
+    <insert id="insertHousehold" parameterType="com.saltedfish.community_management.bean.Household" >
         insert into household
          (name,gender,age,telephone,IDcard,arrivalDate,isOwner,buildingId,roomId)
          values
          (#{name},#{gender},#{age},#{telephone},#{IDcard},#{arrivalDate},#{isOwner},#{buildingId},#{roomId})
+    </insert>
+
+    <update id="updateHousehold" parameterType="com.saltedfish.community_management.bean.Household">
+        update household
+        set
+        name=#{name},gender=#{gender},age=#{age},telephone=#{telephone},IDcard=#{IDcard},arrivalDate=#{arrivalDate},isOwner=#{isOwner},
+        buildingId=#{buildingId},roomId=#{roomId}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteHousehold">
+        delete from household where id = #{id}
+    </delete>
+
+    <select id="findHouseholdById" resultType="com.saltedfish.community_management.bean.Household">
+        select id,name,gender,age,telephone,IDcard,arrivalDate,isOwner,buildingId,roomId from household where id = #{id}
     </select>
+
+    <select id="findHousehold" parameterType="java.util.Map" resultType="com.saltedfish.community_management.bean.Household">
+        select id,name,gender,age,telephone,IDcard,arrivalDate,isOwner,buildingId,roomId
+        from household
+        where 1
+        <if test="conditionMap.gender != null">
+            and gender = #{conditionMap.gender}
+        </if>
+        <if test="conditionMap.age != null">
+            and age = #{conditionMap.age}
+        </if>
+        <if test="conditionMap.arrivalDate != null">
+            and arrivalDate = #{conditionMap.arrivalDate}
+        </if>
+        <if test="conditionMap.buildingId != null">
+            and buildingId = #{conditionMap.buildingId}
+        </if>
+        <if test="conditionMap.roomId != null">
+            and roomId = #{conditionMap.roomId}
+        </if>
+        <if test="conditionMap.isOwner != null">
+            and isOwner = #{conditionMap.isOwner}
+        </if>
+    </select>
+
+
 </mapper>

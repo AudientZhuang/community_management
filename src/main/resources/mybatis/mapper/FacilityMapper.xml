@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.saltedfish.community_management.mapper.FacilityMapper">
+
+    <insert id="insertFacility" parameterType="com.saltedfish.community_management.bean.Facility">
+        insert into facility
+        (name,cateId,num,price,purchaseDate)
+        values
+        (#{name},#{cateId},#{num},#{price},#{purchaseDate})
+    </insert>
+
+    <update id="updateFacility" parameterType="com.saltedfish.community_management.bean.Facility">
+        update facility
+        set
+        name=#{name},cateId=#{cateId},num=#{num},price=#{price},purchaseDate=#{purchaseDate}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteFacility">
+        delete from facility where id = #{id}
+    </delete>
+
+    <select id="findFacilityById" resultType="com.saltedfish.community_management.bean.Facility">
+        select id,name,cateId,num,price,purchaseDate from facility where id = #{id}
+    </select>
+
+    <select id="findFacility" parameterType="java.util.Map" resultType="com.saltedfish.community_management.bean.Facility">
+        select id,name,cateId,num,price,purchaseDate
+        from facility
+        where 1
+        <if test="conditionMap.name != null">
+            and name = #{conditionMap.name}
+        </if>
+        <if test="conditionMap.cateId != null">
+            and cateId = #{conditionMap.cateId}
+        </if>
+        <if test="conditionMap.price != null">
+            and price = #{conditionMap.price}
+        </if>
+        <if test="conditionMap.purchaseDate != null">
+            and purchaseDate = #{conditionMap.purchaseDate}
+        </if>
+    </select>
+
+</mapper>
