@@ -10,6 +10,5 @@ public class User {
     private Integer hh_id;  //外键关联住户id
     private String account; //住户账号
     private String password;//住户密码(默认123456)
-    private String unionId; //绑定微信（保留字段）
     private String openId;  //绑定微信（保留字段）
 }
