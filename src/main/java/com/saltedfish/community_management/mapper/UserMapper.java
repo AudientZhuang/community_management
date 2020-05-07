@@ -1,7 +1,9 @@
 package com.saltedfish.community_management.mapper;
 
 import com.saltedfish.community_management.bean.User;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface UserMapper {
     /**
      * 通过社区账号密码登录

@@ -64,6 +64,10 @@ public enum ResultCode {
     FIND_FACILITY_SUCCESS(1,"根据条件查询设施信息成功"),
     FIND_FACILITY_FAILED(0,"根据条件查询设施信息失败"),
     FIND_FACILITY_EXCEPTION(-1,"根据条件查询设施信息异常"),
+    //社区账号登录
+    LOGIN_USER_SUCCESS(1,"社区账号登录成功"),
+    LOGIN_USER_FAILED(0,"社区账号登录失败"),
+    LOGIN_USER_EXCEPTION(-1,"社区账号登录异常"),
 
     SYSTEM_BUSY(-1,"系统繁忙"),
     LOGIN_SUCCESS(1,"登陆成功");
