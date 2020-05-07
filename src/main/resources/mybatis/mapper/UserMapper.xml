@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.saltedfish.community_management.mapper.UserMapper">
+    <select id="cmLogin" resultType="com.saltedfish.community_management.bean.User">
+        select id,hh_id,account,password,openId
+        from user
+        where account=#{account} and password=#{password}
+    </select>
+</mapper>
