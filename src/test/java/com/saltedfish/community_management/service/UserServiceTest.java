@@ -22,4 +22,14 @@ public class UserServiceTest {
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void bindWx() {
+        try {
+            Result result = userService.bindWx("11", 1);
+            System.out.println(result);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

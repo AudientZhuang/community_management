@@ -68,6 +68,18 @@ public enum ResultCode {
     LOGIN_USER_SUCCESS(1,"社区账号登录成功"),
     LOGIN_USER_FAILED(0,"社区账号登录失败"),
     LOGIN_USER_EXCEPTION(-1,"社区账号登录异常"),
+    //微信登录
+    LOGIN_WX_SUCCESS(1,"微信登录成功"),
+    LOGIN_WX_FAILED(0,"微信登录失败"),
+    LOGIN_WX_EXCEPTION(-1,"微信登录异常"),
+    //绑定微信
+    BIND_WX_SUCESS(1,"绑定微信成功"),
+    BIND_WX_FAILED(0,"绑定微信失败"),
+    BIND_WX_EXCEPTION(-1,"绑定微信异常"),
+    //查询指定hh_id的用户是否绑定微信
+    FIND_USER_ISBIND_BY_ID_SUCCESS(1,"查询指定hh_id的用户是否绑定微信成功"),
+    FIND_USER_ISBIND_BY_ID_FAILED(0,"查询指定hh_id的用户否绑定微信失败"),
+    FIND_USER_ISBIND_BY_ID_EXCEPTION(-1,"查询指定hh_id的用户否绑定微信异常"),
 
     SYSTEM_BUSY(-1,"系统繁忙"),
     LOGIN_SUCCESS(1,"登陆成功");

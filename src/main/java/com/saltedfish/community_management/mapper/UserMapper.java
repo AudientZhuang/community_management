@@ -2,6 +2,7 @@ package com.saltedfish.community_management.mapper;
 
 import com.saltedfish.community_management.bean.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Mapper
 public interface UserMapper {
@@ -29,9 +30,9 @@ public interface UserMapper {
     public Integer bindWx(String openId,Integer id);
 
     /**
-     * 根据id查询住户是否绑定微信
-     * @param id
+     * 根据指定的hh_id查询住户信息是否绑定微信
+     * @param hh_id
      * @return
      */
-    public Integer isBind(Integer id);
+    public User findIsBindByHid(@RequestParam("hh_id") Integer hh_id);
 }
