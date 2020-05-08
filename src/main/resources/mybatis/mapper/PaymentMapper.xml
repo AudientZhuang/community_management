@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.saltedfish.community_management.mapper.PaymentMapper">
+
+    <insert id="insertPayment" parameterType="com.saltedfish.community_management.bean.Payment">
+        insert into payment
+        (householdId,charId,charStandard,payReal,payStatus,payDate)
+        values
+        (#{householdId},#{charId},#{charStandard},#{payReal},#{payStatus},#{payDate})
+    </insert>
+
+    <update id="updatePayment" parameterType="com.saltedfish.community_management.bean.Payment">
+        update payment
+        set
+        householdId=#{householdId},charId=#{charId},charStandard=#{charStandard},payReal=#{payReal},payStatus=#{payStatus},payDate=#{payDate}
+        where id = #{id}
+    </update>
+
+    <delete id="deletePayment">
+        delete from payment where id = #{id}
+    </delete>
+
+    <select id="findPaymentById" resultType="com.saltedfish.community_management.bean.Payment">
+        select id,householdId,charId,charStandard,payReal,payStatus,payDate
+        from payment
+        where id = #{id}
+    </select>
+
+    <select id="findPayment" parameterType="java.util.Map" resultType="com.saltedfish.community_management.bean.Payment">
+        select id,householdId,charId,charStandard,payReal,payStatus,payDate
+        from payment
+        where 1
+        <if test="conditionMap.householdId != null">
+            and householdId = #{conditionMap.householdId}
+        </if>
+        <if test="conditionMap.charId != null">
+            and charId = #{conditionMap.charId}
+        </if>
+        <if test="conditionMap.payStatus != null">
+            and payStatus = #{conditionMap.payStatus}
+        </if>
+        <if test="conditionMap.payDate != null">
+            and payDate = #{conditionMap.payDate}
+        </if>
+    </select>
+
+</mapper>

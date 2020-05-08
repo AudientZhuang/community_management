@@ -116,7 +116,7 @@ public class ActivityServiceImpl implements ActivityService {
         Result result = new Result();
         try{
             List<Activity> activityList = activityMapper.findActivity(conditionMap);
-            if (activityList.size() >= 0){
+            if (activityList != null){
                 //根据条件查询活动信息成功
                 result.setStatus(ResultCode.FIND_ACTIVITY_SUCCESS.getStatus());
                 result.setMessage(ResultCode.FIND_ACTIVITY_SUCCESS.getMessage());
