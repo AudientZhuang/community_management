@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.saltedfish.community_management.mapper.FeedbackMapper">
+
+    <insert id="insertFeedback" parameterType="com.saltedfish.community_management.bean.Feedback">
+        insert into feedback
+        (householdId,content,date,status,reply)
+        values
+        (#{householdId},#{content},#{date},#{status},#{reply})
+    </insert>
+
+    <update id="updateFeedback" parameterType="com.saltedfish.community_management.bean.Feedback">
+        update feedback
+        set
+        householdId=#{householdId},content=#{content},date=#{date},status=#{status},reply=#{reply}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteFeedback">
+        delete from feedback where id = #{id}
+    </delete>
+
+    <select id="findFeedbackById" resultType="com.saltedfish.community_management.bean.Feedback">
+        select id,householdId,content,date,status,reply from feedback where id = #{id}
+    </select>
+
+    <select id="findFeedback" parameterType="java.util.Map" resultType="com.saltedfish.community_management.bean.Feedback">
+        select id,householdId,content,date,status,reply
+        from feedback
+        where 1
+        <if test="conditionMap.householdId != null">
+            and householdId=#{conditionMap.householdId}
+        </if>
+        <if test="conditionMap.date != null">
+            and date=#{conditionMap.date}
+        </if>
+        <if test="conditionMap.status != null">
+            and status=#{conditionMap.status}
+        </if>
+    </select>
+
+</mapper>
