@@ -4,7 +4,43 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.saltedfish.community_management.mapper.MaintenanceMapper">
 
+    <insert id="insertMaintenance" parameterType="com.saltedfish.community_management.bean.Maintenance">
+        insert into maintenance
+        (facilityId,content,status,cost,createDate,date,note)
+        values
+        (#{facilityId},#{content},#{status},#{cost},#{createDate},#{date},#{note})
+    </insert>
 
+    <update id="updateMaintenance" parameterType="com.saltedfish.community_management.bean.Maintenance">
+        update maintenance
+        set
+        facilityId=#{facilityId},content=#{content},status=#{status},cost=#{cost},createDate=#{createDate},date=#{date},note=#{note}
+        where id = #{id}
+    </update>
 
+    <delete id="deleteMaintenance">
+        delete from maintenance where id = #{id}
+    </delete>
+
+    <select id="findMaintenanceById" resultType="com.saltedfish.community_management.bean.Maintenance">
+        select id,facilityId,content,status,cost,createDate,date,note
+        from maintenance
+        where id = #{id}
+    </select>
+
+    <select id="findMaintenance" parameterType="java.util.Map" resultType="com.saltedfish.community_management.bean.Maintenance">
+        select id,facilityId,content,status,cost,createDate,date,note
+        from maintenance
+        where 1
+        <if test="conditionMap.facilityId != null">
+            and facilityId = #{conditionMap.facilityId}
+        </if>
+        <if test="conditionMap.cost != null">
+            and cost = #{conditionMap.cost}
+        </if>
+        <if test="conditionMap.date != null">
+            and date = #{conditionMap.date}
+        </if>
+    </select>
 
 </mapper>

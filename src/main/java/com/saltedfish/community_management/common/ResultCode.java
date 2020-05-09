@@ -81,6 +81,70 @@ public enum ResultCode {
     FIND_USER_ISBIND_BY_ID_FAILED(0,"查询指定hh_id的用户否绑定微信失败"),
     FIND_USER_ISBIND_BY_ID_EXCEPTION(-1,"查询指定hh_id的用户否绑定微信异常"),
 
+    //添加设施维护信息
+    INSERT_MAINTENANCE_SUCCESS(1,"添加设施维护信息成功"),
+    INSERT_MAINTENANCE_FAILED(0,"添加设施维护信息失败"),
+    INSERT_MAINTENANCE_EXCEPTION(-1,"添加设施维护信息异常"),
+    //更新设施维护信息
+    UPDATE_MAINTENANCE_SUCCESS(1,"更新设施维护信息成功"),
+    UPDATE_MAINTENANCE_FAILED(0,"更新设施维护信息失败"),
+    UPDATE_MAINTENANCE_EXCEPTION(-1,"更新设施维护信息异常"),
+    //删除设施维护信息
+    DELETE_MAINTENANCE_SUCCESS(1,"删除设施维护信息成功"),
+    DELETE_MAINTENANCE_FAILED(0,"删除设施维护信息失败"),
+    DELETE_MAINTENANCE_EXCEPTION(-1,"删除设施维护信息异常"),
+    //查询指定id的设施维护信息
+    FIND_MAINTENANCE_BY_ID_SUCCESS(1,"查询指定id的设施维护信息成功"),
+    FIND_MAINTENANCE_BY_ID_FAILED(0,"查询指定id的设施维护信息失败"),
+    FIND_MAINTENANCE_BY_ID_EXCEPTION(-1,"查询指定id的设施维护信息异常"),
+    //根据条件查询设施维护信息
+    FIND_MAINTENANCE_SUCCESS(1,"根据条件查询设施维护信息成功"),
+    FIND_MAINTENANCE_FAILED(0,"根据条件查询设施维护信息失败"),
+    FIND_MAINTENANCE_EXCEPTION(-1,"根据条件查询设施维护信息异常"),
+
+    //添加收费情况
+    INSERT_PAYMENT_SUCCESS(1,"添加收费情况成功"),
+    INSERT_PAYMENT_FAILED(0,"添加收费情况失败"),
+    INSERT_PAYMENT_EXCEPTION(-1,"添加收费情况异常"),
+    //更新收费情况
+    UPDATE_PAYMENT_SUCCESS(1,"更新收费情况成功"),
+    UPDATE_PAYMENT_FAILED(0,"更新收费情况失败"),
+    UPDATE_PAYMENT_EXCEPTION(-1,"更新收费情况异常"),
+    //删除收费情况
+    DELETE_PAYMENT_SUCCESS(1,"删除收费情况成功"),
+    DELETE_PAYMENT_FAILED(0,"删除收费情况失败"),
+    DELETE_PAYMENT_EXCEPTION(-1,"删除收费情况异常"),
+    //查询指定id的收费情况
+    FIND_PAYMENT_BY_ID_SUCCESS(1,"查询指定id的收费情况成功"),
+    FIND_PAYMENT_BY_ID_FAILED(0,"查询指定id的收费情况失败"),
+    FIND_PAYMENT_BY_ID_EXCEPTION(-1,"查询指定id的收费情况异常"),
+    //根据条件查询收费情况
+    FIND_PAYMENT_SUCCESS(1,"根据条件查询收费情况成功"),
+    FIND_PAYMENT_FAILED(0,"根据条件查询收费情况失败"),
+    FIND_PAYMENT_EXCEPTION(-1,"根据条件查询收费情况异常"),
+
+
+    //添加住户申报维修信息
+    INSERT_REPAIR_SUCCESS(1,"添加住户申报维修信息成功"),
+    INSERT_REPAIR_FAILED(0,"添加住户申报维修信息失败"),
+    INSERT_REPAIR_EXCEPTION(-1,"添加住户申报维修信息异常"),
+    //更新住户申报维修信息
+    UPDATE_REPAIR_SUCCESS(1,"更新住户申报维修信息成功"),
+    UPDATE_REPAIR_FAILED(0,"更新住户申报维修信息失败"),
+    UPDATE_REPAIR_EXCEPTION(-1,"更新住户申报维修信息异常"),
+    //删除住户申报维修信息
+    DELETE_REPAIR_SUCCESS(1,"删除住户申报维修信息成功"),
+    DELETE_REPAIR_FAILED(0,"删除住户申报维修信息失败"),
+    DELETE_REPAIR_EXCEPTION(-1,"删除住户申报维修信息异常"),
+    //查询指定id的住户申报维修信息
+    FIND_REPAIR_BY_ID_SUCCESS(1,"查询指定id的住户申报维修信息成功"),
+    FIND_REPAIR_BY_ID_FAILED(0,"查询指定id的住户申报维修信息失败"),
+    FIND_REPAIR_BY_ID_EXCEPTION(-1,"查询指定id的住户申报维修信息异常"),
+    //根据条件查询住户申报维修信息
+    FIND_REPAIR_SUCCESS(1,"根据条件查询住户申报维修信息成功"),
+    FIND_REPAIR_FAILED(0,"根据条件查询住户申报维修信息失败"),
+    FIND_REPAIR_EXCEPTION(-1,"根据条件查询住户申报维修信息异常"),
+
     SYSTEM_BUSY(-1,"系统繁忙"),
     LOGIN_SUCCESS(1,"登陆成功");
 

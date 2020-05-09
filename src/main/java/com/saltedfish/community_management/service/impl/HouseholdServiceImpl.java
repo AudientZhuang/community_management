@@ -126,7 +126,7 @@ public class HouseholdServiceImpl implements HouseholdService {
         Result result = new Result();
         try{
             List<Household> householdList = householdMapper.findHousehold(conditionMap);
-            if (householdList.size() >= 0){
+            if (householdList != null){
                 //根据条件查询住户信息成功
                 result.setStatus(ResultCode.FIND_HOUSEHOLD_SUCCESS.getStatus());
                 result.setMessage(ResultCode.FIND_HOUSEHOLD_SUCCESS.getMessage());
