@@ -116,7 +116,7 @@ public class FacilityServiceImpl implements FacilityService {
         Result result = new Result();
         try {
             List<Facility> facilityList = facilityMapper.findFacility(conditionMap);
-            if (facilityList.size() >= 0){
+            if (facilityList != null){
                 //根据条件查询设施信息成功
                 result.setStatus(ResultCode.FIND_FACILITY_SUCCESS.getStatus());
                 result.setMessage(ResultCode.FIND_FACILITY_SUCCESS.getMessage());

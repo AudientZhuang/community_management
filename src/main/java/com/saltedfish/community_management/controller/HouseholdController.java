@@ -120,12 +120,13 @@ public class HouseholdController {
     }
 
     /**
-     * 查询多条件的住户信息
+     * 根据条件查询住户信息
      * @return
      */
     @GetMapping("/household")
     public Result findHousehold(HttpServletRequest request){
         try{
+            //获取条件参数
             Map<String, String[]> parameterMap = request.getParameterMap();
             Map<String,String> conditionMap = new HashMap<>();
             if (parameterMap.size() >= 0){

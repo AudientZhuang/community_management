@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.saltedfish.community_management.mapper.RepairMapper">
+
+    <insert id="insertRepair" parameterType="com.saltedfish.community_management.bean.Repair">
+        insert into repair
+        (householdId,name,telephone,content,date,status,reply)
+        values
+        (#{householdId},#{name},#{telephone},#{content},#{date},#{status},#{reply})
+    </insert>
+    
+    <update id="updateRepair" parameterType="com.saltedfish.community_management.bean.Repair">
+        update repair
+        set 
+        householdId=#{householdId},name=#{name},telephone=#{telephone},content=#{content},date=#{date},status=#{status},reply=#{reply}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteRepair">
+        delete from repair where id = #{id}
+    </delete>
+
+    <select id="findRepairById" resultType="com.saltedfish.community_management.bean.Repair">
+        select id,householdId,name,telephone,content,date,status,reply from repair where id = #{id}
+    </select>
+
+    <select id="findRepair" parameterType="java.util.Map" resultType="com.saltedfish.community_management.bean.Repair">
+        select id,householdId,name,telephone,content,date,status,reply
+        from repair
+        where 1
+        <if test="conditionMap.householdId != null">
+            and householdId = #{conditionMap.householdId}
+        </if>
+        <if test="conditionMap.name != null">
+            and name = #{conditionMap.name}
+        </if>
+        <if test="conditionMap.telephone != null">
+            and telephone = #{conditionMap.telephone}
+        </if>
+        <if test="conditionMap.date != null">
+            and date = #{conditionMap.date}
+        </if>
+        <if test="conditionMap.status != null">
+            and status = #{conditionMap.status}
+        </if>
+    </select>
+
+</mapper>

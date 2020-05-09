@@ -106,6 +106,7 @@ public class FacilityController {
     @GetMapping("/facility")
     public Result findFacility(HttpServletRequest request){
         try {
+            //获取条件参数
             Map<String, String[]> parameterMap = request.getParameterMap();
             Map<String,String> conditionMap = new HashMap<>();
             if (parameterMap.size() >= 0){
