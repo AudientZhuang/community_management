@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.saltedfish.community_management.mapper.FireSecurityMapper">
+    <insert id="insertFireSecurity" parameterType="com.saltedfish.community_management.bean.FireSecurity">
+        insert into fire_security
+        (buildId,createDate,checkContent,level,checkDate,updateDate)
+        values
+        (#{buildId},#{createDate},#{checkContent},#{level},#{checkDate},#{updateDate})
+    </insert>
+
+    <update id="updateFireSecurity" parameterType="com.saltedfish.community_management.bean.FireSecurity">
+        update fire_security
+        set
+        buildId=#{buildId},createDate=#{createDate},checkContent=#{checkContent},level=#{level},checkDate=#{checkDate},updateDate=#{updateDate}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteFireSecurity">
+        delete from fire_security where id = #{id}
+    </delete>
+
+    <select id="findFireSecurityById" resultType="com.saltedfish.community_management.bean.FireSecurity">
+        select id,buildId,createDate,checkContent,level,checkDate,updateDate
+        from fire_security
+        where id = #{id}
+    </select>
+    
+    <select id="findFireSecurity" parameterType="java.util.Map" resultType="com.saltedfish.community_management.bean.FireSecurity">
+        select id,buildId,createDate,checkContent,level,checkDate,updateDate
+        from fire_security
+        where 1
+        <if test="conditionMap.buildId != null">
+            and buildId = #{conditionMap.buildId}
+        </if>
+        <if test="conditionMap.level != null">
+            and level = #{conditionMap.level}
+        </if>
+        <if test="conditionMap.checkDate != null">
+            and checkDate = #{conditionMap.checkDate}
+        </if>
+        <if test="conditionMap.updateDate != null">
+            and updateDate = #{conditionMap.updateDate}
+        </if>
+
+    </select>
+</mapper>

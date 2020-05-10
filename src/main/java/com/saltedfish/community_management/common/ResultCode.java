@@ -145,6 +145,48 @@ public enum ResultCode {
     FIND_REPAIR_FAILED(0,"根据条件查询住户申报维修信息失败"),
     FIND_REPAIR_EXCEPTION(-1,"根据条件查询住户申报维修信息异常"),
 
+    //添加消防检查情况
+    INSERT_FIRE_SECURITY_SUCCESS(1,"添加消防检查情况成功"),
+    INSERT_FIRE_SECURITY_FAILED(0,"添加消防检查情况失败"),
+    INSERT_FIRE_SECURITY_EXCEPTION(-1,"添加消防检查情况异常"),
+    //更新消防检查情况
+    UPDATE_FIRE_SECURITY_SUCCESS(1,"更新消防检查情况成功"),
+    UPDATE_FIRE_SECURITY_FAILED(0,"更新消防检查情况失败"),
+    UPDATE_FIRE_SECURITY_EXCEPTION(-1,"更新消防检查情况异常"),
+    //删除消防检查情况
+    DELETE_FIRE_SECURITY_SUCCESS(1,"删除消防检查情况成功"),
+    DELETE_FIRE_SECURITY_FAILED(0,"删除消防检查情况失败"),
+    DELETE_FIRE_SECURITY_EXCEPTION(-1,"删除消防检查情况异常"),
+    //查询指定id的消防检查情况
+    FIND_FIRE_SECURITY_BY_ID_SUCCESS(1,"查询指定id的消防检查情况成功"),
+    FIND_FIRE_SECURITY_BY_ID_FAILED(0,"查询指定id的消防检查情况失败"),
+    FIND_FIRE_SECURITY_BY_ID_EXCEPTION(-1,"查询指定id的消防检查情况异常"),
+    //根据条件查询消防检查情况
+    FIND_FIRE_SECURITY_SUCCESS(1,"根据条件查询消防检查情况成功"),
+    FIND_FIRE_SECURITY_FAILED(0,"根据条件查询消防检查情况失败"),
+    FIND_FIRE_SECURITY_EXCEPTION(-1,"根据条件查询消防检查情况异常"),
+
+    //添加反馈信息
+    INSERT_FEEDBACK_SUCCESS(1,"添加反馈信息成功"),
+    INSERT_FEEDBACK_FAILED(0,"添加反馈信息失败"),
+    INSERT_FEEDBACK_EXCEPTION(-1,"添加反馈信息异常"),
+    //更新反馈信息
+    UPDATE_FEEDBACK_SUCCESS(1,"更新反馈信息成功"),
+    UPDATE_FEEDBACK_FAILED(0,"更新反馈信息失败"),
+    UPDATE_FEEDBACK_EXCEPTION(-1,"更新反馈信息异常"),
+    //删除反馈信息
+    DELETE_FEEDBACK_SUCCESS(1,"删除反馈信息成功"),
+    DELETE_FEEDBACK_FAILED(0,"删除反馈信息失败"),
+    DELETE_FEEDBACK_EXCEPTION(-1,"删除反馈信息异常"),
+    //查询指定id的反馈信息
+    FIND_FEEDBACK_BY_ID_SUCCESS(1,"查询指定id的反馈信息成功"),
+    FIND_FEEDBACK_BY_ID_FAILED(0,"查询指定id的反馈信息失败"),
+    FIND_FEEDBACK_BY_ID_EXCEPTION(-1,"查询指定id的反馈信息异常"),
+    //根据条件查询反馈信息
+    FIND_FEEDBACK_SUCCESS(1,"根据条件查询反馈信息成功"),
+    FIND_FEEDBACK_FAILED(0,"根据条件查询反馈信息失败"),
+    FIND_FEEDBACK_EXCEPTION(-1,"根据条件查询反馈信息异常"),
+
     SYSTEM_BUSY(-1,"系统繁忙"),
     LOGIN_SUCCESS(1,"登陆成功");
 

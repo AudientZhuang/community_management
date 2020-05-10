@@ -1,122 +1,377 @@
-2020-05-09 00:06:48.774  INFO 11048 --- [main] c.s.c.service.RepairServiceTest          : Starting RepairServiceTest on DESKTOP-LT5V1F7 with PID 11048 (started by Audient in D:\Java\ideaApp\community_management)
-2020-05-09 00:06:49.320  INFO 11048 --- [main] c.s.c.service.RepairServiceTest          : No active profile set, falling back to default profiles: default
-2020-05-09 00:07:15.683  INFO 11048 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-05-09 00:07:16.908  INFO 11048 --- [main] c.s.c.service.RepairServiceTest          : Started RepairServiceTest in 37.084 seconds (JVM running for 57.376)
-2020-05-09 00:07:27.075  INFO 11048 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-2020-05-09 00:07:28.670  INFO 11048 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-05-09 00:07:28.697  INFO 11048 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-2020-05-09 00:07:28.806  INFO 11048 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-2020-05-09 00:14:37.860  INFO 8336 --- [main] c.s.c.service.RepairServiceTest          : Starting RepairServiceTest on DESKTOP-LT5V1F7 with PID 8336 (started by Audient in D:\Java\ideaApp\community_management)
-2020-05-09 00:14:37.887  INFO 8336 --- [main] c.s.c.service.RepairServiceTest          : No active profile set, falling back to default profiles: default
-2020-05-09 00:14:57.205  INFO 8336 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-05-09 00:14:58.271  INFO 8336 --- [main] c.s.c.service.RepairServiceTest          : Started RepairServiceTest in 26.933 seconds (JVM running for 40.769)
-2020-05-09 00:15:07.788  INFO 8336 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-2020-05-09 00:15:10.677  INFO 8336 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-05-09 00:15:10.780  INFO 8336 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-2020-05-09 00:15:10.867  INFO 8336 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-2020-05-09 00:16:35.059  INFO 5708 --- [main] c.s.c.service.RepairServiceTest          : Starting RepairServiceTest on DESKTOP-LT5V1F7 with PID 5708 (started by Audient in D:\Java\ideaApp\community_management)
-2020-05-09 00:16:35.075  INFO 5708 --- [main] c.s.c.service.RepairServiceTest          : No active profile set, falling back to default profiles: default
-2020-05-09 00:16:38.947  INFO 5708 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-05-09 00:16:39.587  INFO 5708 --- [main] c.s.c.service.RepairServiceTest          : Started RepairServiceTest in 6.472 seconds (JVM running for 13.237)
-2020-05-09 00:16:43.034  INFO 5708 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-2020-05-09 00:16:43.951  INFO 5708 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-05-09 00:16:43.991  INFO 5708 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-2020-05-09 00:16:44.031  INFO 5708 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-2020-05-09 00:17:13.689  INFO 7412 --- [main] c.s.c.service.RepairServiceTest          : Starting RepairServiceTest on DESKTOP-LT5V1F7 with PID 7412 (started by Audient in D:\Java\ideaApp\community_management)
-2020-05-09 00:17:13.691  INFO 7412 --- [main] c.s.c.service.RepairServiceTest          : No active profile set, falling back to default profiles: default
-2020-05-09 00:17:19.362  INFO 7412 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-05-09 00:17:19.961  INFO 7412 --- [main] c.s.c.service.RepairServiceTest          : Started RepairServiceTest in 7.267 seconds (JVM running for 9.883)
-2020-05-09 00:17:21.889  INFO 7412 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-2020-05-09 00:17:22.839  INFO 7412 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-05-09 00:17:22.840  INFO 7412 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-2020-05-09 00:17:22.865  INFO 7412 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-2020-05-09 00:18:13.094  INFO 6248 --- [main] c.s.c.service.RepairServiceTest          : Starting RepairServiceTest on DESKTOP-LT5V1F7 with PID 6248 (started by Audient in D:\Java\ideaApp\community_management)
-2020-05-09 00:18:13.097  INFO 6248 --- [main] c.s.c.service.RepairServiceTest          : No active profile set, falling back to default profiles: default
-2020-05-09 00:18:17.525  INFO 6248 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-05-09 00:18:18.008  INFO 6248 --- [main] c.s.c.service.RepairServiceTest          : Started RepairServiceTest in 5.784 seconds (JVM running for 7.605)
-2020-05-09 00:18:20.113  INFO 6248 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-2020-05-09 00:18:20.548  INFO 6248 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-05-09 00:18:20.551  INFO 6248 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-2020-05-09 00:18:20.559  INFO 6248 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-2020-05-09 00:18:29.086  INFO 13236 --- [main] c.s.c.service.RepairServiceTest          : Starting RepairServiceTest on DESKTOP-LT5V1F7 with PID 13236 (started by Audient in D:\Java\ideaApp\community_management)
-2020-05-09 00:18:29.088  INFO 13236 --- [main] c.s.c.service.RepairServiceTest          : No active profile set, falling back to default profiles: default
-2020-05-09 00:18:32.396  INFO 13236 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-05-09 00:18:32.868  INFO 13236 --- [main] c.s.c.service.RepairServiceTest          : Started RepairServiceTest in 4.594 seconds (JVM running for 6.581)
-2020-05-09 00:18:34.769  INFO 13236 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-2020-05-09 00:18:35.278  INFO 13236 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-05-09 00:18:35.280  INFO 13236 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-2020-05-09 00:18:35.291  INFO 13236 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-2020-05-09 00:19:38.591  INFO 12536 --- [main] c.s.c.service.RepairServiceTest          : Starting RepairServiceTest on DESKTOP-LT5V1F7 with PID 12536 (started by Audient in D:\Java\ideaApp\community_management)
-2020-05-09 00:19:38.594  INFO 12536 --- [main] c.s.c.service.RepairServiceTest          : No active profile set, falling back to default profiles: default
-2020-05-09 00:19:41.511  INFO 12536 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-05-09 00:19:41.972  INFO 12536 --- [main] c.s.c.service.RepairServiceTest          : Started RepairServiceTest in 4.034 seconds (JVM running for 6.33)
-2020-05-09 00:19:43.645  INFO 12536 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-2020-05-09 00:19:43.982  INFO 12536 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-05-09 00:19:43.985  INFO 12536 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-2020-05-09 00:19:43.995  INFO 12536 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-2020-05-09 00:24:00.761  INFO 10844 --- [main] c.s.c.controller.RepairControllerTest    : Starting RepairControllerTest on DESKTOP-LT5V1F7 with PID 10844 (started by Audient in D:\Java\ideaApp\community_management)
-2020-05-09 00:24:00.763  INFO 10844 --- [main] c.s.c.controller.RepairControllerTest    : No active profile set, falling back to default profiles: default
-2020-05-09 00:24:06.283  INFO 10844 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-05-09 00:24:07.009  INFO 10844 --- [main] c.s.c.controller.RepairControllerTest    : Started RepairControllerTest in 7.082 seconds (JVM running for 9.121)
-2020-05-09 00:24:08.191  INFO 10844 --- [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
-2020-05-09 00:24:08.191  INFO 10844 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2020-05-09 00:24:08.192  INFO 10844 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2020-05-09 00:24:12.414  INFO 10844 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-2020-05-09 00:24:13.251  INFO 10844 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-05-09 00:24:13.254  INFO 10844 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-2020-05-09 00:24:13.279  INFO 10844 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-2020-05-09 00:25:38.800  INFO 4616 --- [main] c.s.c.controller.RepairControllerTest    : Starting RepairControllerTest on DESKTOP-LT5V1F7 with PID 4616 (started by Audient in D:\Java\ideaApp\community_management)
-2020-05-09 00:25:38.805  INFO 4616 --- [main] c.s.c.controller.RepairControllerTest    : No active profile set, falling back to default profiles: default
-2020-05-09 00:25:44.351  INFO 4616 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-05-09 00:25:45.019  INFO 4616 --- [main] c.s.c.controller.RepairControllerTest    : Started RepairControllerTest in 6.852 seconds (JVM running for 8.644)
-2020-05-09 00:25:46.172  INFO 4616 --- [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
-2020-05-09 00:25:46.172  INFO 4616 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2020-05-09 00:25:46.173  INFO 4616 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2020-05-09 00:25:48.258  INFO 4616 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-2020-05-09 00:25:49.800  INFO 4616 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-05-09 00:25:49.803  INFO 4616 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-2020-05-09 00:25:49.858  INFO 4616 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-2020-05-09 00:27:22.072  INFO 12128 --- [main] c.s.c.controller.RepairControllerTest    : Starting RepairControllerTest on DESKTOP-LT5V1F7 with PID 12128 (started by Audient in D:\Java\ideaApp\community_management)
-2020-05-09 00:27:22.075  INFO 12128 --- [main] c.s.c.controller.RepairControllerTest    : No active profile set, falling back to default profiles: default
-2020-05-09 00:27:25.879  INFO 12128 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-05-09 00:27:26.347  INFO 12128 --- [main] c.s.c.controller.RepairControllerTest    : Started RepairControllerTest in 5.224 seconds (JVM running for 6.884)
-2020-05-09 00:27:27.191  INFO 12128 --- [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
-2020-05-09 00:27:27.191  INFO 12128 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2020-05-09 00:27:27.192  INFO 12128 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2020-05-09 00:27:30.922  INFO 12128 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-2020-05-09 00:27:32.266  INFO 12128 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-05-09 00:27:32.268  INFO 12128 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-2020-05-09 00:27:32.292  INFO 12128 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-2020-05-09 00:30:58.793  INFO 8544 --- [main] c.s.c.controller.RepairControllerTest    : Starting RepairControllerTest on DESKTOP-LT5V1F7 with PID 8544 (started by Audient in D:\Java\ideaApp\community_management)
-2020-05-09 00:30:58.796  INFO 8544 --- [main] c.s.c.controller.RepairControllerTest    : No active profile set, falling back to default profiles: default
-2020-05-09 00:31:02.899  INFO 8544 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-05-09 00:31:03.349  INFO 8544 --- [main] c.s.c.controller.RepairControllerTest    : Started RepairControllerTest in 5.306 seconds (JVM running for 6.683)
-2020-05-09 00:31:03.642  INFO 8544 --- [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
-2020-05-09 00:31:03.642  INFO 8544 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2020-05-09 00:31:03.643  INFO 8544 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2020-05-09 00:31:05.091  INFO 8544 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-2020-05-09 00:31:05.602  INFO 8544 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-05-09 00:31:05.603  INFO 8544 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-2020-05-09 00:31:05.610  INFO 8544 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-2020-05-09 00:32:02.952  INFO 12864 --- [main] c.s.c.controller.RepairControllerTest    : Starting RepairControllerTest on DESKTOP-LT5V1F7 with PID 12864 (started by Audient in D:\Java\ideaApp\community_management)
-2020-05-09 00:32:02.955  INFO 12864 --- [main] c.s.c.controller.RepairControllerTest    : No active profile set, falling back to default profiles: default
-2020-05-09 00:32:06.351  INFO 12864 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-05-09 00:32:06.913  INFO 12864 --- [main] c.s.c.controller.RepairControllerTest    : Started RepairControllerTest in 4.918 seconds (JVM running for 6.45)
-2020-05-09 00:32:07.278  INFO 12864 --- [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
-2020-05-09 00:32:07.278  INFO 12864 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2020-05-09 00:32:07.279  INFO 12864 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2020-05-09 00:32:10.572  INFO 12864 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-2020-05-09 00:32:11.295  INFO 12864 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-05-09 00:32:11.298  INFO 12864 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-2020-05-09 00:32:11.310  INFO 12864 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-2020-05-09 00:33:36.288  INFO 9856 --- [main] c.s.c.controller.RepairControllerTest    : Starting RepairControllerTest on DESKTOP-LT5V1F7 with PID 9856 (started by Audient in D:\Java\ideaApp\community_management)
-2020-05-09 00:33:36.291  INFO 9856 --- [main] c.s.c.controller.RepairControllerTest    : No active profile set, falling back to default profiles: default
-2020-05-09 00:33:40.147  INFO 9856 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-05-09 00:33:40.635  INFO 9856 --- [main] c.s.c.controller.RepairControllerTest    : Started RepairControllerTest in 5.201 seconds (JVM running for 6.743)
-2020-05-09 00:33:40.981  INFO 9856 --- [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
-2020-05-09 00:33:40.981  INFO 9856 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2020-05-09 00:33:40.982  INFO 9856 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2020-05-09 00:33:42.734  INFO 9856 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-2020-05-09 00:33:43.170  INFO 9856 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-05-09 00:33:43.172  INFO 9856 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-2020-05-09 00:33:43.188  INFO 9856 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-05-10 00:00:28.373  INFO 3476 --- [main] c.s.c.service.FireSecurityServiceTest    : Starting FireSecurityServiceTest on DESKTOP-LT5V1F7 with PID 3476 (started by Audient in D:\Java\ideaApp\community_management)
+2020-05-10 00:00:28.698  INFO 3476 --- [main] c.s.c.service.FireSecurityServiceTest    : No active profile set, falling back to default profiles: default
+2020-05-10 00:00:39.287  INFO 3476 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:00:39.994  INFO 3476 --- [main] c.s.c.service.FireSecurityServiceTest    : Started FireSecurityServiceTest in 12.429 seconds (JVM running for 14.293)
+2020-05-10 00:00:46.329  INFO 3476 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-10 00:00:47.681  INFO 3476 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:00:47.723  INFO 3476 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2020-05-10 00:00:47.821  INFO 3476 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-05-10 00:01:23.445  INFO 10508 --- [main] c.s.c.service.FireSecurityServiceTest    : Starting FireSecurityServiceTest on DESKTOP-LT5V1F7 with PID 10508 (started by Audient in D:\Java\ideaApp\community_management)
+2020-05-10 00:01:23.458  INFO 10508 --- [main] c.s.c.service.FireSecurityServiceTest    : No active profile set, falling back to default profiles: default
+2020-05-10 00:01:28.538  INFO 10508 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:01:29.459  INFO 10508 --- [main] c.s.c.service.FireSecurityServiceTest    : Started FireSecurityServiceTest in 8.945 seconds (JVM running for 15.567)
+2020-05-10 00:01:31.181  INFO 10508 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-10 00:01:31.572  INFO 10508 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:01:31.576  INFO 10508 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2020-05-10 00:01:31.586  INFO 10508 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-05-10 00:02:07.109  INFO 7880 --- [main] c.s.c.service.FireSecurityServiceTest    : Starting FireSecurityServiceTest on DESKTOP-LT5V1F7 with PID 7880 (started by Audient in D:\Java\ideaApp\community_management)
+2020-05-10 00:02:07.125  INFO 7880 --- [main] c.s.c.service.FireSecurityServiceTest    : No active profile set, falling back to default profiles: default
+2020-05-10 00:02:10.848  INFO 7880 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:02:11.338  INFO 7880 --- [main] c.s.c.service.FireSecurityServiceTest    : Started FireSecurityServiceTest in 5.17 seconds (JVM running for 6.877)
+2020-05-10 00:02:12.849  INFO 7880 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-10 00:02:13.256  INFO 7880 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:02:13.257  INFO 7880 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2020-05-10 00:02:13.266  INFO 7880 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-05-10 00:02:26.325  INFO 3408 --- [main] c.s.c.service.FireSecurityServiceTest    : Starting FireSecurityServiceTest on DESKTOP-LT5V1F7 with PID 3408 (started by Audient in D:\Java\ideaApp\community_management)
+2020-05-10 00:02:26.329  INFO 3408 --- [main] c.s.c.service.FireSecurityServiceTest    : No active profile set, falling back to default profiles: default
+2020-05-10 00:02:29.586  INFO 3408 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:02:30.115  INFO 3408 --- [main] c.s.c.service.FireSecurityServiceTest    : Started FireSecurityServiceTest in 4.909 seconds (JVM running for 6.587)
+2020-05-10 00:02:31.916  INFO 3408 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-10 00:02:32.216  INFO 3408 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:02:32.219  INFO 3408 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2020-05-10 00:02:32.227  INFO 3408 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-05-10 00:03:42.403  INFO 3904 --- [main] c.s.c.service.FireSecurityServiceTest    : Starting FireSecurityServiceTest on DESKTOP-LT5V1F7 with PID 3904 (started by Audient in D:\Java\ideaApp\community_management)
+2020-05-10 00:03:42.407  INFO 3904 --- [main] c.s.c.service.FireSecurityServiceTest    : No active profile set, falling back to default profiles: default
+2020-05-10 00:03:46.623  INFO 3904 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:03:47.128  INFO 3904 --- [main] c.s.c.service.FireSecurityServiceTest    : Started FireSecurityServiceTest in 5.755 seconds (JVM running for 7.406)
+2020-05-10 00:03:49.027  INFO 3904 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-10 00:03:49.383  INFO 3904 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:03:49.386  INFO 3904 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2020-05-10 00:03:49.395  INFO 3904 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-05-10 00:05:12.602  INFO 3948 --- [main] c.s.c.service.FireSecurityServiceTest    : Starting FireSecurityServiceTest on DESKTOP-LT5V1F7 with PID 3948 (started by Audient in D:\Java\ideaApp\community_management)
+2020-05-10 00:05:12.605  INFO 3948 --- [main] c.s.c.service.FireSecurityServiceTest    : No active profile set, falling back to default profiles: default
+2020-05-10 00:05:16.600  INFO 3948 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:05:17.089  INFO 3948 --- [main] c.s.c.service.FireSecurityServiceTest    : Started FireSecurityServiceTest in 5.4 seconds (JVM running for 7.087)
+2020-05-10 00:05:18.718  INFO 3948 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-10 00:05:19.055  INFO 3948 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:05:19.063  INFO 3948 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2020-05-10 00:05:19.082  INFO 3948 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-05-10 00:05:32.332  INFO 11300 --- [main] c.s.c.service.FireSecurityServiceTest    : Starting FireSecurityServiceTest on DESKTOP-LT5V1F7 with PID 11300 (started by Audient in D:\Java\ideaApp\community_management)
+2020-05-10 00:05:32.336  INFO 11300 --- [main] c.s.c.service.FireSecurityServiceTest    : No active profile set, falling back to default profiles: default
+2020-05-10 00:05:36.568  INFO 11300 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:05:37.182  INFO 11300 --- [main] c.s.c.service.FireSecurityServiceTest    : Started FireSecurityServiceTest in 5.833 seconds (JVM running for 7.332)
+2020-05-10 00:05:37.682  INFO 11300 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:05:37.685  INFO 11300 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
+2020-05-10 00:06:48.027  INFO 232 --- [main] c.s.c.service.FireSecurityServiceTest    : Starting FireSecurityServiceTest on DESKTOP-LT5V1F7 with PID 232 (started by Audient in D:\Java\ideaApp\community_management)
+2020-05-10 00:06:48.030  INFO 232 --- [main] c.s.c.service.FireSecurityServiceTest    : No active profile set, falling back to default profiles: default
+2020-05-10 00:06:54.432  INFO 232 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:06:55.142  INFO 232 --- [main] c.s.c.service.FireSecurityServiceTest    : Started FireSecurityServiceTest in 8.021 seconds (JVM running for 9.61)
+2020-05-10 00:06:59.183  INFO 232 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-10 00:07:00.374  INFO 232 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:07:00.376  INFO 232 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2020-05-10 00:07:00.446  INFO 232 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-05-10 00:07:48.725  INFO 3788 --- [main] c.s.c.c.FireSecurityControllerTest       : Starting FireSecurityControllerTest on DESKTOP-LT5V1F7 with PID 3788 (started by Audient in D:\Java\ideaApp\community_management)
+2020-05-10 00:07:48.727  INFO 3788 --- [main] c.s.c.c.FireSecurityControllerTest       : No active profile set, falling back to default profiles: default
+2020-05-10 00:07:52.958  INFO 3788 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:07:53.470  INFO 3788 --- [main] c.s.c.c.FireSecurityControllerTest       : Started FireSecurityControllerTest in 5.643 seconds (JVM running for 7.148)
+2020-05-10 00:07:53.793  INFO 3788 --- [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2020-05-10 00:07:53.794  INFO 3788 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-05-10 00:07:53.796  INFO 3788 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2020-05-10 00:07:55.422  INFO 3788 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-10 00:07:56.271  INFO 3788 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:07:56.273  INFO 3788 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2020-05-10 00:07:56.291  INFO 3788 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-05-10 00:08:16.467  INFO 1412 --- [main] c.s.c.c.FireSecurityControllerTest       : Starting FireSecurityControllerTest on DESKTOP-LT5V1F7 with PID 1412 (started by Audient in D:\Java\ideaApp\community_management)
+2020-05-10 00:08:16.471  INFO 1412 --- [main] c.s.c.c.FireSecurityControllerTest       : No active profile set, falling back to default profiles: default
+2020-05-10 00:08:20.329  INFO 1412 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:08:20.838  INFO 1412 --- [main] c.s.c.c.FireSecurityControllerTest       : Started FireSecurityControllerTest in 5.354 seconds (JVM running for 7.142)
+2020-05-10 00:08:21.278  INFO 1412 --- [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2020-05-10 00:08:21.280  INFO 1412 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-05-10 00:08:21.281  INFO 1412 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2020-05-10 00:08:22.738  INFO 1412 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-10 00:08:23.278  INFO 1412 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:08:23.281  INFO 1412 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2020-05-10 00:08:23.292  INFO 1412 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-05-10 00:08:40.628  INFO 9912 --- [main] c.s.c.c.FireSecurityControllerTest       : Starting FireSecurityControllerTest on DESKTOP-LT5V1F7 with PID 9912 (started by Audient in D:\Java\ideaApp\community_management)
+2020-05-10 00:08:40.635  INFO 9912 --- [main] c.s.c.c.FireSecurityControllerTest       : No active profile set, falling back to default profiles: default
+2020-05-10 00:08:44.770  INFO 9912 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:08:45.492  INFO 9912 --- [main] c.s.c.c.FireSecurityControllerTest       : Started FireSecurityControllerTest in 5.754 seconds (JVM running for 7.34)
+2020-05-10 00:08:45.876  INFO 9912 --- [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2020-05-10 00:08:45.876  INFO 9912 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-05-10 00:08:45.877  INFO 9912 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2020-05-10 00:08:47.528  INFO 9912 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-10 00:08:47.944  INFO 9912 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:08:47.948  INFO 9912 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2020-05-10 00:08:47.959  INFO 9912 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-05-10 00:09:08.027  INFO 1284 --- [main] c.s.c.c.FireSecurityControllerTest       : Starting FireSecurityControllerTest on DESKTOP-LT5V1F7 with PID 1284 (started by Audient in D:\Java\ideaApp\community_management)
+2020-05-10 00:09:08.029  INFO 1284 --- [main] c.s.c.c.FireSecurityControllerTest       : No active profile set, falling back to default profiles: default
+2020-05-10 00:09:12.471  INFO 1284 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:09:13.022  INFO 1284 --- [main] c.s.c.c.FireSecurityControllerTest       : Started FireSecurityControllerTest in 6.021 seconds (JVM running for 7.763)
+2020-05-10 00:09:13.359  INFO 1284 --- [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2020-05-10 00:09:13.359  INFO 1284 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-05-10 00:09:13.359  INFO 1284 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2020-05-10 00:09:14.963  INFO 1284 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-10 00:09:15.418  INFO 1284 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:09:15.421  INFO 1284 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2020-05-10 00:09:15.437  INFO 1284 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-05-10 00:09:28.346  INFO 2988 --- [main] c.s.c.c.FireSecurityControllerTest       : Starting FireSecurityControllerTest on DESKTOP-LT5V1F7 with PID 2988 (started by Audient in D:\Java\ideaApp\community_management)
+2020-05-10 00:09:28.353  INFO 2988 --- [main] c.s.c.c.FireSecurityControllerTest       : No active profile set, falling back to default profiles: default
+2020-05-10 00:09:32.765  INFO 2988 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:09:33.414  INFO 2988 --- [main] c.s.c.c.FireSecurityControllerTest       : Started FireSecurityControllerTest in 6.001 seconds (JVM running for 7.763)
+2020-05-10 00:09:33.785  INFO 2988 --- [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2020-05-10 00:09:33.787  INFO 2988 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-05-10 00:09:33.788  INFO 2988 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2020-05-10 00:09:35.251  INFO 2988 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-10 00:09:35.714  INFO 2988 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:09:35.717  INFO 2988 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2020-05-10 00:09:35.728  INFO 2988 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-05-10 00:10:01.059  INFO 7216 --- [main] c.s.c.c.FireSecurityControllerTest       : Starting FireSecurityControllerTest on DESKTOP-LT5V1F7 with PID 7216 (started by Audient in D:\Java\ideaApp\community_management)
+2020-05-10 00:10:01.067  INFO 7216 --- [main] c.s.c.c.FireSecurityControllerTest       : No active profile set, falling back to default profiles: default
+2020-05-10 00:10:05.013  INFO 7216 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:10:05.542  INFO 7216 --- [main] c.s.c.c.FireSecurityControllerTest       : Started FireSecurityControllerTest in 5.406 seconds (JVM running for 7.005)
+2020-05-10 00:10:05.869  INFO 7216 --- [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2020-05-10 00:10:05.870  INFO 7216 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-05-10 00:10:05.870  INFO 7216 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2020-05-10 00:10:07.292  INFO 7216 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-10 00:10:07.678  INFO 7216 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:10:07.681  INFO 7216 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2020-05-10 00:10:07.693  INFO 7216 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-05-10 00:28:03.138  INFO 1324 --- [main] c.s.c.service.FeedbackServiceTest        : Starting FeedbackServiceTest on DESKTOP-LT5V1F7 with PID 1324 (started by Audient in D:\Java\ideaApp\community_management)
+2020-05-10 00:28:03.258  INFO 1324 --- [main] c.s.c.service.FeedbackServiceTest        : No active profile set, falling back to default profiles: default
+2020-05-10 00:28:15.895  INFO 1324 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:28:16.703  INFO 1324 --- [main] c.s.c.service.FeedbackServiceTest        : Started FeedbackServiceTest in 18.879 seconds (JVM running for 30.005)
+2020-05-10 00:28:19.855  INFO 1324 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-10 00:28:21.074  INFO 1324 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:28:21.078  INFO 1324 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2020-05-10 00:28:21.187  INFO 1324 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-05-10 00:30:19.240  INFO 10896 --- [main] c.s.c.service.FeedbackServiceTest        : Starting FeedbackServiceTest on DESKTOP-LT5V1F7 with PID 10896 (started by Audient in D:\Java\ideaApp\community_management)
+2020-05-10 00:30:19.242  INFO 10896 --- [main] c.s.c.service.FeedbackServiceTest        : No active profile set, falling back to default profiles: default
+2020-05-10 00:30:23.689  INFO 10896 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:30:24.202  INFO 10896 --- [main] c.s.c.service.FeedbackServiceTest        : Started FeedbackServiceTest in 5.899 seconds (JVM running for 7.417)
+2020-05-10 00:30:26.060  INFO 10896 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-10 00:30:26.589  INFO 10896 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:30:26.591  INFO 10896 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2020-05-10 00:30:26.599  INFO 10896 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-05-10 00:31:45.965  INFO 10056 --- [main] c.s.c.service.FeedbackServiceTest        : Starting FeedbackServiceTest on DESKTOP-LT5V1F7 with PID 10056 (started by Audient in D:\Java\ideaApp\community_management)
+2020-05-10 00:31:45.968  INFO 10056 --- [main] c.s.c.service.FeedbackServiceTest        : No active profile set, falling back to default profiles: default
+2020-05-10 00:31:49.831  INFO 10056 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:31:50.317  INFO 10056 --- [main] c.s.c.service.FeedbackServiceTest        : Started FeedbackServiceTest in 5.446 seconds (JVM running for 7.142)
+2020-05-10 00:31:52.488  INFO 10056 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-10 00:31:53.733  INFO 10056 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:31:53.736  INFO 10056 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2020-05-10 00:31:53.745  INFO 10056 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-05-10 00:32:10.472  INFO 11948 --- [main] c.s.c.service.FeedbackServiceTest        : Starting FeedbackServiceTest on DESKTOP-LT5V1F7 with PID 11948 (started by Audient in D:\Java\ideaApp\community_management)
+2020-05-10 00:32:10.475  INFO 11948 --- [main] c.s.c.service.FeedbackServiceTest        : No active profile set, falling back to default profiles: default
+2020-05-10 00:32:14.140  INFO 11948 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:32:14.683  INFO 11948 --- [main] c.s.c.service.FeedbackServiceTest        : Started FeedbackServiceTest in 5.128 seconds (JVM running for 6.667)
+2020-05-10 00:32:16.640  INFO 11948 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-10 00:32:17.270  INFO 11948 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:32:17.272  INFO 11948 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2020-05-10 00:32:17.283  INFO 11948 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-05-10 00:33:11.839  INFO 11120 --- [main] c.s.c.service.FeedbackServiceTest        : Starting FeedbackServiceTest on DESKTOP-LT5V1F7 with PID 11120 (started by Audient in D:\Java\ideaApp\community_management)
+2020-05-10 00:33:11.841  INFO 11120 --- [main] c.s.c.service.FeedbackServiceTest        : No active profile set, falling back to default profiles: default
+2020-05-10 00:33:15.056  INFO 11120 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:33:16.002  INFO 11120 --- [main] c.s.c.service.FeedbackServiceTest        : Started FeedbackServiceTest in 4.78 seconds (JVM running for 6.496)
+2020-05-10 00:33:18.349  INFO 11120 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-10 00:33:18.627  INFO 11120 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:33:18.630  INFO 11120 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2020-05-10 00:33:18.641  INFO 11120 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-05-10 00:33:32.786  INFO 1344 --- [main] c.s.c.service.FeedbackServiceTest        : Starting FeedbackServiceTest on DESKTOP-LT5V1F7 with PID 1344 (started by Audient in D:\Java\ideaApp\community_management)
+2020-05-10 00:33:32.788  INFO 1344 --- [main] c.s.c.service.FeedbackServiceTest        : No active profile set, falling back to default profiles: default
+2020-05-10 00:33:37.085  INFO 1344 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:33:37.657  INFO 1344 --- [main] c.s.c.service.FeedbackServiceTest        : Started FeedbackServiceTest in 5.853 seconds (JVM running for 7.372)
+2020-05-10 00:33:39.727  INFO 1344 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-10 00:33:39.979  INFO 1344 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:33:39.982  INFO 1344 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2020-05-10 00:33:39.993  INFO 1344 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-05-10 00:41:17.432  INFO 11132 --- [main] c.s.c.controller.FeedbackControllerTest  : Starting FeedbackControllerTest on DESKTOP-LT5V1F7 with PID 11132 (started by Audient in D:\Java\ideaApp\community_management)
+2020-05-10 00:41:17.438  INFO 11132 --- [main] c.s.c.controller.FeedbackControllerTest  : No active profile set, falling back to default profiles: default
+2020-05-10 00:41:21.050  INFO 11132 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:41:21.889  INFO 11132 --- [main] c.s.c.controller.FeedbackControllerTest  : Started FeedbackControllerTest in 5.358 seconds (JVM running for 7.687)
+2020-05-10 00:41:22.750  INFO 11132 --- [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2020-05-10 00:41:22.751  INFO 11132 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-05-10 00:41:22.752  INFO 11132 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2020-05-10 00:41:25.281  INFO 11132 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-10 00:41:26.487  INFO 11132 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:41:26.490  INFO 11132 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2020-05-10 00:41:26.516  INFO 11132 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-05-10 00:41:42.786  INFO 9128 --- [main] c.s.c.controller.FeedbackControllerTest  : Starting FeedbackControllerTest on DESKTOP-LT5V1F7 with PID 9128 (started by Audient in D:\Java\ideaApp\community_management)
+2020-05-10 00:41:42.788  INFO 9128 --- [main] c.s.c.controller.FeedbackControllerTest  : No active profile set, falling back to default profiles: default
+2020-05-10 00:41:47.489  INFO 9128 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:41:48.051  INFO 9128 --- [main] c.s.c.controller.FeedbackControllerTest  : Started FeedbackControllerTest in 6.148 seconds (JVM running for 7.706)
+2020-05-10 00:41:48.428  INFO 9128 --- [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2020-05-10 00:41:48.428  INFO 9128 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-05-10 00:41:48.429  INFO 9128 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2020-05-10 00:41:50.137  INFO 9128 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-10 00:41:50.960  INFO 9128 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:41:50.964  INFO 9128 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2020-05-10 00:41:50.979  INFO 9128 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-05-10 00:42:12.308  INFO 2572 --- [main] c.s.c.controller.FeedbackControllerTest  : Starting FeedbackControllerTest on DESKTOP-LT5V1F7 with PID 2572 (started by Audient in D:\Java\ideaApp\community_management)
+2020-05-10 00:42:12.311  INFO 2572 --- [main] c.s.c.controller.FeedbackControllerTest  : No active profile set, falling back to default profiles: default
+2020-05-10 00:42:16.313  INFO 2572 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:42:16.865  INFO 2572 --- [main] c.s.c.controller.FeedbackControllerTest  : Started FeedbackControllerTest in 5.521 seconds (JVM running for 7.259)
+2020-05-10 00:42:17.310  INFO 2572 --- [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2020-05-10 00:42:17.311  INFO 2572 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-05-10 00:42:17.312  INFO 2572 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2020-05-10 00:42:19.375  INFO 2572 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-10 00:42:19.884  INFO 2572 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:42:19.887  INFO 2572 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2020-05-10 00:42:19.898  INFO 2572 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-05-10 00:42:39.993  INFO 1908 --- [main] c.s.c.controller.FeedbackControllerTest  : Starting FeedbackControllerTest on DESKTOP-LT5V1F7 with PID 1908 (started by Audient in D:\Java\ideaApp\community_management)
+2020-05-10 00:42:39.995  INFO 1908 --- [main] c.s.c.controller.FeedbackControllerTest  : No active profile set, falling back to default profiles: default
+2020-05-10 00:42:43.974  INFO 1908 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:42:44.619  INFO 1908 --- [main] c.s.c.controller.FeedbackControllerTest  : Started FeedbackControllerTest in 5.625 seconds (JVM running for 7.273)
+2020-05-10 00:42:45.089  INFO 1908 --- [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2020-05-10 00:42:45.090  INFO 1908 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-05-10 00:42:45.091  INFO 1908 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2020-05-10 00:42:46.868  INFO 1908 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-10 00:42:47.349  INFO 1908 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:42:47.352  INFO 1908 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2020-05-10 00:42:47.368  INFO 1908 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-05-10 00:43:03.666  INFO 3424 --- [main] c.s.c.controller.FeedbackControllerTest  : Starting FeedbackControllerTest on DESKTOP-LT5V1F7 with PID 3424 (started by Audient in D:\Java\ideaApp\community_management)
+2020-05-10 00:43:03.668  INFO 3424 --- [main] c.s.c.controller.FeedbackControllerTest  : No active profile set, falling back to default profiles: default
+2020-05-10 00:43:07.832  INFO 3424 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:43:08.366  INFO 3424 --- [main] c.s.c.controller.FeedbackControllerTest  : Started FeedbackControllerTest in 5.78 seconds (JVM running for 7.874)
+2020-05-10 00:43:08.740  INFO 3424 --- [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2020-05-10 00:43:08.740  INFO 3424 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-05-10 00:43:08.741  INFO 3424 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2020-05-10 00:43:10.295  INFO 3424 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-10 00:43:10.753  INFO 3424 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:43:10.756  INFO 3424 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2020-05-10 00:43:10.777  INFO 3424 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-05-10 00:45:36.415  INFO 3344 --- [main] c.s.c.controller.FeedbackControllerTest  : Starting FeedbackControllerTest on DESKTOP-LT5V1F7 with PID 3344 (started by Audient in D:\Java\ideaApp\community_management)
+2020-05-10 00:45:36.421  INFO 3344 --- [main] c.s.c.controller.FeedbackControllerTest  : No active profile set, falling back to default profiles: default
+2020-05-10 00:45:40.453  INFO 3344 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:45:41.032  INFO 3344 --- [main] c.s.c.controller.FeedbackControllerTest  : Started FeedbackControllerTest in 5.514 seconds (JVM running for 7.199)
+2020-05-10 00:45:41.436  INFO 3344 --- [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2020-05-10 00:45:41.436  INFO 3344 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-05-10 00:45:41.437  INFO 3344 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2020-05-10 00:45:43.143  INFO 3344 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-10 00:45:43.574  INFO 3344 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:45:43.577  INFO 3344 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2020-05-10 00:45:43.587  INFO 3344 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-05-10 00:46:00.365  INFO 10928 --- [main] c.s.c.controller.FeedbackControllerTest  : Starting FeedbackControllerTest on DESKTOP-LT5V1F7 with PID 10928 (started by Audient in D:\Java\ideaApp\community_management)
+2020-05-10 00:46:00.370  INFO 10928 --- [main] c.s.c.controller.FeedbackControllerTest  : No active profile set, falling back to default profiles: default
+2020-05-10 00:46:04.643  INFO 10928 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:46:05.150  INFO 10928 --- [main] c.s.c.controller.FeedbackControllerTest  : Started FeedbackControllerTest in 5.542 seconds (JVM running for 7.4)
+2020-05-10 00:46:05.495  INFO 10928 --- [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2020-05-10 00:46:05.495  INFO 10928 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-05-10 00:46:05.496  INFO 10928 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2020-05-10 00:46:07.257  INFO 10928 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-10 00:46:07.861 ERROR 10928 --- [main] druid.sql.Statement                      : {conn-10005, pstmt-20000} execute error. delete from feedback where io = ?
+
+java.sql.SQLSyntaxErrorException: Unknown column 'io' in 'where clause'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3461) [druid-1.1.21.jar:1.1.21]
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440) [druid-1.1.21.jar:1.1.21]
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3459) [druid-1.1.21.jar:1.1.21]
+	at com.alibaba.druid.wall.WallFilter.preparedStatement_execute(WallFilter.java:627) [druid-1.1.21.jar:1.1.21]
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3459) [druid-1.1.21.jar:1.1.21]
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440) [druid-1.1.21.jar:1.1.21]
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3459) [druid-1.1.21.jar:1.1.21]
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167) [druid-1.1.21.jar:1.1.21]
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:497) [druid-1.1.21.jar:1.1.21]
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47) [mybatis-3.5.4.jar:3.5.4]
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74) [mybatis-3.5.4.jar:3.5.4]
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50) [mybatis-3.5.4.jar:3.5.4]
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117) [mybatis-3.5.4.jar:3.5.4]
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76) [mybatis-3.5.4.jar:3.5.4]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197) [mybatis-3.5.4.jar:3.5.4]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.delete(DefaultSqlSession.java:212) [mybatis-3.5.4.jar:3.5.4]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_241]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_241]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_241]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_241]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426) [mybatis-spring-2.0.4.jar:2.0.4]
+	at com.sun.proxy.$Proxy75.delete(Unknown Source) [na:na]
+	at org.mybatis.spring.SqlSessionTemplate.delete(SqlSessionTemplate.java:303) [mybatis-spring-2.0.4.jar:2.0.4]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:72) [mybatis-3.5.4.jar:3.5.4]
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:144) [mybatis-3.5.4.jar:3.5.4]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85) [mybatis-3.5.4.jar:3.5.4]
+	at com.sun.proxy.$Proxy78.deleteFeedback(Unknown Source) [na:na]
+	at com.saltedfish.community_management.service.impl.FeedbackServiceImpl.deleteFeedback(FeedbackServiceImpl.java:70) [classes/:na]
+	at com.saltedfish.community_management.controller.FeedbackController.deleteFeedback(FeedbackController.java:78) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_241]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_241]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_241]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_241]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) [spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) [spring-web-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:931) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:666) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.test.web.servlet.TestDispatcherServlet.service(TestDispatcherServlet.java:72) [spring-test-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.33.jar:9.0.33]
+	at org.springframework.mock.web.MockFilterChain$ServletFilterProxy.doFilter(MockFilterChain.java:167) [spring-test-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:134) [spring-test-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:183) [spring-test-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at com.saltedfish.community_management.controller.FeedbackControllerTest.deleteFeedback(FeedbackControllerTest.java:75) [test-classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_241]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_241]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_241]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_241]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit-4.12.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit-4.12.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74) [spring-test-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84) [spring-test-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75) [spring-test-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86) [spring-test-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84) [spring-test-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251) [spring-test-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.2.5.RELEASE.jar:5.2.5.RELEASE]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit-4.12.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:na]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33) [junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:230) [junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:58) [junit-rt.jar:na]
+
+2020-05-10 00:46:08.161  INFO 10928 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:46:08.165  INFO 10928 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2020-05-10 00:46:08.181  INFO 10928 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-05-10 00:46:43.234  INFO 11136 --- [main] c.s.c.controller.FeedbackControllerTest  : Starting FeedbackControllerTest on DESKTOP-LT5V1F7 with PID 11136 (started by Audient in D:\Java\ideaApp\community_management)
+2020-05-10 00:46:43.236  INFO 11136 --- [main] c.s.c.controller.FeedbackControllerTest  : No active profile set, falling back to default profiles: default
+2020-05-10 00:46:47.022  INFO 11136 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:46:47.518  INFO 11136 --- [main] c.s.c.controller.FeedbackControllerTest  : Started FeedbackControllerTest in 5.026 seconds (JVM running for 6.484)
+2020-05-10 00:46:47.850  INFO 11136 --- [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2020-05-10 00:46:47.851  INFO 11136 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-05-10 00:46:47.851  INFO 11136 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2020-05-10 00:46:49.453  INFO 11136 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-10 00:46:49.814  INFO 11136 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:46:49.818  INFO 11136 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2020-05-10 00:46:49.829  INFO 11136 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-05-10 00:47:04.897  INFO 2252 --- [main] c.s.c.controller.FeedbackControllerTest  : Starting FeedbackControllerTest on DESKTOP-LT5V1F7 with PID 2252 (started by Audient in D:\Java\ideaApp\community_management)
+2020-05-10 00:47:04.900  INFO 2252 --- [main] c.s.c.controller.FeedbackControllerTest  : No active profile set, falling back to default profiles: default
+2020-05-10 00:47:08.444  INFO 2252 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:47:08.972  INFO 2252 --- [main] c.s.c.controller.FeedbackControllerTest  : Started FeedbackControllerTest in 5.284 seconds (JVM running for 7.191)
+2020-05-10 00:47:09.299  INFO 2252 --- [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2020-05-10 00:47:09.300  INFO 2252 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-05-10 00:47:09.300  INFO 2252 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2020-05-10 00:47:11.724  INFO 2252 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-10 00:47:12.819  INFO 2252 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:47:12.821  INFO 2252 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2020-05-10 00:47:12.829  INFO 2252 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-05-10 00:47:26.684  INFO 10052 --- [main] c.s.c.controller.FeedbackControllerTest  : Starting FeedbackControllerTest on DESKTOP-LT5V1F7 with PID 10052 (started by Audient in D:\Java\ideaApp\community_management)
+2020-05-10 00:47:26.688  INFO 10052 --- [main] c.s.c.controller.FeedbackControllerTest  : No active profile set, falling back to default profiles: default
+2020-05-10 00:47:30.923  INFO 10052 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:47:31.535  INFO 10052 --- [main] c.s.c.controller.FeedbackControllerTest  : Started FeedbackControllerTest in 5.705 seconds (JVM running for 7.489)
+2020-05-10 00:47:31.955  INFO 10052 --- [main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2020-05-10 00:47:31.956  INFO 10052 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-05-10 00:47:31.957  INFO 10052 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2020-05-10 00:47:33.507  INFO 10052 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-10 00:47:34.000  INFO 10052 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 00:47:34.003  INFO 10052 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2020-05-10 00:47:34.015  INFO 10052 --- [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
