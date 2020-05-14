@@ -1,14 +1,14 @@
 package com.saltedfish.community_management.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.saltedfish.community_management.bean.OpenIdJson;
+import com.saltedfish.community_management.bean.OpenId;
+import com.saltedfish.community_management.bean.User;
 import com.saltedfish.community_management.common.Result;
 import com.saltedfish.community_management.common.ResultCode;
 import com.saltedfish.community_management.config.WxConfig;
 import com.saltedfish.community_management.service.UserService;
 import com.saltedfish.community_management.util.HttpUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
@@ -57,9 +57,9 @@ public class UserController {
             e.printStackTrace();
         }
         ObjectMapper mapper =new ObjectMapper();
-        OpenIdJson openIdJson = mapper.readValue(httpRes, OpenIdJson.class);
+        OpenId openId = mapper.readValue(httpRes, OpenId.class);
         try {
-            Result result = userService.wxLogin(openIdJson.getOpenid());
+            Result result = userService.wxLogin(openId.getOpenid());
             if(result.getStatus() != ResultCode.LOGIN_WX_EXCEPTION.getStatus()) {
                 //无异常
                 return result;
@@ -88,9 +88,9 @@ public class UserController {
             e.printStackTrace();
         }
         ObjectMapper mapper =new ObjectMapper();
-        OpenIdJson openIdJson = mapper.readValue(httpRes, OpenIdJson.class);
+        OpenId openId = mapper.readValue(httpRes, OpenId.class);
         try {
-            Result result = userService.bindWx(openIdJson.getOpenid(), id);
+            Result result = userService.bindWx(openId.getOpenid(), id);
             if(result.getStatus() != ResultCode.BIND_WX_EXCEPTION.getStatus()) {
                 //无异常
                 return result;
@@ -122,4 +122,5 @@ public class UserController {
             return new Result(ResultCode.SYSTEM_BUSY.getStatus(),ResultCode.SYSTEM_BUSY.getMessage(),null);
         }
     }
+
 }
