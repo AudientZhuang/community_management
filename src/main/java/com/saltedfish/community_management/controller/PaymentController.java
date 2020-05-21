@@ -1,9 +1,11 @@
 package com.saltedfish.community_management.controller;
 
 import com.saltedfish.community_management.bean.Payment;
+import com.saltedfish.community_management.common.PageRequest;
 import com.saltedfish.community_management.common.Result;
 import com.saltedfish.community_management.common.ResultCode;
 import com.saltedfish.community_management.service.PaymentService;
+import com.saltedfish.community_management.util.PageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,23 +28,11 @@ public class PaymentController {
      * @return
      */
     @PostMapping("/payment")
-    public Result addPayment(Payment payment){
-        try {
-            //对前端信息进行校验
+    public Result addPayment(Payment payment) throws Exception {
+        //对前端信息进行校验
 
-            //添加收费情况到数据库
-            Result result = paymentService.addPayment(payment);
-            if (result.getStatus() != ResultCode.INSERT_PAYMENT_EXCEPTION.getStatus()){
-                //添加收费情况没有异常
-                return result;
-            }else{
-                //添加收费情况出现异常
-                throw new Exception(ResultCode.INSERT_PAYMENT_EXCEPTION.getMessage());
-            }
-        }catch (Exception e){
-            //捕获异常
-            return new Result(ResultCode.SYSTEM_BUSY.getStatus(),ResultCode.SYSTEM_BUSY.getMessage(),null);
-        }
+        //添加收费情况到数据库
+        return paymentService.addPayment(payment);
     }
 
     /**
@@ -51,23 +41,11 @@ public class PaymentController {
      * @return
      */
     @PutMapping("/payment")
-    public Result updatePayment(Payment payment){
-        try{
-            //对前端信息进行校验
+    public Result updatePayment(Payment payment) throws Exception {
+        //对前端信息进行校验
 
-            //更新收费情况到数据库
-            Result result = paymentService.updatePayment(payment);
-            if (result.getStatus() != ResultCode.UPDATE_PAYMENT_EXCEPTION.getStatus()){
-                //更新收费情况没有异常
-                return result;
-            }else{
-                //更新收费情况出现异常
-                throw new Exception(ResultCode.UPDATE_PAYMENT_EXCEPTION.getMessage());
-            }
-        }catch (Exception e){
-            //捕获异常
-            return new Result(ResultCode.SYSTEM_BUSY.getStatus(),ResultCode.SYSTEM_BUSY.getMessage(),null);
-        }
+        //更新收费情况到数据库
+        return paymentService.updatePayment(payment);
     }
 
     /**
@@ -76,20 +54,8 @@ public class PaymentController {
      * @return
      */
     @DeleteMapping("/payment/{id}")
-    public Result deletePayment(@PathVariable("id") Integer id){
-        try {
-            Result result = paymentService.deletePayment(id);
-            if (result.getStatus() != ResultCode.DELETE_PAYMENT_EXCEPTION.getStatus()){
-                //删除收费记录没有异常
-                return result;
-            }else {
-                //删除收费记录出现异常
-                throw new Exception(ResultCode.DELETE_PAYMENT_EXCEPTION.getMessage());
-            }
-        }catch (Exception e){
-            //捕获异常
-            return new Result(ResultCode.SYSTEM_BUSY.getStatus(),ResultCode.SYSTEM_BUSY.getMessage(),null);
-        }
+    public Result deletePayment(@PathVariable("id") Integer id) throws Exception {
+        return paymentService.deletePayment(id);
     }
 
     /**
@@ -99,19 +65,7 @@ public class PaymentController {
      */
     @GetMapping("/payment/{id}")
     public Result findPaymentById(@PathVariable("id") Integer id){
-        try {
-            Result result = paymentService.findPaymentById(id);
-            if (result.getStatus() != ResultCode.FIND_PAYMENT_BY_ID_EXCEPTION.getStatus()){
-                //查询指定id的收费情况没有异常
-                return result;
-            }else{
-                //查询指定id的收费情况出现异常
-                throw new Exception(ResultCode.FIND_PAYMENT_BY_ID_EXCEPTION.getMessage());
-            }
-        }catch (Exception e){
-            //捕获异常
-            return new Result(ResultCode.SYSTEM_BUSY.getStatus(),ResultCode.SYSTEM_BUSY.getMessage(),null);
-        }
+        return paymentService.findPaymentById(id);
     }
 
     /**
@@ -120,32 +74,44 @@ public class PaymentController {
      * @return
      */
     @GetMapping("/payment")
-    public Result findPayment(HttpServletRequest request){
-        try {
-            //获取条件参数
-            Map<String, String[]> parameterMap = request.getParameterMap();
-            Map<String,String> conditionMap = new HashMap<>();
-            if (parameterMap.size() >= 0){
-                //参数为空时也可以运行
-                for (String key: parameterMap.keySet()) {
-                    conditionMap.put(key, parameterMap.get(key)[0]);
-                }
-                Result result = paymentService.findPayment(conditionMap);
-                if (result.getStatus() != ResultCode.FIND_PAYMENT_EXCEPTION.getStatus()){
-                    //根据条件查询收费情况没有异常
-                    return result;
-                }else{
-                    //根据条件查询收费情况出现异常
-                    throw new Exception(ResultCode.FIND_PAYMENT_EXCEPTION.getMessage());
-                }
-            }else{
-                //获取不到参数
-                throw new Exception();
-            }
-        }catch (Exception e){
-            //捕获异常
-            return new Result(ResultCode.SYSTEM_BUSY.getStatus(),ResultCode.SYSTEM_BUSY.getMessage(),null);
+    public Result findPayment(HttpServletRequest request) throws Exception {
+        // 分页请求封装类
+        PageRequest pageRequest = new PageRequest();
+        // 设置一个分页变量，判断是否需要分页，默认为不需要分页
+        Boolean isPage = false;
+        Result result = new Result();
+        // 获取前端请求的条件参数
+        Map<String, String[]> parameterMap = request.getParameterMap();
+        // 条件参数Map
+        Map<String,String> conditionMap = new HashMap<>();
+        if (parameterMap == null) {
+            // 无法获取参数，连接出现异常
+            throw new Exception();
         }
+        //参数为空也可以正常运行
+        for (String key: parameterMap.keySet()) {
+            //请求参数中含有分页参数pageNum或pageSize
+            if ("pageNum".equals(key) || "pageSize".equals(key)){
+                // 将分页变量设置为true
+                isPage = true;
+                // 将分页参数设置给pageRequest
+                pageRequest = PageUtil.addPageRequestParam(key,parameterMap.get(key)[0],pageRequest);
+                // 跳过，不将分页请求参数添加到条件参数Map中
+                continue;
+            }
+            //条件请求参数，添加到条件Map中
+            conditionMap.put(key,parameterMap.get(key)[0]);
+        }
+        // 根据是否需要分页调用不同的服务方法
+        if (isPage == true){
+            // 需要分页
+            result = paymentService.findPaymentPage(pageRequest,conditionMap);
+        }else{
+            // 不需要分页
+            result = paymentService.findPayment(conditionMap);
+        }
+        // 返回结果
+        return result;
     }
 
 

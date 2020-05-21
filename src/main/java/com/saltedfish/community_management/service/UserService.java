@@ -9,14 +9,14 @@ public interface UserService {
      * @param password
      * @return
      */
-    public Result cmLogin(String account,String password);
+    Result cmLogin(String account,String password);
 
     /**
      * 微信登录(验证唯一标识openId)
      * @param openId
      * @return
      */
-    public Result wxLogin(String openId);
+    Result wxLogin(String openId);
 
     /**
      * 根据用户id绑定微信（唯一标识）
@@ -24,12 +24,12 @@ public interface UserService {
      * @param id
      * @return
      */
-    public Result bindWx(String openId, Integer id);
+    Result bindWx(String openId, Integer id);
 
     /**
      * 查询指定hh_id的用户是否绑定微信
      * @param hh_id
      * @return
      */
-    public Result findIsBindByHid(Integer hh_id);
+    Result findIsBindByHid(Integer hh_id);
 }

@@ -1,12 +1,12 @@
 package com.saltedfish.community_management.controller;
 
 import com.saltedfish.community_management.bean.Household;
+import com.saltedfish.community_management.common.PageRequest;
 import com.saltedfish.community_management.common.Result;
-import com.saltedfish.community_management.common.ResultCode;
 import com.saltedfish.community_management.service.HouseholdService;
-import org.apache.ibatis.annotations.Param;
+import com.saltedfish.community_management.util.PageUtil;
+import com.saltedfish.community_management.vo.HouseholdVO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -24,27 +24,15 @@ public class HouseholdController {
 
     /**
      * 添加住户信息
-     * @param household
+     * @param householdVO
      * @return
      */
     @PostMapping("/household")
-    public Result addHousehold(Household household){
-        try{
-            //对前端信息进行校验
+    public Result addHousehold(HouseholdVO householdVO) throws Exception {
+        //对前端信息进行校验
 
-            //添加住户信息到数据库
-            Result result = householdService.addHousehold(household);
-            if (result.getStatus() != ResultCode.INSERT_HOUSEHOLD_EXCEPTION.getStatus()){
-                //添加住户信息到数据库没有异常
-                return result;
-            }else {
-                //添加住户信息到数据库出现异常
-                throw new Exception(ResultCode.INSERT_HOUSEHOLD_EXCEPTION.getMessage());
-            }
-        }catch (Exception e){
-            //捕获异常
-            return new Result(ResultCode.SYSTEM_BUSY.getStatus(),ResultCode.SYSTEM_BUSY.getMessage(),null);
-        }
+        //添加住户信息到数据库
+        return householdService.addHousehold(householdVO);
     }
 
     /**
@@ -53,23 +41,11 @@ public class HouseholdController {
      * @return
      */
     @PutMapping("/household")
-    public Result updateHousehold(Household household){
-        try{
-            //对前端信息进行校验
+    public Result updateHousehold(Household household) throws Exception {
+        //对前端信息进行校验
 
-            //更新住户信息到数据库
-            Result result = householdService.updateHousehold(household);
-            if (result.getStatus() != ResultCode.UPDATE_HOUSEHOLD_EXCEPTION.getStatus()){
-                //更新住户信息到数据库没有异常
-                return result;
-            }else {
-                //更新住户信息到数据库出现异常
-                throw new Exception(ResultCode.UPDATE_HOUSEHOLD_EXCEPTION.getMessage());
-            }
-        }catch (Exception e){
-            //捕获异常
-            return new Result(ResultCode.SYSTEM_BUSY.getStatus(),ResultCode.SYSTEM_BUSY.getMessage(),null);
-        }
+        //更新住户信息到数据库
+        return householdService.updateHousehold(household);
     }
 
     /**
@@ -78,21 +54,9 @@ public class HouseholdController {
      * @return
      */
     @DeleteMapping("/household/{id}")
-    public Result deleteHousehold(@PathVariable("id") Integer id){
-        try{
-            //在数据库中删除住户信息
-            Result result = householdService.deleteHousehold(id);
-            if (result.getStatus() != ResultCode.DELETE_HOUSEHOLD_EXCEPTION.getStatus()){
-                //删除住户信息没有异常
-                return result;
-            }else{
-                //删除住户信息出现异常
-                throw new Exception(ResultCode.DELETE_HOUSEHOLD_EXCEPTION.getMessage());
-            }
-        }catch (Exception e){
-            //捕获异常
-            return new Result(ResultCode.SYSTEM_BUSY.getStatus(),ResultCode.SYSTEM_BUSY.getMessage(),null);
-        }
+    public Result deleteHousehold(@PathVariable("id") Integer id) throws Exception {
+        //在数据库中删除住户信息
+        return householdService.deleteHousehold(id);
     }
 
 
@@ -103,20 +67,8 @@ public class HouseholdController {
      */
     @GetMapping("/household/{id}")
     public Result findHousehold(@PathVariable("id") Integer id){
-        try{
-            //在数据库中查询指定id的住户信息
-            Result result = householdService.findHouseholdById(id);
-            if (result.getStatus() != ResultCode.FIND_HOUSEHOLD_BY_ID_EXCEPTION.getStatus()){
-                //查询指定id的住户信息没有异常
-                return result;
-            }else{
-                //查询指定id的住户信息出现异常
-                throw new Exception(ResultCode.FIND_HOUSEHOLD_BY_ID_EXCEPTION.getMessage());
-            }
-        }catch (Exception e){
-            //捕获异常
-            return new Result(ResultCode.SYSTEM_BUSY.getStatus(),ResultCode.SYSTEM_BUSY.getMessage(),null);
-        }
+        //在数据库中查询指定id的住户信息
+        return householdService.findHouseholdById(id);
     }
 
     /**
@@ -124,31 +76,43 @@ public class HouseholdController {
      * @return
      */
     @GetMapping("/household")
-    public Result findHousehold(HttpServletRequest request){
-        try{
-            //获取条件参数
-            Map<String, String[]> parameterMap = request.getParameterMap();
-            Map<String,String> conditionMap = new HashMap<>();
-            if (parameterMap.size() >= 0){
-                //当传入参数为空时也可以正常运行
-                for (String key: parameterMap.keySet()) {
-                    conditionMap.put(key, parameterMap.get(key)[0]);
-                }
-                Result result = householdService.findHousehold(conditionMap);
-                if (result.getStatus() != ResultCode.FIND_HOUSEHOLD_EXCEPTION.getStatus()){
-                    return result;
-                }else{
-                    throw new Exception(ResultCode.FIND_HOUSEHOLD_EXCEPTION.getMessage());
-                }
-            }else{
-                //获取不到参数
-                throw new Exception();
-            }
-        }catch (Exception e){
-            //捕获异常
-            return new Result(ResultCode.SYSTEM_BUSY.getStatus(),ResultCode.SYSTEM_BUSY.getMessage(),null);
+    public Result findHousehold(HttpServletRequest request) throws Exception {
+        // 分页请求封装类
+        PageRequest pageRequest = new PageRequest();
+        // 设置一个分页变量，判断是否需要分页，默认为不需要分页
+        Boolean isPage = false;
+        Result result = new Result();
+        // 获取前端请求的条件参数
+        Map<String, String[]> parameterMap = request.getParameterMap();
+        // 条件参数Map
+        Map<String,String> conditionMap = new HashMap<>();
+        if (parameterMap == null) {
+            // 无法获取参数，连接出现异常
+            throw new Exception();
         }
+        //参数为空也可以正常运行
+        for (String key: parameterMap.keySet()) {
+            //请求参数中含有分页参数pageNum或pageSize
+            if ("pageNum".equals(key) || "pageSize".equals(key)){
+                // 将分页变量设置为true
+                isPage = true;
+                // 将分页参数设置给pageRequest
+                pageRequest = PageUtil.addPageRequestParam(key,parameterMap.get(key)[0],pageRequest);
+                // 跳过，不将分页请求参数添加到条件参数Map中
+                continue;
+            }
+            //条件请求参数，添加到条件Map中
+            conditionMap.put(key,parameterMap.get(key)[0]);
+        }
+        // 根据是否需要分页调用不同的服务方法
+        if (isPage == true){
+            // 需要分页
+            result = householdService.findHouseholdPage(pageRequest,conditionMap);
+        }else{
+            // 不需要分页
+            result = householdService.findHousehold(conditionMap);
+        }
+        // 返回结果
+        return result;
     }
-
-
 }

@@ -46,8 +46,8 @@ public class HouseholdControllerTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .characterEncoding("UTF-8")
                 .accept(MediaType.APPLICATION_JSON_UTF8)
-                //.param("account", "root")
-                //.param("password", "admin")
+                .param("account", "root")
+                .param("password", "admin")
                 .param("name", "zhangsan")
                 .param("gender", "男")
                 .param("age", "18")
@@ -114,10 +114,13 @@ public class HouseholdControllerTest {
 
     @Test
     public void findHousehold() throws Exception {
-        RequestBuilder request = MockMvcRequestBuilders.get("/household?isOwner=1")
+        RequestBuilder request = MockMvcRequestBuilders.get("/household")
                 .contentType(MediaType.APPLICATION_JSON)
                 .characterEncoding("UTF-8")
-                .accept(MediaType.APPLICATION_JSON_UTF8);
+                .accept(MediaType.APPLICATION_JSON_UTF8)
+                .param("pageNum","1")
+                .param("pageSize","2");
+                //.param("isOwner","1");
         ResultActions result = mockMvc.perform(request);
         MvcResult mvcResult = result.andExpect(MockMvcResultMatchers.status().isOk())   //执行状态
                 .andDo(MockMvcResultHandlers.print())   //打印

@@ -187,6 +187,133 @@ public enum ResultCode {
     FIND_FEEDBACK_FAILED(0,"根据条件查询反馈信息失败"),
     FIND_FEEDBACK_EXCEPTION(-1,"根据条件查询反馈信息异常"),
 
+    //添加楼栋信息
+    INSERT_BUILDING_SUCCESS(1,"添加楼栋信息成功"),
+    INSERT_BUILDING_FAILED(0,"添加楼栋信息失败"),
+    INSERT_BUILDING_EXCEPTION(-1,"添加楼栋信息异常"),
+    //更新楼栋信息
+    UPDATE_BUILDING_SUCCESS(1,"更新楼栋信息成功"),
+    UPDATE_BUILDING_FAILED(0,"更新楼栋信息失败"),
+    UPDATE_BUILDING_EXCEPTION(-1,"更新楼栋信息异常"),
+    //删除楼栋信息
+    DELETE_BUILDING_SUCCESS(1,"删除楼栋信息成功"),
+    DELETE_BUILDING_FAILED(0,"删除楼栋信息失败"),
+    DELETE_BUILDING_EXCEPTION(-1,"删除楼栋信息异常"),
+    //查询指定id的楼栋信息
+    FIND_BUILDING_BY_ID_SUCCESS(1,"查询指定id的楼栋信息成功"),
+    FIND_BUILDING_BY_ID_FAILED(0,"查询指定id的楼栋信息失败"),
+    FIND_BUILDING_BY_ID_EXCEPTION(-1,"查询指定id的楼栋信息异常"),
+    //根据条件查询楼栋信息
+    FIND_BUILDING_SUCCESS(1,"根据条件查询楼栋信息成功"),
+    FIND_BUILDING_FAILED(0,"根据条件查询楼栋信息失败"),
+    FIND_BUILDING_EXCEPTION(-1,"根据条件查询楼栋信息异常"),
+
+    //添加房间信息
+    INSERT_ROOM_SUCCESS(1,"添加房间信息成功"),
+    INSERT_ROOM_FAILED(0,"添加房间信息失败"),
+    INSERT_ROOM_EXCEPTION(-1,"添加房间信息异常"),
+    //更新房间信息
+    UPDATE_ROOM_SUCCESS(1,"更新房间信息成功"),
+    UPDATE_ROOM_FAILED(0,"更新房间信息失败"),
+    UPDATE_ROOM_EXCEPTION(-1,"更新房间信息异常"),
+    //删除房间信息
+    DELETE_ROOM_SUCCESS(1,"删除房间信息成功"),
+    DELETE_ROOM_FAILED(0,"删除房间信息失败"),
+    DELETE_ROOM_EXCEPTION(-1,"删除房间信息异常"),
+    //查询指定id的房间信息
+    FIND_ROOM_BY_ID_SUCCESS(1,"查询指定id的房间信息成功"),
+    FIND_ROOM_BY_ID_FAILED(0,"查询指定id的房间信息失败"),
+    FIND_ROOM_BY_ID_EXCEPTION(-1,"查询指定id的房间信息异常"),
+    //根据条件查询房间信息
+    FIND_ROOM_SUCCESS(1,"根据条件查询房间信息成功"),
+    FIND_ROOM_FAILED(0,"根据条件查询房间信息失败"),
+    FIND_ROOM_EXCEPTION(-1,"根据条件查询房间信息异常"),
+
+    //添加设施分类
+    INSERT_FACILITY_CATEGORY_SUCCESS(1,"添加设施分类成功"),
+    INSERT_FACILITY_CATEGORY_FAILED(0,"添加设施分类失败"),
+    INSERT_FACILITY_CATEGORY_EXCEPTION(-1,"添加设施分类异常"),
+    //更新设施分类
+    UPDATE_FACILITY_CATEGORY_SUCCESS(1,"更新设施分类成功"),
+    UPDATE_FACILITY_CATEGORY_FAILED(0,"更新设施分类失败"),
+    UPDATE_FACILITY_CATEGORY_EXCEPTION(-1,"更新设施分类异常"),
+    //删除设施分类
+    DELETE_FACILITY_CATEGORY_SUCCESS(1,"删除设施分类成功"),
+    DELETE_FACILITY_CATEGORY_FAILED(0,"删除设施分类失败"),
+    DELETE_FACILITY_CATEGORY_EXCEPTION(-1,"删除设施分类异常"),
+    //查询指定id的设施分类
+    FIND_FACILITY_CATEGORY_BY_ID_SUCCESS(1,"查询指定id的设施分类成功"),
+    FIND_FACILITY_CATEGORY_BY_ID_FAILED(0,"查询指定id的设施分类失败"),
+    FIND_FACILITY_CATEGORY_BY_ID_EXCEPTION(-1,"查询指定id的设施分类异常"),
+    //根据条件查询设施分类
+    FIND_FACILITY_CATEGORY_SUCCESS(1,"根据条件查询设施分类成功"),
+    FIND_FACILITY_CATEGORY_FAILED(0,"根据条件查询设施分类失败"),
+    FIND_FACILITY_CATEGORY_EXCEPTION(-1,"根据条件查询设施分类异常"),
+
+    //添加缴费项目
+    INSERT_CHARGE_SUCCESS(1,"添加缴费项目成功"),
+    INSERT_CHARGE_FAILED(0,"添加缴费项目失败"),
+    INSERT_CHARGE_EXCEPTION(-1,"添加缴费项目异常"),
+    //更新缴费项目
+    UPDATE_CHARGE_SUCCESS(1,"更新缴费项目成功"),
+    UPDATE_CHARGE_FAILED(0,"更新缴费项目失败"),
+    UPDATE_CHARGE_EXCEPTION(-1,"更新缴费项目异常"),
+    //删除缴费项目
+    DELETE_CHARGE_SUCCESS(1,"删除缴费项目成功"),
+    DELETE_CHARGE_FAILED(0,"删除缴费项目失败"),
+    DELETE_CHARGE_EXCEPTION(-1,"删除缴费项目异常"),
+    //查询指定id的缴费项目
+    FIND_CHARGE_BY_ID_SUCCESS(1,"查询指定id的缴费项目成功"),
+    FIND_CHARGE_BY_ID_FAILED(0,"查询指定id的缴费项目失败"),
+    FIND_CHARGE_BY_ID_EXCEPTION(-1,"查询指定id的缴费项目异常"),
+    //根据条件查询缴费项目
+    FIND_CHARGE_SUCCESS(1,"根据条件查询缴费项目成功"),
+    FIND_CHARGE_FAILED(0,"根据条件查询缴费项目失败"),
+    FIND_CHARGE_EXCEPTION(-1,"根据条件查询缴费项目异常"),
+
+
+    //添加新闻信息
+    INSERT_NEWS_SUCCESS(1,"添加新闻信息成功"),
+    INSERT_NEWS_FAILED(0,"添加新闻信息失败"),
+    INSERT_NEWS_EXCEPTION(-1,"添加新闻信息异常"),
+    //更新新闻信息
+    UPDATE_NEWS_SUCCESS(1,"更新新闻信息成功"),
+    UPDATE_NEWS_FAILED(0,"更新新闻信息失败"),
+    UPDATE_NEWS_EXCEPTION(-1,"更新新闻信息异常"),
+    //删除新闻信息
+    DELETE_NEWS_SUCCESS(1,"删除新闻信息成功"),
+    DELETE_NEWS_FAILED(0,"删除新闻信息失败"),
+    DELETE_NEWS_EXCEPTION(-1,"删除新闻信息异常"),
+    //查询指定id的新闻信息
+    FIND_NEWS_BY_ID_SUCCESS(1,"查询指定id的新闻信息成功"),
+    FIND_NEWS_BY_ID_FAILED(0,"查询指定id的新闻信息失败"),
+    FIND_NEWS_BY_ID_EXCEPTION(-1,"查询指定id的新闻信息异常"),
+    //根据条件查询新闻信息
+    FIND_NEWS_SUCCESS(1,"根据条件查询新闻信息成功"),
+    FIND_NEWS_FAILED(0,"根据条件查询新闻信息失败"),
+    FIND_NEWS_EXCEPTION(-1,"根据条件查询新闻信息异常"),
+
+    //添加活动报名信息
+    INSERT_ACTIVITY_REGISTER_SUCCESS(1,"添加活动报名信息成功"),
+    INSERT_ACTIVITY_REGISTER_FAILED(0,"添加活动报名信息失败"),
+    INSERT_ACTIVITY_REGISTER_EXCEPTION(-1,"添加活动报名信息异常"),
+    //更新活动报名信息
+    UPDATE_ACTIVITY_REGISTER_SUCCESS(1,"更新活动报名信息成功"),
+    UPDATE_ACTIVITY_REGISTER_FAILED(0,"更新活动报名信息失败"),
+    UPDATE_ACTIVITY_REGISTER_EXCEPTION(-1,"更新活动报名信息异常"),
+    //删除活动报名信息
+    DELETE_ACTIVITY_REGISTER_SUCCESS(1,"删除活动报名信息成功"),
+    DELETE_ACTIVITY_REGISTER_FAILED(0,"删除活动报名信息失败"),
+    DELETE_ACTIVITY_REGISTER_EXCEPTION(-1,"删除活动报名信息异常"),
+    //查询指定id的活动报名信息
+    FIND_ACTIVITY_REGISTER_BY_ID_SUCCESS(1,"查询指定id的活动报名信息成功"),
+    FIND_ACTIVITY_REGISTER_BY_ID_FAILED(0,"查询指定id的活动报名信息失败"),
+    FIND_ACTIVITY_REGISTER_BY_ID_EXCEPTION(-1,"查询指定id的活动报名信息异常"),
+    //根据条件查询活动报名信息
+    FIND_ACTIVITY_REGISTER_SUCCESS(1,"根据条件查询活动报名信息成功"),
+    FIND_ACTIVITY_REGISTER_FAILED(0,"根据条件查询活动报名信息失败"),
+    FIND_ACTIVITY_REGISTER_EXCEPTION(-1,"根据条件查询活动报名信息异常"),
+
     SYSTEM_BUSY(-1,"系统繁忙"),
     LOGIN_SUCCESS(1,"登陆成功");
 

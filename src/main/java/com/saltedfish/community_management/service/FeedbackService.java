@@ -1,6 +1,7 @@
 package com.saltedfish.community_management.service;
 
 import com.saltedfish.community_management.bean.Feedback;
+import com.saltedfish.community_management.common.PageRequest;
 import com.saltedfish.community_management.common.Result;
 
 import java.util.Map;
@@ -12,34 +13,41 @@ public interface FeedbackService {
      * @param feedback
      * @return
      */
-    public Result addFeedback(Feedback feedback);
+    Result addFeedback(Feedback feedback) throws Exception;
 
     /**
      * 更新反馈信息
      * @param feedback
      * @return
      */
-    public Result updateFeedback(Feedback feedback);
+    Result updateFeedback(Feedback feedback) throws Exception;
 
     /**
      * 删除反馈信息
      * @param id
      * @return
      */
-    public Result deleteFeedback(Integer id);
+    Result deleteFeedback(Integer id) throws Exception;
 
     /**
      * 查询指定id的反馈信息
      * @param id
      * @return
      */
-    public Result findFeedbackById(Integer id);
+    Result findFeedbackById(Integer id);
 
     /**
-     * 根据条件查询反馈信息
+     * 根据条件查询反馈信息，需要分页
      * @param conditionMap
      * @return
      */
-    public Result findFeedback(Map<String,String> conditionMap);
+    Result findFeedbackPage(PageRequest pageRequest, Map<String,String> conditionMap) throws Exception;
+
+    /**
+     * 根据条件查询反馈信息，不需要分页
+     * @param conditionMap
+     * @return
+     */
+    Result findFeedback(Map<String,String> conditionMap) throws Exception;
 
 }

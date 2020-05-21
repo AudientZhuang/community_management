@@ -1,6 +1,7 @@
 package com.saltedfish.community_management.service;
 
 import com.saltedfish.community_management.bean.Payment;
+import com.saltedfish.community_management.common.PageRequest;
 import com.saltedfish.community_management.common.Result;
 
 import java.util.Map;
@@ -12,33 +13,40 @@ public interface PaymentService {
      * @param payment
      * @return
      */
-    public Result addPayment(Payment payment);
+    Result addPayment(Payment payment) throws Exception;
 
     /**
      * 更新收费情况
      * @param payment
      * @return
      */
-    public Result updatePayment(Payment payment);
+    Result updatePayment(Payment payment) throws Exception;
 
     /**
      * 删除收费情况
      * @return
      */
-    public Result deletePayment(Integer id);
+    Result deletePayment(Integer id) throws Exception;
 
     /**
      * 查询指定id的收费情况
      * @param id
      * @return
      */
-    public Result findPaymentById(Integer id);
+    Result findPaymentById(Integer id);
 
     /**
-     * 根据条件查询收费情况
+     * 根据条件查询收费情况，需要分页
      * @param conditionMap
      * @return
      */
-    public Result findPayment(Map<String,String> conditionMap);
+    Result findPaymentPage(PageRequest pageRequest, Map<String,String> conditionMap) throws Exception;
+
+    /**
+     * 根据条件查询收费情况，不需要分页
+     * @param conditionMap
+     * @return
+     */
+    Result findPayment(Map<String,String> conditionMap) throws Exception;
 
 }

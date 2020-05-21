@@ -28,4 +28,18 @@
         from user
         where hh_id=#{hh_id} and openId is not null
     </select>
+
+    <insert id="insertUser" parameterType="com.saltedfish.community_management.bean.User">
+        insert into user
+        (hh_id,account,password,openId)
+        values
+        (#{hh_id},#{account},#{password},#{openId})
+    </insert>
+
+    <select id="findUserByHouseholdId" resultType="com.saltedfish.community_management.bean.User">
+        select id,hh_id,account,password,openId
+        from user
+        where hh_id = #{hh_id}
+    </select>
+
 </mapper>

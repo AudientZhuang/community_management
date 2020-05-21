@@ -46,6 +46,6 @@ public interface FireSecurityMapper {
      * @param conditionMap
      * @return
      */
-    public List<String> findFireSecurity(@Param("conditionMap") Map<String,String> conditionMap);
+    public List<FireSecurity> findFireSecurity(@Param("conditionMap") Map<String,String> conditionMap);
 
 }

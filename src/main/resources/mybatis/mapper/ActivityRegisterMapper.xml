@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.saltedfish.community_management.mapper.ActivityRegisterMapper">
+    <insert id="insertActivityRegister" parameterType="com.saltedfish.community_management.bean.ActivityRegister">
+        insert into activity_register
+        (act_id,hh_id,telephone,num)
+        values
+        (#{act_id},#{hh_id},#{telephone},#{num})
+    </insert>
+
+    <update id="updateActivityRegister" parameterType="com.saltedfish.community_management.bean.ActivityRegister">
+        update activity_register
+        set
+        act_id=#{act_id},hh_id=#{hh_id},telephone=#{telephone},num=#{num}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteActivityRegister">
+        delete from activity_register where id = #{id}
+    </delete>
+
+    <select id="findActivityRegisterById" resultType="com.saltedfish.community_management.bean.ActivityRegister">
+        select id,act_id,hh_id,telephone,num from activity_register where id = #{id}
+    </select>
+
+    <select id="findActivityRegister" parameterType="java.util.Map" resultType="com.saltedfish.community_management.bean.ActivityRegister">
+        select id,act_id,hh_id,telephone,num
+        from activity_register
+        where 1
+        <if test="conditionMap.act_id != null">
+            and act_id = #{conditionMap.act_id}
+        </if>
+        <if test="conditionMap.hh_id != null">
+            and hh_id = #{conditionMap.hh_id}
+        </if>
+        <if test="conditionMap.telephone != null">
+            and telephone = #{conditionMap.telephone}
+        </if>
+    </select>
+</mapper>

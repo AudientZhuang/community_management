@@ -104,6 +104,8 @@ public class MaintenanceControllerTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .characterEncoding("UTF-8")
                 .accept(MediaType.APPLICATION_JSON_UTF8)
+                .param("pageNum","1")
+                .param("pageSize","2")
                 .param("facilityId","2");
         ResultActions result = mockMvc.perform(request);
         MvcResult mvcResult = result.andExpect(MockMvcResultMatchers.status().isOk())   //执行状态

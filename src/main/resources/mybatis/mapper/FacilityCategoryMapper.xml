@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.saltedfish.community_management.mapper.FacilityCategoryMapper">
+
+    <insert id="insertFacilityCategory" parameterType="com.saltedfish.community_management.bean.FacilityCategory">
+        insert into facility_category
+        (cateName)
+        values
+        (#{cateName})
+    </insert>
+
+    <update id="updateFacilityCategory" parameterType="com.saltedfish.community_management.bean.FacilityCategory">
+        update facility_category
+        set
+        cateName = #{cateName}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteFacilityCategory">
+        delete from facility_category where id = #{id}
+    </delete>
+
+    <select id="findFacilityCategoryById" resultType="com.saltedfish.community_management.bean.FacilityCategory">
+        select id,cateName from facility_category where id = #{id}
+    </select>
+
+    <select id="findFacilityCategory" parameterType="java.util.Map" resultType="com.saltedfish.community_management.bean.FacilityCategory">
+        select id,cateName
+        from facility_category
+        where 1
+        <if test="conditionMap.cateName != null">
+            and cateName = #{conditionMap.cateName}
+        </if>
+    </select>
+
+</mapper>

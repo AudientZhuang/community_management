@@ -27,99 +27,43 @@ public class UserController {
     @PostMapping("/cmLogin")
     public Result cmLogin(@RequestParam("account") String account,
                           @RequestParam("password") String password){
-        try {
-            Result result = userService.cmLogin(account,password);
-            if(result.getStatus() != ResultCode.LOGIN_USER_EXCEPTION.getStatus()){
-                //用户登录无异常
-                return result;
-            }
-            else{
-                throw new Exception(ResultCode.LOGIN_USER_EXCEPTION.getMessage());
-            }
-        }catch (Exception e) {
-            //捕获异常
-            return new Result(ResultCode.SYSTEM_BUSY.getStatus(),ResultCode.SYSTEM_BUSY.getMessage(),null);
-        }
+        return userService.cmLogin(account,password);
     }
 
     @PostMapping("/wxLogin")
-    public Result wxLogin(@RequestParam("code") String code) throws IOException {
+    public Result wxLogin(@RequestParam("code") String code) throws Exception {
         String httpRes = "";
         //携带临时登录凭证code向微信服务器发送请求获取用户唯一标识openId
-        try{
-            httpRes = HttpUtil.doGet(
-                    "https://api.weixin.qq.com/sns/jscode2session?appid="
-                            + WxConfig.AppID + "&secret="
-                            + WxConfig.AppSecret + "&js_code="
-                            + code + "&grant_type="
-                            + WxConfig.grant_type, null);
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
-        ObjectMapper mapper =new ObjectMapper();
+        httpRes = HttpUtil.doGet(
+                "https://api.weixin.qq.com/sns/jscode2session?appid="
+                        + WxConfig.AppID + "&secret="
+                        + WxConfig.AppSecret + "&js_code="
+                        + code + "&grant_type="
+                        + WxConfig.grant_type, null);
+        ObjectMapper mapper = new ObjectMapper();
         OpenIdJson openIdJson = mapper.readValue(httpRes, OpenIdJson.class);
-        try {
-            Result result = userService.wxLogin(openIdJson.getOpenid());
-            if(result.getStatus() != ResultCode.LOGIN_WX_EXCEPTION.getStatus()) {
-                //无异常
-                return result;
-            }
-            else {
-                throw new Exception(ResultCode.LOGIN_WX_EXCEPTION.getMessage());
-            }
-        }catch (Exception e) {
-            //捕获异常
-            return new Result(ResultCode.SYSTEM_BUSY.getStatus(),ResultCode.SYSTEM_BUSY.getMessage(),null);
-        }
+        return userService.wxLogin(openIdJson.getOpenid());
+
     }
 
     @PostMapping("/bindWx")
-    public Result bindWx(String code,Integer id) throws IOException {
+    public Result bindWx(String code,Integer id) throws Exception {
         String httpRes = "";
         //携带临时登录凭证code向微信服务器发送请求获取用户唯一标识openId
-        try{
-            httpRes = HttpUtil.doGet(
-                    "https://api.weixin.qq.com/sns/jscode2session?appid="
-                            + WxConfig.AppID + "&secret="
-                            + WxConfig.AppSecret + "&js_code="
-                            + code + "&grant_type="
-                            + WxConfig.grant_type, null);
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
-        ObjectMapper mapper =new ObjectMapper();
+        httpRes = HttpUtil.doGet(
+                "https://api.weixin.qq.com/sns/jscode2session?appid="
+                        + WxConfig.AppID + "&secret="
+                        + WxConfig.AppSecret + "&js_code="
+                        + code + "&grant_type="
+                        + WxConfig.grant_type, null);
+        ObjectMapper mapper = new ObjectMapper();
         OpenIdJson openIdJson = mapper.readValue(httpRes, OpenIdJson.class);
-        try {
-            Result result = userService.bindWx(openIdJson.getOpenid(), id);
-            if(result.getStatus() != ResultCode.BIND_WX_EXCEPTION.getStatus()) {
-                //无异常
-                return result;
-            }
-            else {
-               throw new Exception(ResultCode.BIND_WX_EXCEPTION.getMessage());
-            }
-        }catch (Exception e) {
-            //捕获异常
-            return new Result(ResultCode.SYSTEM_BUSY.getStatus(),ResultCode.SYSTEM_BUSY.getMessage(),null);
-        }
+        return userService.bindWx(openIdJson.getOpenid(), id);
     }
 
     @GetMapping("/isBind/{hh_id}")
     public Result isBind(@PathVariable("hh_id") Integer hh_id){
-        try {
-            //在数据库中查找指定id的用户是否绑定微信
-            Result result = userService.findIsBindByHid(hh_id);
-            if (result.getStatus() != ResultCode.FIND_USER_ISBIND_BY_ID_EXCEPTION.getStatus()) {
-                //无异常
-                return result;
-            }
-            else {
-                //异常
-                throw new Exception(ResultCode.FIND_USER_ISBIND_BY_ID_EXCEPTION.getMessage());
-            }
-        }catch (Exception e) {
-            //捕获异常
-            return new Result(ResultCode.SYSTEM_BUSY.getStatus(),ResultCode.SYSTEM_BUSY.getMessage(),null);
-        }
+        //在数据库中查找指定id的用户是否绑定微信
+        return userService.findIsBindByHid(hh_id);
     }
 }
