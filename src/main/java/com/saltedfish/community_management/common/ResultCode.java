@@ -64,6 +64,7 @@ public enum ResultCode {
     FIND_FACILITY_SUCCESS(1,"根据条件查询设施信息成功"),
     FIND_FACILITY_FAILED(0,"根据条件查询设施信息失败"),
     FIND_FACILITY_EXCEPTION(-1,"根据条件查询设施信息异常"),
+
     //社区账号登录
     LOGIN_USER_SUCCESS(1,"社区账号登录成功"),
     LOGIN_USER_FAILED(0,"社区账号登录失败"),
@@ -80,6 +81,15 @@ public enum ResultCode {
     FIND_USER_ISBIND_BY_ID_SUCCESS(1,"查询指定hh_id的用户是否绑定微信成功"),
     FIND_USER_ISBIND_BY_ID_FAILED(0,"查询指定hh_id的用户否绑定微信失败"),
     FIND_USER_ISBIND_BY_ID_EXCEPTION(-1,"查询指定hh_id的用户否绑定微信异常"),
+    //添加用户信息
+    INSERT_USER_SUCCESS(1,"添加用户信息成功"),
+    INSERT_USER_FAILED(0,"添加用户信息失败"),
+    INSERT_USER_EXCEPTION(-1,"添加用户信息异常"),
+
+    //获取access_token
+    GET_ACCESSTOKEN_SUCCESS(1,"获取access_token成功"),
+    GET_ACCESSTOKEN_FAILED(0,"获取access_token失败"),
+    GET_ACCESSTOKEN_EXCEPTION(1,"获取access_token异常"),
 
     //添加设施维护信息
     INSERT_MAINTENANCE_SUCCESS(1,"添加设施维护信息成功"),
