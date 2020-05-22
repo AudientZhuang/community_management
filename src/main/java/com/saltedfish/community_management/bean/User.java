@@ -1,9 +1,13 @@
 package com.saltedfish.community_management.bean;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
 
     private Integer id;     //自增ID

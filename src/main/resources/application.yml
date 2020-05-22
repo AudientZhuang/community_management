@@ -1,7 +1,7 @@
 spring:
   datasource:
     username: root
-    password: 1234
+    password: admin
     #数据库url
     url: jdbc:mysql://localhost:3306/cm?serverTimezone=GMT%2B8
     #Druid数据源
@@ -29,17 +29,29 @@ spring:
     maxPoolPreparedStatementPerConnectionSize: 20
     useGlobalDataSourceStat: true
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+  #开启mvc过滤器，实现RESTful
   mvc:
     hiddenmethod:
       filter:
         enabled: true
 #mybatis的相关配置
 mybatis:
-  config-location: classpath:mybatis/mybatis-config.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  #config-location: classpath:mybatis/mybatis-config.xml
   mapper-locations: classpath:mybatis/mapper/*.xml
+
+
 #日志的相关配置
 logging:
-  file:
-    name: springboot.log
+  #file:
+  #  name: springboot.log
   level:
-    com.soltedfish: debug
+    com.soltedfish.community_management: debug
+
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+debug: true

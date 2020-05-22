@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.saltedfish.community_management.mapper.RoomMapper">
+
+    <insert id="insertRoom" parameterType="com.saltedfish.community_management.bean.Room">
+        insert into room
+        (buildingId,roomNum)
+        values
+        (#{buildingId},#{roomNum})
+    </insert>
+
+    <update id="updateRoom" parameterType="com.saltedfish.community_management.bean.Room">
+        update room
+        set
+        buildingId=#{buildingId},roomNum=#{roomNum}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteRoom">
+        delete from room where id = #{id}
+    </delete>
+
+    <select id="findRoomById" resultType="com.saltedfish.community_management.bean.Room">
+        select id,buildingId,roomNum from room where id = #{id}
+    </select>
+
+    <select id="findRoom" parameterType="java.util.Map" resultType="com.saltedfish.community_management.bean.Room">
+        select id,buildingId,roomNum
+        from room
+        where 1
+        <if test="conditionMap.buildingId != null">
+            and buildingId = #{conditionMap.buildingId}
+        </if>
+        <if test="conditionMap.roomNum != null">
+            and roomNum = #{conditionMap.roomNum}
+        </if>
+    </select>
+</mapper>

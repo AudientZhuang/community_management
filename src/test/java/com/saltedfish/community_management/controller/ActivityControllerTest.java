@@ -108,6 +108,8 @@ public class ActivityControllerTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .characterEncoding("UTF-8")
                 .accept(MediaType.APPLICATION_JSON_UTF8)
+                .param("pageNum","1")
+                .param("pageSize","2")
                 .param("publisher","lisi")
                 .param("number","200");
         ResultActions result = mockMvc.perform(request);

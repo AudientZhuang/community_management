@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.saltedfish.community_management.mapper.NewsMapper">
+
+    <insert id="insertNews" parameterType="com.saltedfish.community_management.bean.News">
+        insert into news
+        (image,title,content,author,date)
+        values
+        (#{image},#{title},#{content},#{author},#{date})
+    </insert>
+
+    <update id="updateNews" parameterType="com.saltedfish.community_management.bean.News">
+        update news
+        set
+        image=#{image},title=#{title},content=#{content},author=#{author},date=#{date}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteNews">
+        delete from news where id = #{id}
+    </delete>
+
+    <select id="findNewsById" resultType="com.saltedfish.community_management.bean.News">
+        select id,image,title,content,author,date from news where id = #{id}
+    </select>
+
+    <select id="findNews" parameterType="java.util.Map" resultType="com.saltedfish.community_management.bean.News">
+        select id,image,title,content,author,date
+        from news
+        where 1
+        <if test="conditionMap.title != null">
+            and title = #{conditionMap.title}
+        </if>
+        <if test="conditionMap.author != null">
+            and author = #{conditionMap.author}
+        </if>
+        <if test="conditionMap.date != null">
+            and date = #{conditionMap.date}
+        </if>
+    </select>
+
+
+</mapper>

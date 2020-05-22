@@ -96,6 +96,8 @@ public class FeedbackControllerTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .characterEncoding("UTF-8")
                 .accept(MediaType.APPLICATION_JSON_UTF8)
+                .param("pageNum","1")
+                .param("pageSize","2")
                 .param("status","0");
         ResultActions result = mockMvc.perform(request);
         MvcResult mvcResult = result.andExpect(MockMvcResultMatchers.status().isOk())

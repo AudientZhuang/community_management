@@ -1,6 +1,7 @@
 package com.saltedfish.community_management.service;
 
 import com.saltedfish.community_management.bean.Activity;
+import com.saltedfish.community_management.common.PageRequest;
 import com.saltedfish.community_management.common.Result;
 import com.saltedfish.community_management.mapper.ActivityMapper;
 import org.junit.Assert;
@@ -95,9 +96,12 @@ public class ActivityServiceTest {
     public void findActivity(){
         try{
             Map<String,String> conditionMap = new HashMap<>();
-            conditionMap.put("number","100");
-            conditionMap.put("publisher","root");
-            Result result = activityService.findActivity(conditionMap);
+            //conditionMap.put("number","100");
+            //conditionMap.put("publisher","root");
+            PageRequest pageRequest = new PageRequest();
+            pageRequest.setPageNum(1);
+            pageRequest.setPageSize(5);
+            Result result = activityService.findActivityPage(pageRequest,conditionMap);
             System.out.println(result);
             Assert.assertThat(result.getStatus(),is(1));
         }catch (Exception e){

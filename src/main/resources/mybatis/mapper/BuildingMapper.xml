@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.saltedfish.community_management.mapper.BuildingMapper">
+    <insert id="insertBuilding" parameterType="com.saltedfish.community_management.bean.Building">
+        insert into building
+        (buildName)
+        values
+        (#{buildName})
+    </insert>
+
+    <update id="updateBuilding" parameterType="com.saltedfish.community_management.bean.Building">
+        update building
+        set buildName = #{buildName}
+        where id = #{id}
+    </update>
+    
+    <delete id="deleteBuilding">
+        delete from building where id = #{id}
+    </delete>
+
+    <select id="findBuildingById" resultType="com.saltedfish.community_management.bean.Building">
+        select id,buildName from building where id = #{id}
+    </select>
+
+    <select id="findBuilding" parameterType="java.util.Map" resultType="com.saltedfish.community_management.bean.Building">
+        select id,buildName
+        from building
+        where 1
+        <if test="conditionMap.buildName != null">
+            and buildName = #{conditionMap.buildName}
+        </if>
+    </select>
+    
+</mapper>

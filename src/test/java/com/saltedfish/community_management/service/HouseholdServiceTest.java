@@ -2,6 +2,7 @@ package com.saltedfish.community_management.service;
 
 import com.saltedfish.community_management.bean.Household;
 import com.saltedfish.community_management.common.Result;
+import com.saltedfish.community_management.vo.HouseholdVO;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,21 +26,23 @@ public class HouseholdServiceTest {
 
     @Test
     public void addHousehold(){
-        Household household = new Household();
-        household.setName("zhangsan");
-        household.setGender("男");
-        household.setAge(18);
-        household.setIDcard("121212121212");
-        household.setTelephone("1234556");
-        household.setArrivalDate(new Date(System.currentTimeMillis()));
-        household.setIsOwner(1);
-        household.setBuildingId(1);
-        household.setRoomId(1);
+        HouseholdVO householdVO = new HouseholdVO();
+        householdVO.setAccount("admin");
+        householdVO.setPassword("11111");
+        householdVO.setName("zhangsan");
+        householdVO.setGender("男");
+        householdVO.setAge(18);
+        householdVO.setIDcard("121212121212");
+        householdVO.setTelephone("1234556");
+        householdVO.setArrivalDate(new Date(System.currentTimeMillis()));
+        householdVO.setIsOwner(1);
+        householdVO.setBuildingId(1);
+        householdVO.setRoomId(1);
 
         try {
-            Result result = householdService.addHousehold(household);
+            Result result = householdService.addHousehold(householdVO);
             System.out.println("返回结果为：" + result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         } catch (Exception e) {
             e.printStackTrace();
         }
