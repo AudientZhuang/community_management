@@ -70,13 +70,21 @@ public class RepairServiceImpl implements RepairService {
     @Override
     public Result findRepairById(Integer id) throws Exception {
         Repair repair = repairMapper.findRepairById(id);
-        if (repair != null){
-            //查询指定id的住户申报维修信息成功
-            return new Result(HttpStatus.OK.value(),"查询指定id的住户申报维修信息成功",repair);
-        }else{
+        if (repair == null){
             //查询指定id的住户申报维修信息失败
             return new Result(HttpStatus.UNAUTHORIZED.value(),"没有找到住户申报维修信息",null);
         }
+        //查询指定id的住户申报维修信息成功
+        //对住户申报维修信息进行完善
+        //根据id获取住户信息
+        Household household = householdMapper.findHouseholdById(repair.getHouseholdId());
+        //获取不到住户信息，跳过
+        if (household == null){
+            return new Result(HttpStatus.UNAUTHORIZED.value(),"住户信息不存在",null);
+        }
+        RepairVO repairVO = VOUtil.toRepairVO(repair);
+        repairVO.setHouseholdName(household.getName());
+        return new Result(HttpStatus.OK.value(),"查询指定id的住户申报维修信息成功",repairVO);
     }
 
     @Override

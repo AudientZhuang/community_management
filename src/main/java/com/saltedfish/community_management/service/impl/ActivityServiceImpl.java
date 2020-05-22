@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -97,5 +98,17 @@ public class ActivityServiceImpl implements ActivityService {
             //根据条件查询活动信息失败
             throw new Exception("根据条件查询活动信息失败");
         }
+    }
+
+    @Override
+    public Result findMyUnderwayActivity(Integer hh_id, Date currentTime) {
+        List<Activity> activityList = activityMapper.findMyUnderwayActivity(hh_id, currentTime);
+        return new Result(HttpStatus.OK.value(),"获取我的正在进行活动成功",activityList);
+    }
+
+    @Override
+    public Result findMyOverdueActivity(Integer hh_id, Date currentTime) {
+        List<Activity> activityList = activityMapper.findMyOverdueActivity(hh_id, currentTime);
+        return new Result(HttpStatus.OK.value(),"获取我的已过期活动成功",activityList);
     }
 }

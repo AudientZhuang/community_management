@@ -2,7 +2,7 @@ package com.saltedfish.community_management.vo;
 
 import lombok.Data;
 
-import java.sql.Date;
+import java.util.Date;
 
 /**
  * @author Audient

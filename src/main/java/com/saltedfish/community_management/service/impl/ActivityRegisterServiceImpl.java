@@ -75,13 +75,29 @@ public class ActivityRegisterServiceImpl implements ActivityRegisterService {
     @Override
     public Result findActivityRegisterById(Integer id) throws Exception {
         ActivityRegister activityRegister = activityRegisterMapper.findActivityRegisterById(id);
-        if (activityRegister != null){
-            //查询指定id的活动报名信息成功
-            return new Result(HttpStatus.OK.value(),"查询指定id的活动报名信息成功",activityRegister);
-        }else{
+        if (activityRegister == null){
             //查询指定id的活动报名信息失败
             return new Result(HttpStatus.UNAUTHORIZED.value(),"没有找到活动报名信息",null);
         }
+        //查询指定id的活动报名信息成功
+        //将活动报名信息进行完善
+        //根据活动id获取活动信息
+        Activity activity = activityMapper.findActivityById(activityRegister.getAct_id());
+        //获取不到活动信息，跳过
+        if (activity == null){
+            return new Result(HttpStatus.UNAUTHORIZED.value(),"活动信息不存在",null);
+        }
+        //根据住户id获取住户信息
+        Household household = householdMapper.findHouseholdById(activityRegister.getHh_id());
+        //获取不到住户信息，跳过
+        if (household == null){
+            return new Result(HttpStatus.UNAUTHORIZED.value(),"住户信息不存在",null);
+        }
+        //对活动报名信息进行封装
+        ActivityRegisterVO activityRegisterVO = VOUtil.toActivityRegisterVO(activityRegister);
+        activityRegisterVO.setActName(activity.getTitle());
+        activityRegisterVO.setHouseholdName(household.getName());
+        return new Result(HttpStatus.OK.value(),"查询指定id的活动报名信息成功",activityRegisterVO);
     }
 
     @Override

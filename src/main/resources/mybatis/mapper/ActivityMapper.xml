@@ -41,4 +41,16 @@
         </if>
     </select>
 
+    <select id="findMyUnderwayActivity" resultType="com.saltedfish.community_management.bean.Activity">
+        select t1.id,image,title,content,address,number,date,publisher,publishDate
+        from activity as t1, activity_register as t2
+        where t2.hh_id = #{hh_id} and t1.date &gt;= #{currentTime} and t1.id = t2.act_id
+    </select>
+
+    <select id="findMyOverdueActivity" resultType="com.saltedfish.community_management.bean.Activity">
+        select t1.id,image,title,content,address,number,date,publisher,publishDate
+        from activity as t1, activity_register as t2
+        where t2.hh_id = #{hh_id} and t1.date &lt; #{currentTime} and t1.id = t2.act_id
+    </select>
+
 </mapper>

@@ -72,13 +72,21 @@ public class FacilityServiceImpl implements FacilityService {
     @Override
     public Result findFacilityById(Integer id) throws Exception {
         Facility facility = facilityMapper.findFacilityById(id);
-        if(facility != null){
-            //查询指定id的设施信息成功
-            return new Result(HttpStatus.OK.value(),"查询指定id的设施信息成功",facility);
-        }else {
+        if(facility == null){
             //查询指定id的设施信息失败
             return new Result(HttpStatus.UNAUTHORIZED.value(),"没有找到设施信息",null);
         }
+        //查询指定id的设施信息成功
+        //对设施信息进行完善
+        //根据id获取设施分类信息
+        FacilityCategory facilityCategory = facilityCategoryMapper.findFacilityCategoryById(facility.getCateId());
+        //获取不到设施分类信息，跳过
+        if (facilityCategory == null){
+            return new Result(HttpStatus.UNAUTHORIZED.value(),"设施分类信息不存在",null);
+        }
+        FacilityVO facilityVO = VOUtil.toFacilityVO(facility);
+        facilityVO.setCateName(facilityCategory.getCateName());
+        return new Result(HttpStatus.OK.value(),"查询指定id的设施信息成功",facilityVO);
     }
 
     @Override

@@ -71,13 +71,21 @@ public class FireSecurityServiceImpl implements FireSecurityService {
     @Override
     public Result findFireSecurityById(Integer id) {
         FireSecurity fireSecurity = fireSecurityMapper.findFireSecurityById(id);
-        if (fireSecurity != null){
-            //查询指定id的消防检查情况成功
-            return new Result(HttpStatus.OK.value(),"查询指定id的消防检查情况成功",fireSecurity);
-        }else{
+        if (fireSecurity == null){
             //查询指定id的消防检查情况失败
             return new Result(HttpStatus.UNAUTHORIZED.value(),"没有找到消防检查情况",null);
         }
+        //查询指定id的消防检查情况成功
+        //对消防检查情况进行完善
+        //根据id获取楼栋信息
+        Building building = buildingMapper.findBuildingById(fireSecurity.getBuildId());
+        //获取不到楼栋信息，跳过
+        if (building == null){
+            return new Result(HttpStatus.UNAUTHORIZED.value(),"楼栋信息不存在",null);
+        }
+        FireSecurityVO fireSecurityVO = VOUtil.toFireSecurityVO(fireSecurity);
+        fireSecurityVO.setBuildingName(building.getBuildName());
+        return new Result(HttpStatus.OK.value(),"查询指定id的消防检查情况成功",fireSecurityVO);
     }
 
     @Override
