@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
@@ -116,4 +117,25 @@ public class ActivityController {
         return result;
     }
 
+
+    /**
+     * 获取指定id的用户的正在进行的活动
+     * @param hh_id
+     * @return
+     */
+    @GetMapping("/household/activity/underway")
+    public Result findMyUnderwayActivity(Integer hh_id){
+        return activityService.findMyUnderwayActivity(hh_id, new Date(System.currentTimeMillis()));
+    }
+
+
+    /**
+     * 获取指定id的用户的正在进行的活动
+     * @param hh_id
+     * @return
+     */
+    @GetMapping("/household/activity/overdue")
+    public Result findMyOverdueActivity(Integer hh_id){
+        return activityService.findMyOverdueActivity(hh_id, new Date(System.currentTimeMillis()));
+    }
 }

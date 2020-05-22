@@ -30,12 +30,12 @@ public class NewsServiceTest {
         news.setContent("新闻内容1111");
         news.setImage("D:/ssda");
         news.setAuthor("作者11111");
-        news.setDate(new Date(Date.valueOf("2020-1-1").getTime()));
+        news.setDate(new java.util.Date(System.currentTimeMillis()));
 
         try {
             Result result = newsService.addNews(news);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }

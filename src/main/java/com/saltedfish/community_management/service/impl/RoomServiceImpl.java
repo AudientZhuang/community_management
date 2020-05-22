@@ -70,13 +70,21 @@ public class RoomServiceImpl implements RoomService {
     @Override
     public Result findRoomById(Integer id) {
         Room room = roomMapper.findRoomById(id);
-        if (room != null){
-            //查询指定id的房间信息成功
-            return new Result(HttpStatus.OK.value(),"查询指定id的房间信息成功",room);
-        }else{
+        if (room == null){
             //查询指定id的房间信息失败
             return new Result(HttpStatus.UNAUTHORIZED.value(),"没有找到房间信息",null);
         }
+        //查询指定id的房间信息成功
+        //对房间信息进行完善
+        //根据id获取楼栋信息
+        Building building = buildingMapper.findBuildingById(room.getBuildingId());
+        //获取不到楼栋信息，跳过
+        if (building == null){
+            return new Result(HttpStatus.UNAUTHORIZED.value(),"楼栋信息不存在",null);
+        }
+        RoomVO roomVO = VOUtil.toRoomVO(room);
+        roomVO.setBuildingName(building.getBuildName());
+        return new Result(HttpStatus.OK.value(),"查询指定id的房间信息成功",roomVO);
     }
 
     @Override

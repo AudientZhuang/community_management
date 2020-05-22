@@ -76,13 +76,28 @@ public class PaymentServiceImpl implements PaymentService {
     @Override
     public Result findPaymentById(Integer id) {
         Payment payment = paymentMapper.findPaymentById(id);
-        if (payment != null){
-            //查找收费记录成功
-            return new Result(HttpStatus.OK.value(),"查找收费记录成功",payment);
-        }else{
+        if (payment == null){
             //查找收费记录失败
             return new Result(HttpStatus.UNAUTHORIZED.value(),"没有找到收费记录",null);
         }
+        //查找收费记录成功
+        //对收费情况进行完善，需要住户名称，缴费项目名称
+        //根据id获取住户信息
+        Household household = householdMapper.findHouseholdById(payment.getHouseholdId());
+        //获取不到住户信息，跳过
+        if (household == null){
+            return new Result(HttpStatus.UNAUTHORIZED.value(),"住户信息不存在",null);
+        }
+        //根据id获取缴费项目
+        Charge charge = chargeMapper.findChargeById(payment.getCharId());
+        //获取不到缴费项目，跳过
+        if (charge == null){
+            return new Result(HttpStatus.UNAUTHORIZED.value(),"缴费项目不存在",null);
+        }
+        PaymentVO paymentVO = VOUtil.toPaymentVO(payment);
+        paymentVO.setHouseholdName(household.getName());
+        paymentVO.setChargeName(charge.getName());
+        return new Result(HttpStatus.OK.value(),"查找收费记录成功",paymentVO);
     }
 
     @Override
@@ -98,7 +113,7 @@ public class PaymentServiceImpl implements PaymentService {
         //封装返回结果，需要住户名称和缴费项目名称
         List<PaymentVO> paymentVOList = new ArrayList<>();
         for (Payment payment : paymentList) {
-            //对收费情况进行封装
+            //对收费情况进行完善，需要住户名称，缴费项目名称
             //根据id获取住户信息
             Household household = householdMapper.findHouseholdById(payment.getHouseholdId());
             //获取不到住户信息，跳过

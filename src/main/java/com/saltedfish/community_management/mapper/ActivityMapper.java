@@ -4,6 +4,7 @@ import com.saltedfish.community_management.bean.Activity;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -43,5 +44,21 @@ public interface ActivityMapper {
      * @return
      */
     public List<Activity> findActivity(@Param("conditionMap") Map<String,String> conditionMap);
+
+    /**
+     * 获取指定id的住户的正在进行的活动
+     * @param hh_id
+     * @param currentTime
+     * @return
+     */
+    public List<Activity> findMyUnderwayActivity(@Param("hh_id") Integer hh_id, @Param("currentTime") Date currentTime);
+
+    /**
+     * 获取指定id的住户的已过期的活动
+     * @param hh_id
+     * @param currentTime
+     * @return
+     */
+    public List<Activity> findMyOverdueActivity(@Param("hh_id") Integer hh_id, @Param("currentTime") Date currentTime);
 
 }

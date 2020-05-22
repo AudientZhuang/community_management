@@ -40,7 +40,7 @@ public class ActivityServiceTest {
         try{
             Result result = activityService.addActivity(activity);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }

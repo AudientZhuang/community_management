@@ -4,7 +4,10 @@ package com.saltedfish.community_management.service;
 import com.saltedfish.community_management.bean.Activity;
 import com.saltedfish.community_management.common.PageRequest;
 import com.saltedfish.community_management.common.Result;
+import org.apache.ibatis.annotations.Param;
 
+import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 public interface ActivityService {
@@ -49,5 +52,21 @@ public interface ActivityService {
      * @return
      */
     Result findActivity(Map<String,String> conditionMap) throws Exception;
+
+    /**
+     * 获取指定id的住户的正在进行的活动
+     * @param hh_id
+     * @param currentTime
+     * @return
+     */
+    Result findMyUnderwayActivity(@Param("hh_id") Integer hh_id, @Param("currentTime") Date currentTime);
+
+    /**
+     * 获取指定id的住户的已过期的活动
+     * @param hh_id
+     * @param currentTime
+     * @return
+     */
+    Result findMyOverdueActivity(@Param("hh_id") Integer hh_id, @Param("currentTime") Date currentTime);
 
 }

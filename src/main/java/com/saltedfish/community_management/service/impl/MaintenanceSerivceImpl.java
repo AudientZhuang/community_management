@@ -69,14 +69,22 @@ public class MaintenanceSerivceImpl implements MaintenanceService {
 
     @Override
     public Result findMaintenanceById(Integer id) {
-            Maintenance maintenance = maintenanceMapper.findMaintenanceById(id);
-            if (maintenance != null){
-                //查询指定id的设施维护信息成功
-                return new Result(HttpStatus.OK.value(),"查询指定id的设施维护信息成功",maintenance);
-            }else{
-                //查询指定id的设施维护信息失败
-                return new Result(HttpStatus.UNAUTHORIZED.value(),"没有找到设施维护信息",null);
-            }
+        Maintenance maintenance = maintenanceMapper.findMaintenanceById(id);
+        if (maintenance == null){
+            //查询指定id的设施维护信息失败
+            return new Result(HttpStatus.UNAUTHORIZED.value(),"没有找到设施维护信息",null);
+        }
+        //查询指定id的设施维护信息成功
+        //对维修信息进行完善
+        //根据id获取设施信息
+        Facility facility = facilityMapper.findFacilityById(maintenance.getFacilityId());
+        //获取不到设施信息，跳过
+        if (facility == null){
+            return new Result(HttpStatus.UNAUTHORIZED.value(),"设施信息不存在",null);
+        }
+        MaintenanceVO maintenanceVO = VOUtil.toMaintenanceVO(maintenance);
+        maintenanceVO.setFacilityName(facility.getName());
+        return new Result(HttpStatus.OK.value(),"查询指定id的设施维护信息成功",maintenanceVO);
     }
 
     @Override

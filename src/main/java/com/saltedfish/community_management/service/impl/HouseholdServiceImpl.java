@@ -106,13 +106,37 @@ public class HouseholdServiceImpl implements HouseholdService {
     @Override
     public Result findHouseholdById(Integer id) {
         Household household = householdMapper.findHouseholdById(id);
-        if (household != null){
-            //查询指定id的住户信息成功
-            return new Result(HttpStatus.OK.value(),"查询指定id的住户信息成功",household);
-        }else{
+        if (household == null){
             //没有找到指定id的住户信息
             return new Result(HttpStatus.UNAUTHORIZED.value(),"没有找到住户信息",null);
         }
+        //查询指定id的住户信息成功
+        //对住户信息进行完善
+        //根据hh_id获取住户账号信息
+        User user = userMapper.findUserByHouseholdId(household.getId());
+        //获取不到住户账号信息，跳过
+        if (user == null){
+            return new Result(HttpStatus.UNAUTHORIZED.value(),"住户账号不存在",null);
+        }
+        //根据id获取楼栋信息
+        Building building = buildingMapper.findBuildingById(household.getBuildingId());
+        //获取不到楼栋信息，跳过
+        if (building == null){
+            return new Result(HttpStatus.UNAUTHORIZED.value(),"楼栋信息不存在",null);
+        }
+        //根据id获取房间信息
+        Room room = roomMapper.findRoomById(household.getRoomId());
+        //获取不到房间信息，跳过
+        if (room == null){
+            return new Result(HttpStatus.UNAUTHORIZED.value(),"房间信息不存在",null);
+        }
+        //对住户信息进行封装
+        HouseholdVO householdVO = VOUtil.toHouseholdVO(household);
+        //householdVO.setAccount(user.getAccount());
+        //householdVO.setPassword(user.getPassword());
+        householdVO.setBuildingName(building.getBuildName());
+        householdVO.setRoomNum(room.getRoomNum());
+        return new Result(HttpStatus.OK.value(),"查询指定id的住户信息成功",householdVO);
     }
 
     @Override
