@@ -32,7 +32,6 @@ public class ActivityServiceTest {
         activity.setTitle("活动1");
         activity.setContent("内容1111111");
         activity.setAddress("人民南路");
-        activity.setNumber(100);
         activity.setDate(new Date(Date.valueOf("2020-5-11").getTime()));
         activity.setPublisher("root");
         activity.setPublishDate(new Date(System.currentTimeMillis()));
@@ -56,7 +55,6 @@ public class ActivityServiceTest {
         activity.setTitle("活动1");
         activity.setContent("内容1111111");
         activity.setAddress("人民南路");
-        activity.setNumber(100);
         activity.setDate(new Date(Date.valueOf("2020-5-11").getTime()));
         activity.setPublisher("root");
         activity.setPublishDate(new Date(System.currentTimeMillis()));

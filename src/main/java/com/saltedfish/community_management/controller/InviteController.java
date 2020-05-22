@@ -6,6 +6,7 @@ import com.saltedfish.community_management.common.Result;
 import com.saltedfish.community_management.common.ResultCode;
 import com.saltedfish.community_management.config.WxConfig;
 import com.saltedfish.community_management.util.HttpUtil;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -31,13 +32,13 @@ public class InviteController {
             AccessToken accessToken = mapper.readValue(httpRes, AccessToken.class);
             if(accessToken != null) {
                 //获取成功
-                result.setStatus(ResultCode.GET_ACCESSTOKEN_SUCCESS.getStatus());
-                result.setMessage(ResultCode.GET_ACCESSTOKEN_SUCCESS.getMessage());
+                result.setStatus(HttpStatus.OK.value());
+                result.setMessage("获取Access_token成功");
                 result.setData(accessToken);
             }else{
                 //获取失败
-                result.setStatus(ResultCode.GET_ACCESSTOKEN_FAILED.getStatus());
-                result.setMessage(ResultCode.GET_ACCESSTOKEN_FAILED.getMessage());
+                result.setStatus(HttpStatus.UNAUTHORIZED.value());
+                result.setMessage("获取Access_token失败");
             }
             return result;
         }catch (Exception e) {

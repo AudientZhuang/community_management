@@ -56,7 +56,7 @@ public class UserController {
         }catch (Exception e) {
             e.printStackTrace();
         }
-        ObjectMapper mapper =new ObjectMapper();
+        ObjectMapper mapper = new ObjectMapper();
         OpenId openId = mapper.readValue(httpRes, OpenId.class);
         try {
             Result result = userService.wxLogin(openId.getOpenid());
