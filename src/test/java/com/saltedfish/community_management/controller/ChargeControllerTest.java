@@ -41,7 +41,7 @@ public class ChargeControllerTest {
                 .param("name","水费")
                 .param("description","gkd")
                 .param("standard","200")
-                .param("creationDate",new Date(System.currentTimeMillis()).toString())
+                .param("creationDate","2020-1-1")
                 .param("note","note...");
 
         ResultActions result = mockMvc.perform(request);
@@ -56,11 +56,11 @@ public class ChargeControllerTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .characterEncoding("UTF-8")
                 .accept(MediaType.APPLICATION_JSON_UTF8)
-                .param("id","3")
+                .param("id","6")
                 .param("name","电费")
                 .param("description","电费gkd")
-                .param("standard","200")
-                .param("creationDate",new Date(System.currentTimeMillis()).toString())
+                .param("standard","250")
+                .param("creationDate","2020-1-1")
                 .param("note","note...");
 
         ResultActions result = mockMvc.perform(request);
@@ -71,7 +71,7 @@ public class ChargeControllerTest {
 
     @Test
     public void deleteCharge() throws Exception {
-        RequestBuilder request = MockMvcRequestBuilders.delete("/charge/4")
+        RequestBuilder request = MockMvcRequestBuilders.delete("/charge/6")
                 .contentType(MediaType.APPLICATION_JSON)
                 .characterEncoding("UTF-8")
                 .accept(MediaType.APPLICATION_JSON_UTF8);

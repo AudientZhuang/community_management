@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -64,7 +64,7 @@ public class HouseholdServiceTest {
         try{
             Result result = householdService.updateHousehold(household);
             System.out.println("返回结果为：" + result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -76,7 +76,7 @@ public class HouseholdServiceTest {
         try{
             Result result = householdService.deleteHousehold(27);
             System.out.println("返回结果为：" + result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -87,7 +87,7 @@ public class HouseholdServiceTest {
         try{
             Result result = householdService.findHouseholdById(26);
             System.out.println("返回结果为：" + result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -101,7 +101,7 @@ public class HouseholdServiceTest {
             conditionMap.put("arrivalDate","2020-04-30");
             Result result = householdService.findHousehold(conditionMap);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }

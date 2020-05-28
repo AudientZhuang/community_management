@@ -39,6 +39,20 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     public Result addPayment(Payment payment) throws Exception {
+        // 检查住户信息是否存在
+        Household household = householdMapper.findHouseholdById(payment.getHouseholdId());
+        //住户信息不存在
+        if (household == null){
+            return new Result(HttpStatus.UNAUTHORIZED.value(),"住户信息不存在",null);
+        }
+        //检查缴费项目是否存在
+        Charge charge = chargeMapper.findChargeById(payment.getCharId());
+        //缴费项目不存在
+        if (charge == null){
+            return new Result(HttpStatus.UNAUTHORIZED.value(),"缴费项目不存在",null);
+        }
+
+        // 添加收费情况
         Integer effort = paymentMapper.insertPayment(payment);
         if (effort != 0){
             //添加收费情况成功
@@ -97,6 +111,7 @@ public class PaymentServiceImpl implements PaymentService {
         PaymentVO paymentVO = VOUtil.toPaymentVO(payment);
         paymentVO.setHouseholdName(household.getName());
         paymentVO.setChargeName(charge.getName());
+        paymentVO.setDescription(charge.getDescription());
         return new Result(HttpStatus.OK.value(),"查找收费记录成功",paymentVO);
     }
 
@@ -131,7 +146,8 @@ public class PaymentServiceImpl implements PaymentService {
             paymentVO.setChargeName(charge.getName());
             paymentVOList.add(paymentVO);
         }
-        PageResult pageResult = PageUtil.getPageResult(pageRequest, new PageInfo<>(paymentVOList));
+        PageResult pageResult = PageUtil.getPageResult(pageRequest, new PageInfo<>(paymentList));
+        pageResult.setItems(paymentVOList);
         return new Result(HttpStatus.OK.value(),"根据条件查询收费情况成功",pageResult);
     }
 

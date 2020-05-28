@@ -10,7 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.xml.crypto.Data;
-import java.sql.Date;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,14 +32,14 @@ public class MaintenanceServiceTest {
         maintenance.setFacilityId(1);
         maintenance.setStatus(1);
         maintenance.setCost(100.0);
-        maintenance.setCreateDate(new Date(Date.valueOf("2020-1-1").getTime()));
-        maintenance.setDate(new Date(Date.valueOf("2020-1-10").getTime()));
+        maintenance.setCreateDate(new Date(System.currentTimeMillis()));
+        maintenance.setDate(new Date(System.currentTimeMillis()));
         maintenance.setNote("备注");
 
         try{
             Result result = maintenanceService.addMaintenance(maintenance);
             System.out.println("返回结果为：" + result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -55,14 +55,14 @@ public class MaintenanceServiceTest {
         maintenance.setFacilityId(1);
         maintenance.setStatus(1);
         maintenance.setCost(110.0);
-        maintenance.setCreateDate(new Date(Date.valueOf("2020-1-1").getTime()));
-        maintenance.setDate(new Date(Date.valueOf("2020-1-10").getTime()));
+        maintenance.setCreateDate(new Date(System.currentTimeMillis()));
+        maintenance.setDate(new Date(System.currentTimeMillis()));
         maintenance.setNote("备注修改版");
 
         try{
             Result result = maintenanceService.updateMaintenance(maintenance);
             System.out.println("返回结果：" + result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -73,7 +73,7 @@ public class MaintenanceServiceTest {
         try {
             Result result = maintenanceService.deleteMaintenance(2);
             System.out.println("返回结果：" + result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -84,7 +84,7 @@ public class MaintenanceServiceTest {
         try {
             Result result = maintenanceService.findMaintenanceById(1);
             System.out.println("返回结果：" + result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -97,7 +97,7 @@ public class MaintenanceServiceTest {
             //conditionMap.put("facilityId","2");
             Result result = maintenanceService.findMaintenance(conditionMap);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }

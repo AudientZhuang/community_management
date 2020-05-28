@@ -40,7 +40,7 @@ public class FeedbackControllerTest {
                 .accept(MediaType.APPLICATION_JSON_UTF8)
                 .param("householdId","2")
                 .param("content","反馈内容2222")
-                .param("date",new Date(System.currentTimeMillis()).toString())
+                .param("date","2020-2-2")
                 .param("status","0");
         ResultActions result = mockMvc.perform(request);
         MvcResult mvcResult = result.andExpect(MockMvcResultMatchers.status().isOk())
@@ -57,7 +57,7 @@ public class FeedbackControllerTest {
                 .param("id","3")
                 .param("householdId","2")
                 .param("content","反馈内容2222")
-                .param("date",new Date(System.currentTimeMillis()).toString())
+                .param("date","2020-2-2")
                 .param("status","1")
                 .param("reply","回复内容2222");
         ResultActions result = mockMvc.perform(request);

@@ -11,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.print.attribute.HashPrintJobAttributeSet;
-import java.sql.Date;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,11 +32,11 @@ public class FacilityServiceTest {
         facility.setName("篮球场");
         facility.setNum(1);
         facility.setPrice(20000.0);
-        facility.setPurchaseDate(new Date(Date.valueOf("2020-1-24").getTime()));
+        facility.setPurchaseDate(new Date(System.currentTimeMillis()));
         try{
             Result result = facilityService.addFacility(facility);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -51,11 +51,11 @@ public class FacilityServiceTest {
         facility.setName("篮球场");
         facility.setNum(1);
         facility.setPrice(20000.0);
-        facility.setPurchaseDate(new Date(Date.valueOf("2020-2-24").getTime()));
+        facility.setPurchaseDate(new Date(System.currentTimeMillis()));
         try{
             Result result = facilityService.updateFacility(facility);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -66,7 +66,7 @@ public class FacilityServiceTest {
         try {
             Result result = facilityService.deleteFacility(2);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -77,7 +77,7 @@ public class FacilityServiceTest {
         try{
             Result result = facilityService.findFacilityById(4);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -90,7 +90,7 @@ public class FacilityServiceTest {
             conditionMap.put("name","乒乓球桌");
             Result result = facilityService.findFacility(conditionMap);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
 

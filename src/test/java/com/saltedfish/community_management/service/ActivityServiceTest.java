@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,7 +32,7 @@ public class ActivityServiceTest {
         activity.setTitle("活动1");
         activity.setContent("内容1111111");
         activity.setAddress("人民南路");
-        activity.setDate(new Date(Date.valueOf("2020-5-11").getTime()));
+        //activity.setDate(new Date(System.currentTimeMillis()));
         activity.setPublisher("root");
         activity.setPublishDate(new Date(System.currentTimeMillis()));
 
@@ -55,14 +55,14 @@ public class ActivityServiceTest {
         activity.setTitle("活动1");
         activity.setContent("内容1111111");
         activity.setAddress("人民南路");
-        activity.setDate(new Date(Date.valueOf("2020-5-11").getTime()));
+        //activity.setDate(new Date(System.currentTimeMillis()));
         activity.setPublisher("root");
         activity.setPublishDate(new Date(System.currentTimeMillis()));
 
         try {
             Result result = activityService.updateActivity(activity);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -73,7 +73,7 @@ public class ActivityServiceTest {
         try{
             Result result = activityService.deleteActivity(1);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -84,7 +84,7 @@ public class ActivityServiceTest {
         try{
             Result result = activityService.findActivityById(3);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e) {
             e.printStackTrace();
         }
@@ -101,7 +101,7 @@ public class ActivityServiceTest {
             pageRequest.setPageSize(5);
             Result result = activityService.findActivityPage(pageRequest,conditionMap);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }

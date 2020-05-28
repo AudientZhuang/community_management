@@ -40,7 +40,7 @@ public class FacilityControllerTest {
                 .param("cateId","1")
                 .param("num","2")
                 .param("price","10000")
-                .param("purchaseDate",new Date(Date.valueOf("2020-01-31").getTime()).toString());
+                .param("purchaseDate","2020-01-31");
 
         ResultActions result = mockMvc.perform(request);
         MvcResult mvcResult = result.andExpect(MockMvcResultMatchers.status().isOk())
@@ -59,7 +59,7 @@ public class FacilityControllerTest {
                 .param("cateId","1")
                 .param("num","1")
                 .param("price","10000")
-                .param("purchaseDate",new Date(Date.valueOf("2020-03-02").getTime()).toString());
+                .param("purchaseDate","2020-03-02");
 
         ResultActions result = mockMvc.perform(request);
         MvcResult mvcResult = result.andExpect(MockMvcResultMatchers.status().isOk())

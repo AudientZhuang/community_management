@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,11 +31,11 @@ public class PaymentServiceTest {
         payment.setCharStandard(90.0);
         payment.setPayReal(100.0);
         payment.setPayStatus(1);
-        payment.setPayDate(new Date(Date.valueOf("2020-1-1").getTime()));
+        payment.setPayDate(new Date(System.currentTimeMillis()));
         try {
             Result result = paymentService.addPayment(payment);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -51,11 +51,11 @@ public class PaymentServiceTest {
         payment.setCharStandard(90.0);
         payment.setPayReal(100.0);
         payment.setPayStatus(1);
-        payment.setPayDate(new Date(Date.valueOf("2020-1-2").getTime()));
+        payment.setPayDate(new Date(System.currentTimeMillis()));
         try {
             Result result = paymentService.updatePayment(payment);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -66,7 +66,7 @@ public class PaymentServiceTest {
         try {
             Result result = paymentService.deletePayment(1);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -77,7 +77,7 @@ public class PaymentServiceTest {
         try {
             Result result = paymentService.findPaymentById(2);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
              e.printStackTrace();
         }
@@ -90,7 +90,7 @@ public class PaymentServiceTest {
             conditionMap.put("householdId","1");
             Result result = paymentService.findPayment(conditionMap);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }

@@ -19,7 +19,7 @@ public class PageUtil {
         pageResult.setPageNum(pageRequest.getPageNum());
         pageResult.setPageSize(pageRequest.getPageSize());
         pageResult.setTotalSize(pageInfo.getTotal());
-        pageResult.setTotalPages(pageInfo.getPages());
+        pageResult.setTotalPages(pageInfo.getSize());
         pageResult.setItems(pageInfo.getList());
         return pageResult;
     }

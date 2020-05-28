@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.saltedfish.community_management.mapper.ChargeMapper">
 
-    <insert id="insertCharge" parameterType="com.saltedfish.community_management.bean.Charge">
+    <insert id="insertCharge" parameterType="com.saltedfish.community_management.bean.Charge" useGeneratedKeys="true" keyProperty="id">
         insert into charge
         (name,description,standard,creationDate,note)
         values

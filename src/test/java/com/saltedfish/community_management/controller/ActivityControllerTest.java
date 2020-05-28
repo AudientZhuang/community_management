@@ -44,10 +44,12 @@ public class ActivityControllerTest {
                 .param("title","title1")
                 .param("content","content1")
                 .param("address","北京路")
-                .param("number","200")
-                .param("date",new Date(Date.valueOf("2020-6-1").getTime()).toString())
+                //.param("number","200")
+                .param("startDate","2020-05-8")
+                .param("endDate","2020-05-11")
+                .param("deadline","2020-05-10")
                 .param("publisher","lisi")
-                .param("publishDate",new Date(System.currentTimeMillis()).toString());
+                .param("publishDate","2020-05-05");
         ResultActions result = mockMvc.perform(request);
         MvcResult mvcResult = result.andExpect(MockMvcResultMatchers.status().isOk())   //执行状态
                 .andDo(MockMvcResultHandlers.print())   //打印
@@ -67,10 +69,12 @@ public class ActivityControllerTest {
                 .param("title","title1")
                 .param("content","content1")
                 .param("address","北京路")
-                .param("number","200")
-                .param("date",new Date(Date.valueOf("2020-6-1").getTime()).toString())
+                //.param("number","200")
+                .param("startDate","2020-05-8")
+                .param("endDate","2020-05-11")
+                .param("deadline","2020-05-10")
                 .param("publisher","lisi")
-                .param("publishDate",new Date(System.currentTimeMillis()).toString());
+                .param("publishDate","2020-05-05");
         ResultActions result = mockMvc.perform(request);
         MvcResult mvcResult = result.andExpect(MockMvcResultMatchers.status().isOk())   //执行状态
                 .andDo(MockMvcResultHandlers.print())   //打印
@@ -110,8 +114,21 @@ public class ActivityControllerTest {
                 .accept(MediaType.APPLICATION_JSON_UTF8)
                 .param("pageNum","1")
                 .param("pageSize","2")
-                .param("publisher","lisi")
-                .param("number","200");
+                .param("publisher","lisi");
+                //.param("number","200");
+        ResultActions result = mockMvc.perform(request);
+        MvcResult mvcResult = result.andExpect(MockMvcResultMatchers.status().isOk())   //执行状态
+                .andDo(MockMvcResultHandlers.print())   //打印
+                .andReturn();      //返回
+    }
+
+    @Test
+    public void findActivityByIdAndHouseholdId() throws Exception {
+        RequestBuilder request = MockMvcRequestBuilders.get("/household/activity/14")
+                .contentType(MediaType.APPLICATION_JSON)
+                .characterEncoding("UTF-8")
+                .accept(MediaType.APPLICATION_JSON_UTF8)
+                .param("hh_id", "22");
         ResultActions result = mockMvc.perform(request);
         MvcResult mvcResult = result.andExpect(MockMvcResultMatchers.status().isOk())   //执行状态
                 .andDo(MockMvcResultHandlers.print())   //打印

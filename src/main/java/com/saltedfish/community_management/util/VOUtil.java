@@ -26,6 +26,7 @@ public class VOUtil {
         householdVO.setGender(household.getGender());
         householdVO.setAge(household.getAge());
         householdVO.setTelephone(household.getTelephone());
+        householdVO.setIDcard(household.getIDcard());
         householdVO.setArrivalDate(household.getArrivalDate());
         householdVO.setIsOwner(household.getIsOwner());
         householdVO.setBuildingId(household.getBuildingId());
@@ -130,7 +131,7 @@ public class VOUtil {
     }
 
     /**
-     * 将FireSecurityVO对象转换为FireSecurity对象
+     * 将FireSecurity对象转换为FireSecurityVO对象
      * @param fireSecurity
      * @return
      */
@@ -144,6 +145,27 @@ public class VOUtil {
         fireSecurityVO.setCheckDate(fireSecurity.getCheckDate());
         fireSecurityVO.setUpdateDate(fireSecurity.getUpdateDate());
         return fireSecurityVO;
+    }
+
+    /**
+     * 将Activity对象转换为ActivityVO对象
+     * @param activity
+     * @return
+     */
+    public static ActivityVO toActivityVO(Activity activity){
+        ActivityVO activityVO = new ActivityVO();
+        activityVO.setId(activity.getId());
+        activityVO.setImage(activity.getImage());
+        activityVO.setTitle(activity.getTitle());
+        activityVO.setContent(activity.getContent());
+        activityVO.setAddress(activity.getAddress());
+        activityVO.setStartDate(activity.getStartDate());
+        activityVO.setEndDate(activity.getEndDate());
+        activityVO.setDeadline(activity.getDeadline());
+        activityVO.setPublisher(activity.getPublisher());
+        activityVO.setPublishDate(activity.getPublishDate());
+        activityVO.setCancel(activity.getCancel());
+        return activityVO;
     }
 
 }

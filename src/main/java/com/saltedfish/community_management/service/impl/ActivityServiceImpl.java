@@ -3,18 +3,24 @@ package com.saltedfish.community_management.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.saltedfish.community_management.bean.Activity;
+import com.saltedfish.community_management.bean.ActivityRegister;
 import com.saltedfish.community_management.common.PageRequest;
 import com.saltedfish.community_management.common.PageResult;
 import com.saltedfish.community_management.common.Result;
 import com.saltedfish.community_management.common.ResultCode;
 import com.saltedfish.community_management.mapper.ActivityMapper;
+import com.saltedfish.community_management.mapper.ActivityRegisterMapper;
 import com.saltedfish.community_management.service.ActivityService;
 import com.saltedfish.community_management.util.PageUtil;
+import com.saltedfish.community_management.util.VOUtil;
+import com.saltedfish.community_management.vo.ActivityVO;
+import com.saltedfish.community_management.vo.MyActivityVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -23,6 +29,9 @@ public class ActivityServiceImpl implements ActivityService {
 
     @Autowired
     private ActivityMapper activityMapper;
+
+    @Autowired
+    private ActivityRegisterMapper activityRegisterMapper;
 
     @Override
     public Result addActivity(Activity activity) throws Exception {
@@ -45,6 +54,18 @@ public class ActivityServiceImpl implements ActivityService {
         }else{
             //更新活动信息失败
             throw new Exception("更新活动信息失败");
+        }
+    }
+
+    @Override
+    public Result cancelActivity(Integer id) throws Exception {
+        Integer effort = activityMapper.deleteActivity(id);
+        if (effort != 0){
+            // 取消活动成功
+            return new Result(HttpStatus.OK.value(),"取消活动成功",null);
+        }else {
+            // 取消活动失败
+            throw new Exception("取消活动失败");
         }
     }
 
@@ -102,13 +123,35 @@ public class ActivityServiceImpl implements ActivityService {
 
     @Override
     public Result findMyUnderwayActivity(Integer hh_id, Date currentTime) {
-        List<Activity> activityList = activityMapper.findMyUnderwayActivity(hh_id, currentTime);
+        List<MyActivityVO> activityList = activityMapper.findMyUnderwayActivity(hh_id, currentTime);
         return new Result(HttpStatus.OK.value(),"获取我的正在进行活动成功",activityList);
     }
 
     @Override
     public Result findMyOverdueActivity(Integer hh_id, Date currentTime) {
-        List<Activity> activityList = activityMapper.findMyOverdueActivity(hh_id, currentTime);
+        List<MyActivityVO> activityList = activityMapper.findMyOverdueActivity(hh_id, currentTime);
         return new Result(HttpStatus.OK.value(),"获取我的已过期活动成功",activityList);
+    }
+
+    @Override
+    public Result findActivityByIdAndHouseholdId(Integer id, Integer hh_id) throws Exception {
+        // 根据id获取活动信息
+        Activity activity = activityMapper.findActivityById(id);
+        // 对活动信息进行完善,需要确认当前用户是否已经报名该活动
+        ActivityVO activityVO = VOUtil.toActivityVO(activity);
+        // 判断当前用户是否已经报名过该活动
+        Map<String,String> conditionMap = new HashMap<>();
+        conditionMap.put("act_id",id.toString());
+        conditionMap.put("hh_id",hh_id.toString());
+        List<ActivityRegister> activityRegisterList = activityRegisterMapper.findActivityRegister(conditionMap);
+
+        if (activityRegisterList.size() == 0){
+            // 当前用户未报名该活动
+            activityVO.setRegister(0);
+        }else{
+            //当前用户已报名该活动
+            activityVO.setRegister(1);
+        }
+        return new Result(HttpStatus.OK.value(),"查询活动信息成功",activityVO);
     }
 }

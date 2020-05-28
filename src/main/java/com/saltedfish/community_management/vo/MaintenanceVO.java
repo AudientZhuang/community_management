@@ -1,10 +1,12 @@
 package com.saltedfish.community_management.vo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+
 
 /**
  * @author Audient
@@ -21,7 +23,9 @@ public class MaintenanceVO {
     private String content;     //维护内容
     private Integer status;     //维护状态(0表示未维护，1表示已维护)
     private Double cost;        //维护费用
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
     private Date createDate;    //记录创建日期
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
     private Date date;          //维护日期
     private String note;        //备注
 }

@@ -43,8 +43,8 @@ public class MaintenanceControllerTest {
                 .param("content", "内容2")
                 .param("status", "0")
                 .param("cost", "200")
-                .param("createDate", new Date(Date.valueOf("2020-2-1").getTime()).toString())
-                .param("date", new Date(Date.valueOf("2020-2-5").getTime()).toString())
+                .param("createDate", "2020-2-1")
+                .param("date", "2020-2-5")
                 .param("note", "备注2");
         ResultActions result = mockMvc.perform(request);
         MvcResult mvcResult = result.andExpect(MockMvcResultMatchers.status().isOk())   //执行状态
@@ -64,8 +64,8 @@ public class MaintenanceControllerTest {
                 .param("content", "内容2")
                 .param("status", "0")
                 .param("cost", "200")
-                .param("createDate", new Date(Date.valueOf("2020-2-1").getTime()).toString())
-                .param("date", new Date(Date.valueOf("2020-2-5").getTime()).toString())
+                .param("createDate", "2020-2-1")
+                .param("date", "2020-2-5")
                 .param("note", "备注22222");
         ResultActions result = mockMvc.perform(request);
         MvcResult mvcResult = result.andExpect(MockMvcResultMatchers.status().isOk())   //执行状态

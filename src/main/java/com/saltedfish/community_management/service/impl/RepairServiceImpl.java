@@ -19,6 +19,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -33,6 +34,14 @@ public class RepairServiceImpl implements RepairService {
 
     @Override
     public Result addRepair(Repair repair) throws Exception {
+        // 检查住户信息是否存在
+        Household household = householdMapper.findHouseholdById(repair.getHouseholdId());
+        // 住户信息不存在
+        if (household == null){
+            return new Result(HttpStatus.UNAUTHORIZED.value(),"住户信息不存在",null);
+        }
+
+        // 添加住户申报维修信息
         Integer effort = repairMapper.insertRepair(repair);
         if (effort != 0){
             //添加住户申报维修信息成功
@@ -104,15 +113,15 @@ public class RepairServiceImpl implements RepairService {
             //根据id获取住户信息
             Household household = householdMapper.findHouseholdById(repair.getHouseholdId());
             //获取不到住户信息，跳过
-            if (household == null){
+            if (household == null) {
                 continue;
             }
             RepairVO repairVO = VOUtil.toRepairVO(repair);
             repairVO.setHouseholdName(household.getName());
             repairVOList.add(repairVO);
-
         }
-        PageResult pageResult = PageUtil.getPageResult(pageRequest, new PageInfo<>(repairVOList));
+        PageResult pageResult = PageUtil.getPageResult(pageRequest, new PageInfo<>(repairList));
+        pageResult.setItems(repairVOList);
         return new Result(HttpStatus.OK.value(),"根据条件查询住户申报维修信息成功",pageResult);
     }
 
@@ -131,7 +140,7 @@ public class RepairServiceImpl implements RepairService {
             //根据id获取住户信息
             Household household = householdMapper.findHouseholdById(repair.getHouseholdId());
             //获取不到住户信息，跳过
-            if (household == null){
+            if (household == null) {
                 continue;
             }
             RepairVO repairVO = VOUtil.toRepairVO(repair);

@@ -29,7 +29,7 @@ public class BuildingServiceTest {
         try {
             Result result = buildingService.addBuilding(building);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -45,7 +45,7 @@ public class BuildingServiceTest {
         try {
             Result result = buildingService.updateBuilding(building);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -56,7 +56,7 @@ public class BuildingServiceTest {
         try {
             Result result = buildingService.deleteBuilding(2);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -67,7 +67,7 @@ public class BuildingServiceTest {
         try {
             Result result = buildingService.findBuildingById(1);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -80,7 +80,7 @@ public class BuildingServiceTest {
             conditionMap.put("buildName","公主楼");
             Result result = buildingService.findBuilding(conditionMap);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }

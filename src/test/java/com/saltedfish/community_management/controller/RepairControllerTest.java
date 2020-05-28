@@ -43,7 +43,7 @@ public class RepairControllerTest {
                 .param("telephone","2222222")
                 .param("content","content222")
                 .param("status","0")
-                .param("date",new Date(Date.valueOf("2020-2-20").getTime()).toString())
+                .param("date","2020-2-20")
                 .param("reply","回复消息");
 
         ResultActions result = mockMvc.perform(request);
@@ -64,7 +64,7 @@ public class RepairControllerTest {
                 .param("telephone","3333")
                 .param("content","content222")
                 .param("status","0")
-                .param("date",new Date(Date.valueOf("2020-2-20").getTime()).toString())
+                .param("date","2020-2-20")
                 .param("reply","回复消息");
 
         ResultActions result = mockMvc.perform(request);

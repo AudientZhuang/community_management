@@ -38,6 +38,21 @@ public class ActivityRegisterServiceImpl implements ActivityRegisterService {
 
     @Override
     public Result addActivityRegister(ActivityRegister activityRegister) throws Exception {
+        // 检查活动信息是否存在
+        Activity activity = activityMapper.findActivityById(activityRegister.getAct_id());
+        // 找不到活动信息
+        if (activity == null){
+            return new Result(HttpStatus.UNAUTHORIZED.value(),"活动不存在",null);
+        }
+
+        // 检查住户是否存在
+        Household household = householdMapper.findHouseholdById(activityRegister.getHh_id());
+        // 找不到住户信息
+        if (household == null){
+            return new Result(HttpStatus.UNAUTHORIZED.value(),"住户信息不存在",null);
+        }
+
+        // 添加活动报名信息
         Integer effort = activityRegisterMapper.insertActivityRegister(activityRegister);
         if (effort != 0){
             //添加活动报名信息成功
@@ -128,7 +143,8 @@ public class ActivityRegisterServiceImpl implements ActivityRegisterService {
                 activityRegisterVO.setHouseholdName(household.getName());
                 activityRegisterVOList.add(activityRegisterVO);
             }
-            PageResult pageResult = PageUtil.getPageResult(pageRequest, new PageInfo<>(activityRegisterVOList));
+            PageResult pageResult = PageUtil.getPageResult(pageRequest, new PageInfo<>(activityRegisterList));
+            pageResult.setItems(activityRegisterVOList);
             return new Result(HttpStatus.OK.value(),"根据条件查询活动报名信息成功",pageResult);
         }else{
             //根据条件查询活动报名信息失败

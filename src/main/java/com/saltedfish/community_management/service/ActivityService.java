@@ -26,6 +26,13 @@ public interface ActivityService {
     Result updateActivity(Activity activity) throws Exception;
 
     /**
+     * 取消活动
+     * @param id
+     * @return
+     */
+    Result cancelActivity(Integer id) throws Exception;
+
+    /**
      * 删除活动信息
      * @param id
      * @return
@@ -68,5 +75,13 @@ public interface ActivityService {
      * @return
      */
     Result findMyOverdueActivity(@Param("hh_id") Integer hh_id, @Param("currentTime") Date currentTime);
+
+    /**
+     * 查询指定id的活动信息,并确定当前用户是否已经报名过该活动
+     * @param id
+     * @param hh_id
+     * @return
+     */
+    Result findActivityByIdAndHouseholdId(Integer id, Integer hh_id) throws Exception;
 
 }

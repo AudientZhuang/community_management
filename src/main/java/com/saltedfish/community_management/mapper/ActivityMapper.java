@@ -1,6 +1,7 @@
 package com.saltedfish.community_management.mapper;
 
 import com.saltedfish.community_management.bean.Activity;
+import com.saltedfish.community_management.vo.MyActivityVO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -23,6 +24,13 @@ public interface ActivityMapper {
      * @return
      */
     public Integer updateActivity(Activity activity);
+
+    /**
+     * 取消活动
+     * @param id
+     * @return
+     */
+    public Integer cancelActivity(Integer id);
 
     /**
      * 删除活动信息
@@ -51,7 +59,7 @@ public interface ActivityMapper {
      * @param currentTime
      * @return
      */
-    public List<Activity> findMyUnderwayActivity(@Param("hh_id") Integer hh_id, @Param("currentTime") Date currentTime);
+    public List<MyActivityVO> findMyUnderwayActivity(@Param("hh_id") Integer hh_id, @Param("currentTime") Date currentTime);
 
     /**
      * 获取指定id的住户的已过期的活动
@@ -59,6 +67,7 @@ public interface ActivityMapper {
      * @param currentTime
      * @return
      */
-    public List<Activity> findMyOverdueActivity(@Param("hh_id") Integer hh_id, @Param("currentTime") Date currentTime);
+    public List<MyActivityVO> findMyOverdueActivity(@Param("hh_id") Integer hh_id, @Param("currentTime") Date currentTime);
+
 
 }
