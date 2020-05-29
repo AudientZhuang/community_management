@@ -113,8 +113,8 @@ public class ActivityControllerTest {
                 .characterEncoding("UTF-8")
                 .accept(MediaType.APPLICATION_JSON_UTF8)
                 .param("pageNum","1")
-                .param("pageSize","2")
-                .param("publisher","lisi");
+                .param("pageSize","4");
+                //.param("publisher","lisi");
                 //.param("number","200");
         ResultActions result = mockMvc.perform(request);
         MvcResult mvcResult = result.andExpect(MockMvcResultMatchers.status().isOk())   //执行状态
