@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,7 +34,7 @@ public class FeedbackServiceTest {
         try {
             Result result = feedbackService.addFeedback(feedback);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -54,7 +54,7 @@ public class FeedbackServiceTest {
         try {
             Result result = feedbackService.updateFeedback(feedback);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -65,7 +65,7 @@ public class FeedbackServiceTest {
         try {
             Result result = feedbackService.deleteFeedback(2);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -76,7 +76,7 @@ public class FeedbackServiceTest {
         try {
             Result result = feedbackService.findFeedbackById(1);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -89,7 +89,7 @@ public class FeedbackServiceTest {
             conditionMap.put("status","0");
             Result result = feedbackService.findFeedback(conditionMap);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }

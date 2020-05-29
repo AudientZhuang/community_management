@@ -4,17 +4,20 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.saltedfish.community_management.bean.Feedback;
+import com.saltedfish.community_management.bean.Household;
 import com.saltedfish.community_management.common.PageRequest;
 import com.saltedfish.community_management.common.PageResult;
 import com.saltedfish.community_management.common.Result;
 import com.saltedfish.community_management.common.ResultCode;
 import com.saltedfish.community_management.mapper.FeedbackMapper;
+import com.saltedfish.community_management.mapper.HouseholdMapper;
 import com.saltedfish.community_management.service.FeedbackService;
 import com.saltedfish.community_management.util.PageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 
@@ -24,8 +27,19 @@ public class FeedbackServiceImpl implements FeedbackService {
     @Autowired
     private FeedbackMapper feedbackMapper;
 
+    @Autowired
+    private HouseholdMapper householdMapper;
+
     @Override
     public Result addFeedback(Feedback feedback) throws Exception {
+        // 检查住户信息是否存在
+        Household household = householdMapper.findHouseholdById(feedback.getHouseholdId());
+        // 住户信息不存在
+        if (household == null){
+            return new Result(HttpStatus.UNAUTHORIZED.value(),"住户信息不存在",null);
+        }
+
+        // 添加反馈信息
         Integer effort = feedbackMapper.insertFeedback(feedback);
         if (effort != 0){
             //添加反馈信息成功

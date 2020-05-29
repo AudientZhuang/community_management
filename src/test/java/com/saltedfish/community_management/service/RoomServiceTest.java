@@ -31,7 +31,7 @@ public class RoomServiceTest {
         try {
             Result result = roomService.addRoom(room);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -48,7 +48,7 @@ public class RoomServiceTest {
         try {
             Result result = roomService.updateRoom(room);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -59,7 +59,7 @@ public class RoomServiceTest {
         try {
             Result result = roomService.deleteRoom(2);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -70,7 +70,7 @@ public class RoomServiceTest {
         try {
             Result result = roomService.findRoomById(1);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -83,7 +83,7 @@ public class RoomServiceTest {
             conditionMap.put("buildingId","1");
             Result result = roomService.findRoom(conditionMap);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }

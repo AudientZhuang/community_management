@@ -39,10 +39,10 @@ public class FireSecurityControllerTest {
                 .characterEncoding("UTF-8")
                 .accept(MediaType.APPLICATION_JSON_UTF8)
                 .param("buildId","2")
-                .param("createDate",new Date(Date.valueOf("2020-4-1").getTime()).toString())
+                .param("createDate","2020-4-1")
                 .param("checkContent","检查内容2222")
                 .param("level","0")
-                .param("checkDate",new Date(Date.valueOf("2020-3-20").getTime()).toString());
+                .param("checkDate","2020-3-20");
         ResultActions result = mockMvc.perform(request);
         MvcResult mvcResult = result.andExpect(MockMvcResultMatchers.status().isOk())
                 .andDo(MockMvcResultHandlers.print())
@@ -57,11 +57,11 @@ public class FireSecurityControllerTest {
                 .accept(MediaType.APPLICATION_JSON_UTF8)
                 .param("id","3")
                 .param("buildId","2")
-                .param("createDate",new Date(Date.valueOf("2020-4-1").getTime()).toString())
+                .param("createDate","2020-4-1")
                 .param("checkContent","检查内容2222")
                 .param("level","0")
-                .param("checkDate",new Date(Date.valueOf("2020-3-20").getTime()).toString())
-                .param("updateDate",new Date(System.currentTimeMillis()).toString());
+                .param("checkDate","2020-3-20")
+                .param("updateDate","2020-3-21");
         ResultActions result = mockMvc.perform(request);
         MvcResult mvcResult = result.andExpect(MockMvcResultMatchers.status().isOk())
                 .andDo(MockMvcResultHandlers.print())

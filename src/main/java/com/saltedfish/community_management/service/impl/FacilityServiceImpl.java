@@ -34,7 +34,14 @@ public class FacilityServiceImpl implements FacilityService {
 
     @Override
     public Result addFacility(Facility facility) throws Exception {
+        // 检查设施分类是否存在
+        FacilityCategory facilityCategory = facilityCategoryMapper.findFacilityCategoryById(facility.getCateId());
+        // 设施分类不存在
+        if (facilityCategory == null){
+            return new Result(HttpStatus.UNAUTHORIZED.value(),"设施分类不存在",null);
+        }
 
+        // 添加设施信息
         Integer effort = facilityMapper.insertFacility(facility);
         if (effort != 0){
             //添加设施信息成功
@@ -112,7 +119,8 @@ public class FacilityServiceImpl implements FacilityService {
             facilityVO.setCateName(facilityCategory.getCateName());
             facilityVOList.add(facilityVO);
         }
-        PageResult pageResult = PageUtil.getPageResult(pageRequest, new PageInfo<>(facilityVOList));
+        PageResult pageResult = PageUtil.getPageResult(pageRequest, new PageInfo<>(facilityList));
+        pageResult.setItems(facilityVOList);
         return new Result(HttpStatus.OK.value(),"根据条件查询设施信息成功",pageResult);
     }
 

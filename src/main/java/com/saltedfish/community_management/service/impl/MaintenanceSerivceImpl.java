@@ -33,6 +33,14 @@ public class MaintenanceSerivceImpl implements MaintenanceService {
 
     @Override
     public Result addMaintenance(Maintenance maintenance) throws Exception {
+        // 检查设施信息是否存在
+        Facility facility = facilityMapper.findFacilityById(maintenance.getFacilityId());
+        // 设施信息不存在
+        if (facility == null){
+            return new Result(HttpStatus.UNAUTHORIZED.value(),"设施信息不存在",null);
+        }
+
+        // 添加设施维护信息
         Integer effort = maintenanceMapper.insertMaintenance(maintenance);
         if (effort != 0){
             //添加设施维护信息成功
@@ -111,7 +119,8 @@ public class MaintenanceSerivceImpl implements MaintenanceService {
             maintenanceVO.setFacilityName(facility.getName());
             maintenanceVOList.add(maintenanceVO);
         }
-        PageResult pageResult = PageUtil.getPageResult(pageRequest, new PageInfo<>(maintenanceVOList));
+        PageResult pageResult = PageUtil.getPageResult(pageRequest, new PageInfo<>(maintenanceList));
+        pageResult.setItems(maintenanceVOList);
         return new Result(HttpStatus.OK.value(),"根据条件查询设施维护信息成功",pageResult);
     }
 

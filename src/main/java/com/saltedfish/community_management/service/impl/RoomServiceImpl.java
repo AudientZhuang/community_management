@@ -33,6 +33,14 @@ public class RoomServiceImpl implements RoomService {
 
     @Override
     public Result addRoom(Room room) throws Exception {
+        // 检查楼栋信息是否存在
+        Building building = buildingMapper.findBuildingById(room.getBuildingId());
+        // 楼栋信息不存在
+        if (building == null){
+            return new Result(HttpStatus.UNAUTHORIZED.value(),"楼栋信息不存在",null);
+        }
+
+        // 添加房间信息
         Integer effort = roomMapper.insertRoom(room);
         if (effort != 0){
             //添加房间信息成功
@@ -111,7 +119,8 @@ public class RoomServiceImpl implements RoomService {
             roomVO.setBuildingName(building.getBuildName());
             roomVOList.add(roomVO);
         }
-        PageResult pageResult = PageUtil.getPageResult(pageRequest, new PageInfo<>(roomVOList));
+        PageResult pageResult = PageUtil.getPageResult(pageRequest, new PageInfo<>(roomList));
+        pageResult.setItems(roomVOList);
         return new Result(HttpStatus.OK.value(),"根据条件查询房间信息成功",pageResult);
 
     }

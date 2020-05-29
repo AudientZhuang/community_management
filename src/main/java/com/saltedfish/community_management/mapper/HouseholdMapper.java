@@ -44,4 +44,10 @@ public interface HouseholdMapper {
      */
     public List<Household> findHousehold(@Param("conditionMap") Map<String,String> conditionMap);
 
+    /**
+     * 查找所有的户主id
+     * @return
+     */
+    public List<Integer> findAllOwner();
+
 }

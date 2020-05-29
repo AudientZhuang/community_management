@@ -44,7 +44,7 @@ public class PaymentControllerTest {
                 .param("charStandard","200")
                 .param("payReal","200")
                 .param("payStatus","1")
-                .param("payDate",new Date(Date.valueOf("2020-2-2").getTime()).toString());
+                .param("payDate","2020-2-2");
 
         ResultActions result = mockMvc.perform(request);
         MvcResult mvcResult = result.andExpect(MockMvcResultMatchers.status().isOk()) //执行状态
@@ -64,7 +64,7 @@ public class PaymentControllerTest {
                 .param("charStandard","250")
                 .param("payReal","200")
                 .param("payStatus","1")
-                .param("payDate",new Date(Date.valueOf("2020-2-2").getTime()).toString());
+                .param("payDate","2020-2-2");
 
         ResultActions result = mockMvc.perform(request);
         MvcResult mvcResult = result.andExpect(MockMvcResultMatchers.status().isOk()) //执行状态

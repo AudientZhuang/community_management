@@ -1,7 +1,7 @@
 spring:
   datasource:
     username: root
-    password: 1234
+    password: admin
     #数据库url
     url: jdbc:mysql://localhost:3306/cm?serverTimezone=GMT%2B8
     #Druid数据源
@@ -43,15 +43,18 @@ mybatis:
 
 
 #日志的相关配置
-logging:
+#logging:
   #file:
   #  name: springboot.log
-  level:
-    com.soltedfish.community_management: debug
+#  level:
+#    com.soltedfish.community_management: debug
 
 pagehelper:
   helper-dialect: mysql
   reasonable: true
   support-methods-arguments: true
-  params: count=countSql
+  #params: count=countSql
 debug: true
+
+file:
+  upload-folder: D://image/

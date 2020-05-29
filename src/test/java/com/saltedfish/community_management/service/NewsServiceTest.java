@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,7 +30,7 @@ public class NewsServiceTest {
         news.setContent("新闻内容1111");
         news.setImage("D:/ssda");
         news.setAuthor("作者11111");
-        news.setDate(new java.util.Date(System.currentTimeMillis()));
+        news.setDate(new Date(System.currentTimeMillis()));
 
         try {
             Result result = newsService.addNews(news);
@@ -50,12 +50,12 @@ public class NewsServiceTest {
         news.setContent("新闻内容1111修改");
         news.setImage("D:/ssda");
         news.setAuthor("作者11111");
-        news.setDate(new Date(Date.valueOf("2020-1-1").getTime()));
+        news.setDate(new Date(System.currentTimeMillis()));
 
         try {
             Result result = newsService.updateNews(news);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -66,7 +66,7 @@ public class NewsServiceTest {
         try {
             Result result = newsService.deleteNews(2);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -77,7 +77,7 @@ public class NewsServiceTest {
         try{
             Result result = newsService.findNewsById(1);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -90,7 +90,7 @@ public class NewsServiceTest {
             conditionMap.put("title","新闻标题1111111");
             Result result = newsService.findNews(conditionMap);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }

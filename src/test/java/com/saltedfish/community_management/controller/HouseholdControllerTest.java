@@ -53,7 +53,7 @@ public class HouseholdControllerTest {
                 .param("age", "18")
                 .param("telephone", "12345678")
                 .param("IDcard", "19981024014")
-                .param("arrivalDate", new Date(System.currentTimeMillis()).toString())
+                .param("arrivalDate", "2020-3-3")
                 .param("isOwner", "0")
                 .param("buildingId", "1")
                 .param("roomId", "1");
@@ -76,7 +76,7 @@ public class HouseholdControllerTest {
                 .param("age", "20")
                 .param("telephone", "12345678")
                 .param("IDcard", "19981024014")
-                .param("arrivalDate", new Date(System.currentTimeMillis()).toString())
+                .param("arrivalDate", "2020-3-5")
                 .param("isOwner", "0")
                 .param("buildingId", "1")
                 .param("roomId", "1");

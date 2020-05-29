@@ -1,8 +1,11 @@
 package com.saltedfish.community_management.bean;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
+
 
 @Data
 public class Household {
@@ -15,6 +18,8 @@ public class Household {
     private Integer age;        //年龄
     private String telephone;   //联系电话
     private String IDcard;      //身份证号码
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date arrivalDate;   //入住日期
     private Integer isOwner;    //是否为业主(1表示是,0表示否)
     private Integer buildingId; //外键绑定楼栋ID

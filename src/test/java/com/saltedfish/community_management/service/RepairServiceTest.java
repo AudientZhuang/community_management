@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,13 +31,13 @@ public class RepairServiceTest {
         repair.setContent("维修内容1");
         repair.setStatus(1);
         repair.setTelephone("123456");
-        repair.setDate(new Date(Date.valueOf("2020-2-2").getTime()));
+        repair.setDate(new Date(System.currentTimeMillis()));
         repair.setReply("回复信息1");
 
         try {
             Result result = repairService.addRepair(repair);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -53,13 +53,13 @@ public class RepairServiceTest {
         repair.setContent("维修内容2");
         repair.setStatus(1);
         repair.setTelephone("123456890");
-        repair.setDate(new Date(Date.valueOf("2020-2-2").getTime()));
+        repair.setDate(new Date(System.currentTimeMillis()));
         repair.setReply("回复信息2");
 
         try {
             Result result = repairService.updateRepair(repair);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -70,7 +70,7 @@ public class RepairServiceTest {
         try {
             Result result = repairService.deleteRepair(2);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -81,7 +81,7 @@ public class RepairServiceTest {
         try {
             Result result = repairService.findRepairById(1);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -94,7 +94,7 @@ public class RepairServiceTest {
             conditionMap.put("status","1");
             Result result = repairService.findRepair(conditionMap);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }

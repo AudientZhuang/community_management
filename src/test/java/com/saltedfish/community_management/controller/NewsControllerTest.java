@@ -42,7 +42,7 @@ public class NewsControllerTest {
                 .param("title","新闻标题221222")
                 .param("content","新闻内容222222")
                 .param("author","作者22222")
-                .param("date",new Date(Date.valueOf("2020-01-31").getTime()).toString());
+                .param("date","2020-01-31");
 
         ResultActions result = mockMvc.perform(request);
         MvcResult mvcResult = result.andExpect(MockMvcResultMatchers.status().isOk())
@@ -61,7 +61,7 @@ public class NewsControllerTest {
                 .param("title","新闻标题221222修改")
                 .param("content","新闻内容222222修改")
                 .param("author","作者22222")
-                .param("date",new Date(Date.valueOf("2020-01-31").getTime()).toString());
+                .param("date","2020-01-31");
 
         ResultActions result = mockMvc.perform(request);
         MvcResult mvcResult = result.andExpect(MockMvcResultMatchers.status().isOk())

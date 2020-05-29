@@ -23,6 +23,7 @@ public class GlobalExceptionHandler {
     @ResponseBody
     @ExceptionHandler(value = Exception.class)
     public Object unkownExceptionHandler(Exception exception){
+        exception.printStackTrace();
         log.info(exception.getMessage());
         return new Result(HttpStatus.INTERNAL_SERVER_ERROR.value(),"系统繁忙",null);
     }

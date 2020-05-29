@@ -179,8 +179,8 @@ public class HouseholdServiceImpl implements HouseholdService {
             householdVO.setRoomNum(room.getRoomNum());
             householdVOList.add(householdVO);
         }
-
-        PageResult pageResult = PageUtil.getPageResult(pageRequest, new PageInfo<>(householdVOList));
+        PageResult pageResult = PageUtil.getPageResult(pageRequest, new PageInfo<>(householdList));
+        pageResult.setItems(householdVOList);
         return new Result(HttpStatus.OK.value(),"根据条件查询住户信息成功",pageResult);
     }
 

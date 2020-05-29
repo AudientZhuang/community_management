@@ -30,7 +30,7 @@ public class FacilityCategoryServiceTest {
         try {
             Result result = facilityCategoryService.addFacilityCategory(facilityCategory);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -46,7 +46,7 @@ public class FacilityCategoryServiceTest {
         try {
             Result result = facilityCategoryService.updateFacilityCategory(facilityCategory);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -57,7 +57,7 @@ public class FacilityCategoryServiceTest {
         try {
             Result result = facilityCategoryService.deleteFacilityCategory(2);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -68,7 +68,7 @@ public class FacilityCategoryServiceTest {
         try {
             Result result = facilityCategoryService.findFacilityCategoryById(1);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -81,7 +81,7 @@ public class FacilityCategoryServiceTest {
             conditionMap.put("cateName","器具");
             Result result = facilityCategoryService.findFacilityCategory(conditionMap);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }

@@ -50,6 +50,17 @@ public class ActivityController {
     }
 
     /**
+     * 取消活动
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    @PostMapping("/activity/cancel")
+    public Result cancelActivity(Integer id) throws Exception {
+        return activityService.cancelActivity(id);
+    }
+
+    /**
      * 删除活动信息
      * @param id
      * @return
@@ -137,5 +148,11 @@ public class ActivityController {
     @GetMapping("/household/activity/overdue")
     public Result findMyOverdueActivity(Integer hh_id){
         return activityService.findMyOverdueActivity(hh_id, new Date(System.currentTimeMillis()));
+    }
+
+    @GetMapping("/household/activity/{id}")
+    public Result findActivityByIdAndHouseholdId(@PathVariable("id") Integer id,
+                                                 @RequestParam("hh_id") Integer hh_id) throws Exception {
+        return activityService.findActivityByIdAndHouseholdId(id, hh_id);
     }
 }

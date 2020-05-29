@@ -34,6 +34,14 @@ public class FireSecurityServiceImpl implements FireSecurityService {
 
     @Override
     public Result addFireSecurity(FireSecurity fireSecurity) throws Exception {
+        // 检查楼栋信息是否存在
+        Building building = buildingMapper.findBuildingById(fireSecurity.getBuildId());
+        // 楼栋信息不存在
+        if (building == null){
+            return new Result(HttpStatus.UNAUTHORIZED.value(),"楼栋信息不存在",null);
+        }
+
+        // 添加消防检查情况
         Integer effort = fireSecurityMapper.insertFireSecurity(fireSecurity);
         if (effort != 0){
             //添加消防检查情况成功
@@ -112,7 +120,8 @@ public class FireSecurityServiceImpl implements FireSecurityService {
             fireSecurityVO.setBuildingName(building.getBuildName());
             fireSecurityVOList.add(fireSecurityVO);
         }
-        PageResult pageResult = PageUtil.getPageResult(pageRequest, new PageInfo<>(fireSecurityVOList));
+        PageResult pageResult = PageUtil.getPageResult(pageRequest, new PageInfo<>(fireSecurityList));
+        pageResult.setItems(fireSecurityVOList);
         return new Result(HttpStatus.OK.value(),"根据条件查询消防检查情况成功",pageResult);
     }
 

@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,13 +28,13 @@ public class FireSecurityServiceTest {
         FireSecurity fireSecurity = new FireSecurity();
         fireSecurity.setBuildId(1);
         fireSecurity.setCheckContent("检查内容");
-        fireSecurity.setCreateDate(new Date(Date.valueOf("2020-5-8").getTime()));
-        fireSecurity.setCheckDate(new Date(Date.valueOf("2020-5-5").getTime()));
+        fireSecurity.setCreateDate(new Date(System.currentTimeMillis()));
+        fireSecurity.setCheckDate(new Date(System.currentTimeMillis()));
         fireSecurity.setLevel(0);
         try {
             Result result = fireSecurityService.addFireSecurity(fireSecurity);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -47,14 +47,14 @@ public class FireSecurityServiceTest {
         fireSecurity.setId(1);
         fireSecurity.setBuildId(1);
         fireSecurity.setCheckContent("检查内容修改版");
-        fireSecurity.setCreateDate(new Date(Date.valueOf("2020-5-8").getTime()));
-        fireSecurity.setCheckDate(new Date(Date.valueOf("2020-5-5").getTime()));
+        fireSecurity.setCreateDate(new Date(System.currentTimeMillis()));
+        fireSecurity.setCheckDate(new Date(System.currentTimeMillis()));
         fireSecurity.setUpdateDate(new Date(System.currentTimeMillis()));
         fireSecurity.setLevel(1);
         try {
             Result result = fireSecurityService.updateFireSecurity(fireSecurity);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -65,7 +65,7 @@ public class FireSecurityServiceTest {
         try {
             Result result = fireSecurityService.deleteFireSecurity(2);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -76,7 +76,7 @@ public class FireSecurityServiceTest {
         try {
             Result result = fireSecurityService.findFireSecurityById(1);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -89,7 +89,7 @@ public class FireSecurityServiceTest {
             conditionMap.put("level","1");
             Result result = fireSecurityService.findFireSecurity(conditionMap);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }

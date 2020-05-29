@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,12 +30,12 @@ public class ChargeServiceTest {
         charge.setName("水费");
         charge.setDescription("交水费啦");
         charge.setStandard(100.0);
-        charge.setCreationDate(new Date(Date.valueOf("2020-1-31").getTime()));
+        charge.setCreationDate(new Date(System.currentTimeMillis()));
 
         try {
             Result result = chargeService.addCharge(charge);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -49,12 +49,12 @@ public class ChargeServiceTest {
         charge.setName("电费费");
         charge.setDescription("交电费费啦");
         charge.setStandard(150.0);
-        charge.setCreationDate(new Date(Date.valueOf("2020-1-31").getTime()));
+        charge.setCreationDate(new Date(System.currentTimeMillis()));
 
         try {
             Result result = chargeService.updateCharge(charge);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -65,7 +65,7 @@ public class ChargeServiceTest {
         try {
             Result result = chargeService.deleteCharge(2);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -76,7 +76,7 @@ public class ChargeServiceTest {
         try {
             Result result = chargeService.findChargeById(2);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -89,7 +89,7 @@ public class ChargeServiceTest {
             conditionMap.put("name","电费");
             Result result = chargeService.findCharge(conditionMap);
             System.out.println(result);
-            Assert.assertThat(result.getStatus(),is(1));
+            Assert.assertThat(result.getStatus(),is(200));
         }catch (Exception e){
             e.printStackTrace();
         }

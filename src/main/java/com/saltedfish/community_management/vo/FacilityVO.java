@@ -1,8 +1,10 @@
 package com.saltedfish.community_management.vo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import java.util.Date;
+
 
 /**
  * @author Audient
@@ -16,5 +18,6 @@ public class FacilityVO {
     private String cateName;    //设施分类名称
     private Integer num;        //设施购入数量
     private Double price;       //设施价格
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
     private Date purchaseDate;  //购买日期
 }

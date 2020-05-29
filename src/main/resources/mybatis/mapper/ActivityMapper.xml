@@ -6,15 +6,24 @@
 
     <insert id="insertActivity" parameterType="com.saltedfish.community_management.bean.Activity">
         insert into activity
-        (image,title,content,address,number,date,publisher,publishDate)
+        (image,title,content,address,startDate,endDate,deadline,publisher,publishDate)
         values
-        (#{image},#{title},#{content},#{address},#{number},#{date},#{publisher},#{publishDate})
+        (#{image},#{title},#{content},#{address},#{startDate},#{endDate},#{deadline},#{publisher},#{publishDate})
     </insert>
 
     <update id="updateActivity" parameterType="com.saltedfish.community_management.bean.Activity">
         update activity
         set
-        image=#{image},title=#{title},content=#{content},address=#{address},number=#{number},date=#{date},publisher=#{publisher},publishDate=#{publishDate}
+        image=#{image},title=#{title},content=#{content},address=#{address},
+        startDate=#{startDate},endDate=#{endDate},deadline=#{deadline},publisher=#{publisher},
+        publishDate=#{publishDate}
+        where id = #{id}
+    </update>
+
+    <update id="cancelActivity">
+        update activity
+        set
+        concel = 1
         where id = #{id}
     </update>
 
@@ -23,11 +32,11 @@
     </delete>
 
     <select id="findActivityById" resultType="com.saltedfish.community_management.bean.Activity">
-        select id,image,title,content,address,date,publisher,publishDate from activity where id = #{id}
+        select id,image,title,content,address,startDate,endDate,deadline,publisher,publishDate,cancel from activity where id = #{id}
     </select>
 
     <select id="findActivity" parameterType="java.util.Map" resultType="com.saltedfish.community_management.bean.Activity">
-        select id,image,title,content,address,date,publisher,publishDate
+        select id,image,title,content,address,startDate,endDate,deadline,publisher,publishDate,cancel
         from activity
         where 1
         <if test="conditionMap.publishDate != null">
@@ -36,18 +45,21 @@
         <if test="conditionMap.publisher != null">
             and publisher = #{conditionMap.publisher}
         </if>
+        <if test="conditionMap.cancel != null">
+            and cancel = #{conditionMap.cancel}
+        </if>
     </select>
 
-    <select id="findMyUnderwayActivity" resultType="com.saltedfish.community_management.bean.Activity">
-        select t1.id,image,title,content,address,date,publisher,publishDate
+    <select id="findMyUnderwayActivity" resultType="com.saltedfish.community_management.vo.MyActivityVO">
+        select t2.id,t2.act_id,title,t2.num,startDate,endDate,cancel
         from activity as t1, activity_register as t2
-        where t2.hh_id = #{hh_id} and t1.date &gt;= #{currentTime} and t1.id = t2.act_id
+        where t2.hh_id = #{hh_id} and t1.endDate &gt;= #{currentTime} and t1.id = t2.act_id
     </select>
 
-    <select id="findMyOverdueActivity" resultType="com.saltedfish.community_management.bean.Activity">
-        select t1.id,image,title,content,address,date,publisher,publishDate
+    <select id="findMyOverdueActivity" resultType="com.saltedfish.community_management.vo.MyActivityVO">
+        select t2.id,t2.act_id,title,t2.num,startDate,endDate,cancel
         from activity as t1, activity_register as t2
-        where t2.hh_id = #{hh_id} and t1.date &lt; #{currentTime} and t1.id = t2.act_id
+        where t2.hh_id = #{hh_id} and t1.endDate &lt; #{currentTime} and t1.id = t2.act_id
     </select>
 
 </mapper>
