@@ -144,6 +144,7 @@ public class PaymentServiceImpl implements PaymentService {
             PaymentVO paymentVO = VOUtil.toPaymentVO(payment);
             paymentVO.setHouseholdName(household.getName());
             paymentVO.setChargeName(charge.getName());
+            paymentVO.setDescription(charge.getDescription());
             paymentVOList.add(paymentVO);
         }
         PageResult pageResult = PageUtil.getPageResult(pageRequest, new PageInfo<>(paymentList));
@@ -178,6 +179,7 @@ public class PaymentServiceImpl implements PaymentService {
             PaymentVO paymentVO = VOUtil.toPaymentVO(payment);
             paymentVO.setHouseholdName(household.getName());
             paymentVO.setChargeName(charge.getName());
+            paymentVO.setDescription(charge.getDescription());
             paymentVOList.add(paymentVO);
         }
         return new Result(HttpStatus.OK.value(),"根据条件查询收费情况成功",paymentVOList);
