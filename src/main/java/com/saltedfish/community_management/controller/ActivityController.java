@@ -146,7 +146,7 @@ public class ActivityController {
 
 
     /**
-     * 获取指定id的用户的正在进行的活动
+     * 获取指定id的用户的已结束的活动
      * @param hh_id
      * @return
      */
