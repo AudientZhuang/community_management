@@ -102,7 +102,7 @@ public class HouseholdControllerTest {
 
     @Test
     public void findHouseholdById() throws Exception {
-        RequestBuilder request = MockMvcRequestBuilders.get("/household/26")
+        RequestBuilder request = MockMvcRequestBuilders.get("/household/35")
                 .contentType(MediaType.APPLICATION_JSON)
                 .characterEncoding("UTF-8")
                 .accept(MediaType.APPLICATION_JSON_UTF8);

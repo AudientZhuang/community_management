@@ -24,5 +24,4 @@ public class Household {
     private Integer isOwner;    //是否为业主(1表示是,0表示否)
     private Integer buildingId; //外键绑定楼栋ID
     private Integer roomId;     //外键绑定房间ID
-
 }
