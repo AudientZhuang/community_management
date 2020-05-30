@@ -132,7 +132,7 @@ public class ActivityServiceImpl implements ActivityService {
     @Override
     public Result findMyOverdueActivity(PageRequest pageRequest, Integer hh_id, Date currentTime) {
         PageHelper.startPage(pageRequest.getPageNum(),pageRequest.getPageSize());
-        List<MyActivityVO> activityList = activityMapper.findMyUnderwayActivity(hh_id, currentTime);
+        List<MyActivityVO> activityList = activityMapper.findMyOverdueActivity(hh_id, currentTime);
         PageResult pageResult = PageUtil.getPageResult(pageRequest, new PageInfo<>(activityList));
         return new Result(HttpStatus.OK.value(),"获取我的已过期活动成功",pageResult);
     }
