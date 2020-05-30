@@ -60,6 +60,7 @@ public class VOUtil {
         maintenanceVO.setFacilityId(maintenance.getFacilityId());
         maintenanceVO.setContent(maintenance.getContent());
         maintenanceVO.setStatus(maintenance.getStatus());
+        maintenanceVO.setCost(maintenance.getCost());
         maintenanceVO.setCreateDate(maintenance.getCreateDate());
         maintenanceVO.setDate(maintenance.getDate());
         maintenanceVO.setNote(maintenance.getNote());

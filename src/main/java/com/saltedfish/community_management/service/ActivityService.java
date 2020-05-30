@@ -1,6 +1,7 @@
 package com.saltedfish.community_management.service;
 
 
+import com.github.pagehelper.Page;
 import com.saltedfish.community_management.bean.Activity;
 import com.saltedfish.community_management.common.PageRequest;
 import com.saltedfish.community_management.common.Result;
@@ -66,7 +67,7 @@ public interface ActivityService {
      * @param currentTime
      * @return
      */
-    Result findMyUnderwayActivity(@Param("hh_id") Integer hh_id, @Param("currentTime") Date currentTime);
+    Result findMyUnderwayActivity(PageRequest pageRequest, Integer hh_id, Date currentTime);
 
     /**
      * 获取指定id的住户的已过期的活动
@@ -74,7 +75,7 @@ public interface ActivityService {
      * @param currentTime
      * @return
      */
-    Result findMyOverdueActivity(@Param("hh_id") Integer hh_id, @Param("currentTime") Date currentTime);
+    Result findMyOverdueActivity(PageRequest pageRequest, Integer hh_id, Date currentTime);
 
     /**
      * 查询指定id的活动信息,并确定当前用户是否已经报名过该活动

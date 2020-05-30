@@ -135,8 +135,13 @@ public class ActivityController {
      * @return
      */
     @GetMapping("/household/activity/underway")
-    public Result findMyUnderwayActivity(Integer hh_id){
-        return activityService.findMyUnderwayActivity(hh_id, new Date(System.currentTimeMillis()));
+    public Result findMyUnderwayActivity(@RequestParam("hh_id") Integer hh_id,
+                                         @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
+                                         @RequestParam(value = "pageSize",defaultValue = "10") Integer pageSize){
+        PageRequest pageRequest = new PageRequest();
+        pageRequest.setPageNum(pageNum);
+        pageRequest.setPageSize(pageSize);
+        return activityService.findMyUnderwayActivity(pageRequest, hh_id, new Date(System.currentTimeMillis()));
     }
 
 
@@ -146,10 +151,23 @@ public class ActivityController {
      * @return
      */
     @GetMapping("/household/activity/overdue")
-    public Result findMyOverdueActivity(Integer hh_id){
-        return activityService.findMyOverdueActivity(hh_id, new Date(System.currentTimeMillis()));
+    public Result findMyOverdueActivity(@RequestParam(value = "hh_id") Integer hh_id,
+                                        @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
+                                        @RequestParam(value = "pageSize",defaultValue = "10") Integer pageSize){
+
+        PageRequest pageRequest = new PageRequest();
+        pageRequest.setPageNum(pageNum);
+        pageRequest.setPageSize(pageSize);
+        return activityService.findMyOverdueActivity(pageRequest, hh_id, new Date(System.currentTimeMillis()));
     }
 
+    /**
+     * 查询指定id的活动信息,并确定当前用户是否已经报名过该活动
+     * @param id
+     * @param hh_id
+     * @return
+     * @throws Exception
+     */
     @GetMapping("/household/activity/{id}")
     public Result findActivityByIdAndHouseholdId(@PathVariable("id") Integer id,
                                                  @RequestParam("hh_id") Integer hh_id) throws Exception {
