@@ -73,6 +73,9 @@ public class UserController {
             //有异常
             throw new Exception(ResultCode.LOGIN_WX_EXCEPTION.getMessage());
         }
+        if(result.getStatus() == HttpStatus.UNAUTHORIZED.value()) {
+            return  new Result(HttpStatus.UNAUTHORIZED.value(),"用户未绑定微信",null);
+        }
         User user  = (User)result.getData();
         EasyTypeToken token = new EasyTypeToken(user.getUsername());
         Subject subject = SecurityUtils.getSubject();
@@ -168,7 +171,7 @@ public class UserController {
             subject.login(token);
             Result result = userService.findUserByUsername(user.getUsername());
             User u = (User) result.getData();
-            return new Result(HttpStatus.OK.value(),"登录成功", user.getHh_id());
+            return new Result(HttpStatus.OK.value(),"登录成功", u.getHh_id());
         }catch (IncorrectCredentialsException e){
             return new Result(HttpStatus.UNAUTHORIZED.value(),"用户不存在或者或者密码错误",null);
         }catch (AuthenticationException e){
