@@ -55,7 +55,7 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/wxLogin","anon");
         filterChainDefinitionMap.put("/**","authc");
         // 配置shiro默认登录界面地址,前后端分离中登陆界面应由前端去控制,后台进返回json数据
-        shiroFilterFactoryBean.setLoginUrl("login/unauth");
+        shiroFilterFactoryBean.setLoginUrl("/login/unauth");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return shiroFilterFactoryBean;
     }
