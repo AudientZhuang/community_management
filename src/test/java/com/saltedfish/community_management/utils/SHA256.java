@@ -16,7 +16,7 @@ public class SHA256 {
     @Test
     public void testSHA256(){
         String salt = UUID.randomUUID().toString();
-        String password = SHA256Util.sha256("123456", salt);
+        String password = SHA256Util.sha256("8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92", salt);
         System.out.println("盐值: " + salt);
         System.out.println("加密之后的密码: " + password);
     }
