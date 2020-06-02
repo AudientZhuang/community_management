@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.saltedfish.community_management.mapper.RoleMapper">
+
+    <select id="findRolesByUserId" resultType="com.saltedfish.community_management.bean.Role">
+        select t1.id,t1.role,t1.description
+        from role as t1,user_role as t2
+        where t2.user_id = #{userId} and t1.id = t2.role_id
+    </select>
+
+    <select id="findRoleIdByUserId" resultType="java.lang.Integer">
+        select t1.id
+        from role as t1,user_role as t2
+        where t2.user_id = #{userId} and t1.id = t2.role_id
+    </select>
+
+    <insert id="insertUserRole">
+        insert into user_role
+        (user_id, role_id)
+        values
+        (#{userId}, #{roleId})
+    </insert>
+
+    <delete id="deleteUserRole">
+        delete from user_role where user_id = #{userId} and role_id = #{roleId}
+    </delete>
+
+</mapper>

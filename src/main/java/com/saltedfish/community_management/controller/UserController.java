@@ -135,7 +135,7 @@ public class UserController {
     }
 
     /**
-     * 用户登陆
+     * 管理员登陆
      * @param user
      * @return
      */
