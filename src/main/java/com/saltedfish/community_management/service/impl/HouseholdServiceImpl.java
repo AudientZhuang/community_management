@@ -16,6 +16,7 @@ import com.saltedfish.community_management.mapper.RoomMapper;
 import com.saltedfish.community_management.mapper.UserMapper;
 import com.saltedfish.community_management.service.HouseholdService;
 import com.saltedfish.community_management.util.PageUtil;
+import com.saltedfish.community_management.util.SHA256Util;
 import com.saltedfish.community_management.util.VOUtil;
 import com.saltedfish.community_management.vo.HouseholdVO;
 import org.slf4j.Logger;
@@ -28,6 +29,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 @Service
 public class HouseholdServiceImpl implements HouseholdService {
@@ -68,8 +70,11 @@ public class HouseholdServiceImpl implements HouseholdService {
         }
         //2、进行user的添加
         User user = new User();
-        user.setAccount(householdVO.getAccount());
-        user.setPassword(householdVO.getPassword());
+        user.setUsername(householdVO.getAccount());
+        String salt = UUID.randomUUID().toString();
+        user.setSalt(salt);
+        String password = SHA256Util.sha256(householdVO.getPassword(),salt);
+        user.setPassword(password);
         user.setHh_id(household.getId());
         Integer userEffort = userMapper.insertUser(user);
         if (userEffort == 0){
@@ -173,7 +178,7 @@ public class HouseholdServiceImpl implements HouseholdService {
             }
             //对住户信息进行封装
             HouseholdVO householdVO = VOUtil.toHouseholdVO(household);
-            householdVO.setAccount(user.getAccount());
+            householdVO.setAccount(user.getUsername());
             householdVO.setPassword(user.getPassword());
             householdVO.setBuildingName(building.getBuildName());
             householdVO.setRoomNum(room.getRoomNum());
@@ -216,7 +221,7 @@ public class HouseholdServiceImpl implements HouseholdService {
                 continue;
             }
             HouseholdVO householdVO = VOUtil.toHouseholdVO(household);
-            householdVO.setAccount(user.getAccount());
+            householdVO.setAccount(user.getUsername());
             householdVO.setPassword(user.getPassword());
             householdVO.setBuildingName(building.getBuildName());
             householdVO.setRoomNum(room.getRoomNum());

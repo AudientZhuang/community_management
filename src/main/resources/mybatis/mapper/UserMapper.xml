@@ -4,14 +4,14 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.saltedfish.community_management.mapper.UserMapper">
 
-    <select id="cmLogin" resultType="com.saltedfish.community_management.bean.User">
-        select id,hh_id,account,password,openId
+    <!--<select id="cmLogin" resultType="com.saltedfish.community_management.bean.User">
+        select id,hh_id,account,password,openId,salt
         from user
         where account=#{account} and password=#{password}
-    </select>
+    </select>-->
 
     <select id="wxLogin" resultType="com.saltedfish.community_management.bean.User">
-        select id,hh_id,account,password,openId
+        select id,hh_id,username,password,openId,salt
         from user
         where openId=#{openId}
     </select>
@@ -24,22 +24,28 @@
     </update>
 
     <select id="findIsBindByHid" resultType="com.saltedfish.community_management.bean.User">
-        select id,hh_id,account,password,openId
+        select id,hh_id,username,password,openId,salt
         from user
         where hh_id=#{hh_id} and openId is not null
     </select>
 
     <insert id="insertUser" parameterType="com.saltedfish.community_management.bean.User">
         insert into user
-        (hh_id,account,password,openId)
+        (hh_id,username,password,openId,salt)
         values
-        (#{hh_id},#{account},#{password},#{openId})
+        (#{hh_id},#{username},#{password},#{openId},#{salt})
     </insert>
 
     <select id="findUserByHouseholdId" resultType="com.saltedfish.community_management.bean.User">
-        select id,hh_id,account,password,openId
+        select id,hh_id,username,password,openId,salt
         from user
         where hh_id = #{hh_id}
+    </select>
+
+    <select id="findUserByUsername" resultType="com.saltedfish.community_management.bean.User">
+        select id,hh_id,username,password,openId,salt
+        from user
+        where username = #{username}
     </select>
 
 </mapper>

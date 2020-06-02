@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService {
         User user = userMapper.wxLogin(openId);
         if(user != null) {
             //存在用户
-            return new Result(HttpStatus.OK.value(),"登陆成功",user.getHh_id());
+            return new Result(HttpStatus.OK.value(),"登陆成功",user);
         }
         else {
             //不存在该用户
@@ -68,6 +68,18 @@ public class UserServiceImpl implements UserService {
         else {
             //该用户未绑定微信
             return new Result(HttpStatus.UNAUTHORIZED.value(),"该用户未绑定微信",0);
+        }
+    }
+
+    @Override
+    public Result findUserByUsername(String username) {
+        User user = userMapper.findUserByUsername(username);
+        if (user != null){
+            // 找到指定账号的用户
+            return new Result(HttpStatus.OK.value(),"找到用户",user);
+        }else {
+            // 没有找到用户
+            return new Result(HttpStatus.UNAUTHORIZED.value(),"没有找到用户",null);
         }
     }
 
