@@ -136,23 +136,46 @@ public class UserController {
      * @param user
      * @return
      */
-    @PostMapping("/login")
+    @PostMapping("/login/admin")
     public Result adminLogin(User user){
         // 进行身份验证
         try {
             Subject subject = SecurityUtils.getSubject();
             EasyTypeToken token = new EasyTypeToken(user.getUsername(),user.getPassword());
             subject.login(token);
+            Result result = userService.findUserByUsername(user.getUsername());
+            User u = (User) result.getData();
+            return new Result(HttpStatus.OK.value(),"登录成功", user.getId());
         }catch (IncorrectCredentialsException e){
             return new Result(HttpStatus.UNAUTHORIZED.value(),"用户不存在或者或者密码错误",null);
         }catch (AuthenticationException e){
             return new Result(HttpStatus.UNAUTHORIZED.value(),"用户不存在",null);
         }
-        return new Result(HttpStatus.OK.value(),"登录成功",null);
-
 
     }
 
+    /**
+     * 用户登陆
+     * @param user
+     * @return
+     */
+    @PostMapping("/login/household")
+    public Result householdLogin(User user){
+        // 进行身份验证
+        try {
+            Subject subject = SecurityUtils.getSubject();
+            EasyTypeToken token = new EasyTypeToken(user.getUsername(),user.getPassword());
+            subject.login(token);
+            Result result = userService.findUserByUsername(user.getUsername());
+            User u = (User) result.getData();
+            return new Result(HttpStatus.OK.value(),"登录成功", user.getHh_id());
+        }catch (IncorrectCredentialsException e){
+            return new Result(HttpStatus.UNAUTHORIZED.value(),"用户不存在或者或者密码错误",null);
+        }catch (AuthenticationException e){
+            return new Result(HttpStatus.UNAUTHORIZED.value(),"用户不存在",null);
+        }
+
+    }
     /**
      * 未登录
      * @return
