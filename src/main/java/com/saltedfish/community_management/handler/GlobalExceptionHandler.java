@@ -3,10 +3,14 @@ package com.saltedfish.community_management.handler;
 import com.saltedfish.community_management.common.Result;
 import com.saltedfish.community_management.common.ResultCode;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.authz.AuthorizationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 全局异常处理
@@ -14,6 +18,18 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Slf4j
 @ControllerAdvice
 public class GlobalExceptionHandler {
+
+    /**
+     * 处理shiro权限拦截异常
+     * @return
+     */
+    @ResponseBody
+    @ExceptionHandler(value = AuthorizationException.class)
+    public Result defaultShiroErrorHandler(){
+        return new Result(HttpStatus.FORBIDDEN.value(),"拒绝访问",null);
+    }
+
+
 
     /**
      * 未知异常处理

@@ -1,6 +1,7 @@
 package com.saltedfish.community_management.mapper;
 
 import com.saltedfish.community_management.bean.User;
+import com.saltedfish.community_management.common.Result;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -50,4 +51,11 @@ public interface UserMapper {
      * @return
      */
     public User findUserByHouseholdId(@Param("hh_id") Integer hh_id);
+
+    /**
+     * 根据用户账号查找用户信息
+     * @param username
+     * @return
+     */
+    User findUserByUsername(@Param("username") String username);
 }

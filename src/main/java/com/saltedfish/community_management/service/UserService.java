@@ -32,4 +32,11 @@ public interface UserService {
      * @return
      */
     Result findIsBindByHid(Integer hh_id);
+
+    /**
+     * 根据用户账号查找用户信息
+     * @param account
+     * @return
+     */
+    Result findUserByUsername(String account);
 }
