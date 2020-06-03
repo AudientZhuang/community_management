@@ -1,5 +1,6 @@
 package com.saltedfish.community_management.config;
 
+import com.saltedfish.community_management.filter.StatelessAuthcFilter;
 import com.saltedfish.community_management.realm.ShiroRealm;
 import com.saltedfish.community_management.shiro.RetryLimitHashedCredentialsMatcher;
 import com.saltedfish.community_management.util.SHA256Util;
@@ -12,6 +13,7 @@ import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreato
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import javax.servlet.Filter;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -49,6 +51,11 @@ public class ShiroConfig {
     public ShiroFilterFactoryBean shiroFilterFactoryBean(SecurityManager securityManager){
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         shiroFilterFactoryBean.setSecurityManager(securityManager);
+
+        Map<String, Filter> filters = new LinkedHashMap<>();
+        filters.put("user", new StatelessAuthcFilter());
+        shiroFilterFactoryBean.setFilters(filters);
+
         Map<String,String> filterChainDefinitionMap = new LinkedHashMap<>();
         filterChainDefinitionMap.put("/static","anon");
         filterChainDefinitionMap.put("/login/**","anon");

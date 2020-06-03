@@ -27,9 +27,9 @@ public class MyWebMvcConfig implements WebMvcConfigurer {
 
     /**
      * 跨域处理
-     * @param registry
+     *
      */
-    @Override
+    /*@Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
                 .allowedOrigins("*")
@@ -37,6 +37,6 @@ public class MyWebMvcConfig implements WebMvcConfigurer {
                 .allowCredentials(true)
                 .maxAge(3600)
                 .allowedHeaders("*");
-    }
+    }*/
 
 }

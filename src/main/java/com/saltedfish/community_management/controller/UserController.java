@@ -139,7 +139,7 @@ public class UserController {
      * @param user
      * @return
      */
-    @PostMapping("/login/admin")
+    @GetMapping("/login/admin")
     public Result adminLogin(User user){
         // 进行身份验证
         try {
@@ -148,7 +148,7 @@ public class UserController {
             subject.login(token);
             Result result = userService.findUserByUsername(user.getUsername());
             User u = (User) result.getData();
-            return new Result(HttpStatus.OK.value(),"登录成功", user.getId());
+            return new Result(HttpStatus.OK.value(),"登录成功", u.getId());
         }catch (IncorrectCredentialsException e){
             return new Result(HttpStatus.UNAUTHORIZED.value(),"用户不存在或者或者密码错误",null);
         }catch (AuthenticationException e){
