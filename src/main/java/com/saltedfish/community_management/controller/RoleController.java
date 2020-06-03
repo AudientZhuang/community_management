@@ -20,12 +20,12 @@ public class RoleController {
 
     /**
      * 通过用户id获取对应的角色信息
-     * @param id
+     * @param userId
      * @return
      */
-    @GetMapping("/roles/{id}")
-    public Result getRolesByUserId(@PathVariable("id") Integer id) throws Exception {
-        return roleService.getRolesByUserId(id);
+    @GetMapping("/roles")
+    public Result getRolesByUserId(@RequestParam("userId") Integer userId) throws Exception {
+        return roleService.getRolesByUserId(userId);
     }
 
     /**
