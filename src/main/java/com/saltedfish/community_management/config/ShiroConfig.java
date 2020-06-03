@@ -3,6 +3,7 @@ package com.saltedfish.community_management.config;
 import com.saltedfish.community_management.filter.StatelessAuthcFilter;
 import com.saltedfish.community_management.realm.ShiroRealm;
 import com.saltedfish.community_management.shiro.RetryLimitHashedCredentialsMatcher;
+import com.saltedfish.community_management.shiro.ShiroSessionManager;
 import com.saltedfish.community_management.util.SHA256Util;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.mgt.SecurityManager;
@@ -10,6 +11,7 @@ import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSource
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -53,7 +55,7 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setSecurityManager(securityManager);
 
         Map<String, Filter> filters = new LinkedHashMap<>();
-        filters.put("user", new StatelessAuthcFilter());
+        filters.put("authc", new StatelessAuthcFilter());
         shiroFilterFactoryBean.setFilters(filters);
 
         Map<String,String> filterChainDefinitionMap = new LinkedHashMap<>();
@@ -76,8 +78,25 @@ public class ShiroConfig {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         // 自定义realm验证
         securityManager.setRealm(shiroRealm());
+        securityManager.setSessionManager(sessionManager());
         return securityManager;
     }
+
+    @Bean(name = "sessionManager")
+    public ShiroSessionManager sessionManager() {
+        ShiroSessionManager manager = new ShiroSessionManager();
+        /*manager.setDeleteInvalidSessions(true);
+        manager.setSessionValidationSchedulerEnabled(true);
+//        manager.setSessionValidationScheduler(sessionValidationScheduler);
+
+        manager.setSessionIdCookieEnabled(false);
+//        manager.setSessionIdCookieEnabled(true);
+//        manager.setSessionIdCookie(sessionIdCookie);
+        manager.setSessionIdUrlRewritingEnabled(false);*/
+        return manager;
+    }
+
+
 
     /**
      * 身份验证器
