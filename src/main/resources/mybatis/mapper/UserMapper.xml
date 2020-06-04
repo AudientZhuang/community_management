@@ -23,6 +23,13 @@
         where hh_id=#{id}
     </update>
 
+    <update id="unbindWx">
+        update user
+        set
+        openId=NULL
+        where hh_id=#{id}
+    </update>
+
     <select id="findIsBindByHid" resultType="com.saltedfish.community_management.bean.User">
         select id,hh_id,username,password,openId,salt
         from user
@@ -48,4 +55,9 @@
         where username = #{username}
     </select>
 
+    <update id="modifyPassword">
+        update user
+        set password=#{password},salt=#{salt}
+        where hh_id=#{hh_id}
+    </update>
 </mapper>
