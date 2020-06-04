@@ -53,6 +53,13 @@ public class UserController {
         }
     }*/
 
+    /**
+     * 微信登录
+     * @param code
+     * @param attributes
+     * @return
+     * @throws Exception
+     */
     @PostMapping("/wxLogin")
     public Result wxLogin(@RequestParam("code") String code, RedirectAttributes attributes) throws Exception {
         String httpRes = "";
@@ -90,6 +97,13 @@ public class UserController {
 
     }
 
+    /**
+     * 绑定微信
+     * @param code
+     * @param id
+     * @return
+     * @throws IOException
+     */
     @PostMapping("/bindWx")
     public Result bindWx(String code,Integer id) throws IOException {
         String httpRes = "";
@@ -121,6 +135,21 @@ public class UserController {
         }
     }
 
+    /**
+     * 解除微信绑定
+     * @param hh_id
+     * @return
+     */
+    @GetMapping("/unbindWx/{hh_id}")
+    public Result unbind(@PathVariable("hh_id") Integer hh_id){
+        return userService.unbindWx(hh_id);
+    }
+
+    /**
+     * 根据用户id查询是否绑定微信
+     * @param hh_id
+     * @return
+     */
     @GetMapping("/isBind/{hh_id}")
     public Result isBind(@PathVariable("hh_id") Integer hh_id){
         try {
@@ -140,6 +169,25 @@ public class UserController {
         }
     }
 
+    /**
+     * 验证用户密码
+     * @param user
+     * @return
+     */
+    @PostMapping("/verifyPassword")
+    public Result verifyPassword(User user) {
+        return userService.verifyPassword(user.getHh_id(), user.getPassword());
+    }
+
+    /**
+     * 修改用户密码
+     * @param user
+     * @return
+     */
+    @PostMapping("/modifyPassword")
+    public Result modifyPassword(User user) {
+        return userService.modifyPassword(user.getHh_id(), user.getPassword());
+    }
     /**
      * 管理员登陆
      * @param user

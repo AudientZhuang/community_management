@@ -31,6 +31,14 @@ public interface UserMapper {
      */
     public Integer bindWx(String openId,Integer id);
 
+
+    /**
+     * 取消绑定
+     * @param id
+     * @return
+     */
+    public Integer unbindWx(Integer id);
+
     /**
      * 根据指定的hh_id查询住户信息是否绑定微信
      * @param hh_id
@@ -58,4 +66,13 @@ public interface UserMapper {
      * @return
      */
     User findUserByUsername(@Param("username") String username);
+
+    /**
+     * 修改用户密码
+     * @param hh_id
+     * @param password
+     * @param salt
+     * @return
+     */
+    Integer modifyPassword(Integer hh_id, String password, String salt);
 }
