@@ -3,6 +3,7 @@ package com.saltedfish.community_management.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.saltedfish.community_management.bean.OpenId;
 import com.saltedfish.community_management.bean.User;
+import com.saltedfish.community_management.bean.UserToken;
 import com.saltedfish.community_management.common.Result;
 import com.saltedfish.community_management.common.ResultCode;
 import com.saltedfish.community_management.config.WxConfig;
@@ -23,6 +24,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.IOException;
+import java.io.Serializable;
 
 @RestController
 public class UserController {
@@ -80,7 +82,11 @@ public class UserController {
         EasyTypeToken token = new EasyTypeToken(user.getUsername());
         Subject subject = SecurityUtils.getSubject();
         subject.login(token);
-        return new Result(HttpStatus.OK.value(),"登陆成功",user.getHh_id());
+        Serializable sessionId = subject.getSession().getId();
+        UserToken userToken = new UserToken();
+        userToken.setId(user.getHh_id());
+        userToken.setToken(sessionId);
+        return new Result(HttpStatus.OK.value(),"登陆成功",userToken);
 
     }
 
@@ -148,7 +154,11 @@ public class UserController {
             subject.login(token);
             Result result = userService.findUserByUsername(user.getUsername());
             User u = (User) result.getData();
-            return new Result(HttpStatus.OK.value(),"登录成功", user.getId());
+            Serializable sessionId = subject.getSession().getId();
+            UserToken userToken = new UserToken();
+            userToken.setId(u.getId());
+            userToken.setToken(sessionId);
+            return new Result(HttpStatus.OK.value(),"登录成功", userToken);
         }catch (IncorrectCredentialsException e){
             return new Result(HttpStatus.UNAUTHORIZED.value(),"用户不存在或者或者密码错误",null);
         }catch (AuthenticationException e){
@@ -171,7 +181,11 @@ public class UserController {
             subject.login(token);
             Result result = userService.findUserByUsername(user.getUsername());
             User u = (User) result.getData();
-            return new Result(HttpStatus.OK.value(),"登录成功", u.getHh_id());
+            Serializable sessionId = subject.getSession().getId();
+            UserToken userToken = new UserToken();
+            userToken.setId(u.getHh_id());
+            userToken.setToken(sessionId);
+            return new Result(HttpStatus.OK.value(),"登录成功", userToken);
         }catch (IncorrectCredentialsException e){
             return new Result(HttpStatus.UNAUTHORIZED.value(),"用户不存在或者或者密码错误",null);
         }catch (AuthenticationException e){

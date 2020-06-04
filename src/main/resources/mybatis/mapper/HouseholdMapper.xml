@@ -48,6 +48,12 @@
         <if test="conditionMap.isOwner != null">
             and isOwner = #{conditionMap.isOwner}
         </if>
+        <if test="conditionMap.IDcard != null">
+            and IDcard = #{conditionMap.IDcard}
+        </if>
+        <if test="conditionMap.name != null">
+            and name = #{conditionMap.name}
+        </if>
     </select>
 
 
