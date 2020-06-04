@@ -174,7 +174,7 @@ public class UserController {
      * @param user
      * @return
      */
-    @PostMapping("/verifyPassword")
+    @PostMapping("/user/password")
     public Result verifyPassword(User user) {
         return userService.verifyPassword(user.getHh_id(), user.getPassword());
     }
@@ -184,7 +184,7 @@ public class UserController {
      * @param user
      * @return
      */
-    @PostMapping("/modifyPassword")
+    @PostMapping("/user/newPassword")
     public Result modifyPassword(User user) {
         return userService.modifyPassword(user.getHh_id(), user.getPassword());
     }
