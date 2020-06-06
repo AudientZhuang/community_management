@@ -6,6 +6,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @Mapper
 public interface UserMapper {
     /**
@@ -66,6 +68,12 @@ public interface UserMapper {
      * @return
      */
     User findUserByUsername(@Param("username") String username);
+
+    /**
+     * 查找所有的管理员信息
+     * @return
+     */
+    List<User> findAdminUser();
 
     /**
      * 修改用户密码

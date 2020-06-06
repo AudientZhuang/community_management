@@ -39,4 +39,13 @@ public class RoleController {
                                   @RequestParam("roleIdList") List<Integer> roleIdList) throws Exception {
         return roleService.updateUserRoles(userId,roleIdList);
     }
+
+    /**
+     * 获取所有用户的所有角色信息
+     * @return
+     */
+    @GetMapping("/user/all/roles")
+    public Result getAllUserRoles() throws Exception {
+        return roleService.getAllUserRoles();
+    }
 }

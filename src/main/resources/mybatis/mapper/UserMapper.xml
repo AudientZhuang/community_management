@@ -60,4 +60,10 @@
         set password=#{password},salt=#{salt}
         where hh_id=#{hh_id}
     </update>
+    <select id="findAdminUser" resultType="com.saltedfish.community_management.bean.User">
+        select id,hh_id,username,password,openId,salt
+        from user
+        where ISNULL(hh_id)
+    </select>
+
 </mapper>

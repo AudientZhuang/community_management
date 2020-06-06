@@ -25,4 +25,10 @@ public interface RoleService {
      * @return
      */
     Result updateUserRoles(Integer userId, List<Integer> roleIdList) throws Exception;
+
+    /**
+     * 获取所有用户的所有角色信息
+     * @return
+     */
+    Result getAllUserRoles() throws Exception;
 }
