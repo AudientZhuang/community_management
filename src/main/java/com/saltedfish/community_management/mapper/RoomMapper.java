@@ -48,4 +48,5 @@ public interface RoomMapper {
      */
     public List<Room> findRoom(@Param("conditionMap") Map<String,String> conditionMap);
 
+
 }

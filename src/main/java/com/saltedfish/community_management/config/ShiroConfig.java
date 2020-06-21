@@ -59,7 +59,7 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setFilters(filters);
 
         Map<String,String> filterChainDefinitionMap = new LinkedHashMap<>();
-        filterChainDefinitionMap.put("/static","anon");
+        filterChainDefinitionMap.put("/image/**","anon");
         filterChainDefinitionMap.put("/login/**","anon");
         filterChainDefinitionMap.put("/wxLogin","anon");
         filterChainDefinitionMap.put("/**","authc");

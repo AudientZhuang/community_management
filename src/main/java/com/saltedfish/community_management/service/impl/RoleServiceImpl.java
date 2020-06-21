@@ -1,10 +1,14 @@
 package com.saltedfish.community_management.service.impl;
 
 import com.saltedfish.community_management.bean.Role;
+import com.saltedfish.community_management.bean.User;
 import com.saltedfish.community_management.common.Result;
 import com.saltedfish.community_management.mapper.RoleMapper;
+import com.saltedfish.community_management.mapper.UserMapper;
 import com.saltedfish.community_management.service.RoleService;
+import com.saltedfish.community_management.vo.UserRoleVO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.AutoConfigurationPackage;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,6 +25,9 @@ public class RoleServiceImpl implements RoleService {
 
     @Autowired
     private RoleMapper roleMapper;
+
+    @Autowired
+    private UserMapper userMapper;
 
     @Override
     public Result getRolesByUserId(Integer id) throws Exception {
@@ -79,5 +86,30 @@ public class RoleServiceImpl implements RoleService {
 
 
         return new Result(HttpStatus.OK.value(),"更新用户角色成功",null);
+    }
+
+    @Override
+    public Result getAllUserRoles() throws Exception {
+        // 查找所有的管理员信息
+        List<User> adminUserList = userMapper.findAdminUser();
+
+        List<UserRoleVO> userRoleVOList = new ArrayList<>();
+
+        if (adminUserList == null){
+            throw new Exception("查找所有用户的角色信息失败");
+        }
+
+        for (User user : adminUserList) {
+            // 查找管理员对应的角色信息
+            List<Role> roleList = roleMapper.findRolesByUserId(user.getId());
+
+            // 将用户信息和角色信息封装为UserRoleVO对象
+            UserRoleVO userRoleVO = new UserRoleVO();
+            userRoleVO.setUserId(user.getId());
+            userRoleVO.setUsername(user.getUsername());
+            userRoleVO.setRoleList(roleList);
+            userRoleVOList.add(userRoleVO);
+        }
+        return new Result(HttpStatus.OK.value(),"查找所有用户的角色信息成功",userRoleVOList);
     }
 }
